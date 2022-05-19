@@ -1,0 +1,37 @@
+{
+  "extends": "@sapphire",
+  "rules": {
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/class-literal-property-style": "off",
+    "no-lone-blocks": "error",
+    "no-tabs": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "never", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+      { "blankLine": "never", "prev": "case", "next": "case" },
+      { "blankLine": "never", "prev": "expression", "next": "expression" },
+      { "blankLine": "never", "prev": "for", "next": "for" },
+      { "blankLine": "never", "prev": "if", "next": "if" },
+      {
+        "blankLine": "always",
+        "prev": [
+          "block-like",
+          "break",
+          "case",
+          "class",
+          "continue",
+          "default",
+          "multiline-const",
+          "multiline-expression",
+          "multiline-let",
+          "multiline-var",
+          "return",
+          "switch",
+          "try"
+        ],
+        "next": "*"
+      },
+      { "blankLine": "always", "prev": "*", "next": ["case", "default"] }
+    ]
+  }
+}
