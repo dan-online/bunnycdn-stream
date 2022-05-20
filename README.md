@@ -58,20 +58,15 @@ This was harder than you would think, a lot of bunnycdn's documentation is misna
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [Axios](https://axios.com/)
 - [Typescript](https://www.typescriptlang.org)
 - [Rollup](https://rollupjs.org/guide/en/)
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Install
-
-This is an example of how to list things you need to use the software and how to install them.
 
 - npm
 
