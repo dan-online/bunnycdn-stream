@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/dan-online/bunnycdn-stream">
-    <img src="assets/bunnycdn-stream.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/bunnycdn-stream.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BunnyCDN-Stream</h3>
@@ -36,11 +36,9 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -134,4 +132,4 @@ Project Link: [https://github.com/dan-online/bunnycdn-stream](https://github.com
 [issues-url]: https://github.com/dan-online/bunnycdn-stream/issues
 [license-shield]: https://img.shields.io/github/license/dan-online/bunnycdn-stream.svg?style=for-the-badge
 [license-url]: https://github.com/dan-online/bunnycdn-stream/blob/master/LICENSE
-[product-screenshot]: assets/demo.png
+[product-screenshot]: src/assets/demo.png
