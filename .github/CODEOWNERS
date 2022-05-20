@@ -1,8 +1,4 @@
-/.github/ @RealShadowNova
-/.husky/ @RealShadowNova
-/.vscode/ @RealShadowNova
-/.yarn/ @RealShadowNova
-/src/ @RealShadowNova @dan-online
-/tests/ @RealShadowNova @dan-online
-LICENSE @eslachance
-package.json @RealShadowNova
+/.github/ @dan-online
+/src/ @dan-online
+LICENSE @dan-online
+package.json @dan-online
