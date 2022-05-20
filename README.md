@@ -12,7 +12,7 @@
   <h3 align="center">BunnyCDN-Stream</h3>
 
   <p align="center">
-    A simple, lightweight, and easy to use the HTTP streaming library for BunnyCDN.
+    A simple, lightweight, and easy to use library for BunnyCDN's stream api.
     <br />
     <a href="https://github.com/dan-online/bunnycdn-stream/blob/1.0.0/docs/classes/BunnyCdnStream.md">Documentation</a>
     ·
