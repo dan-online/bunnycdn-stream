@@ -50,7 +50,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot]
 
 There are many bunnycdn modules for accessing bunnycdn storage yet none of them provide access to the `stream` endpoint, which requires seperate authentication. Therefore I decided to just write my own in typescript.
 
