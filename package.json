@@ -24,7 +24,7 @@
     "watch": "tsc -b src -w",
     "release": "npm publish",
     "prepublishOnly": "rollup-type-bundler",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.3.0",
