@@ -1,4 +1,4 @@
-import type { VideoResponse } from '../types/response';
+import type { BunnyCdnStream } from '../';
 
 export class BunnyCdnStreamVideo {
   public videoLibraryId: number;
@@ -38,7 +38,7 @@ export class BunnyCdnStreamVideo {
     timestamp: number;
   }[];
 
-  public constructor(data: VideoResponse) {
+  public constructor(data: BunnyCdnStream.VideoResponse) {
     this.videoLibraryId = data.videoLibraryId;
     this.guid = data.guid;
     this.title = data.title;

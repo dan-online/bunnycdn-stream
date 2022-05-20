@@ -20,6 +20,7 @@
     "test": "jest",
     "update": "yarn upgrade-interactive",
     "build": "rollup -c rollup.bundle.ts",
+    "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
     "watch": "tsc -b src -w",
     "release": "npm publish",
     "prepublishOnly": "rollup-type-bundler",
@@ -54,6 +55,8 @@
     "standard-version": "^9.3.2",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
+    "typedoc": "^0.22.15",
+    "typedoc-plugin-markdown": "^3.12.1",
     "typescript": "^4.6.4"
   },
   "files": [
