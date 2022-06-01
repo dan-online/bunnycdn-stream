@@ -19,7 +19,6 @@ export class BunnyCdnStreamError extends Error {
     super();
 
     if (axiosError instanceof AxiosError) {
-      console.log(axiosError.response);
       this.name = axiosError.response ? errorTypes[axiosError.response.status] : 'UNKNOWN_ERROR';
       this.code = axiosError.response ? axiosError.response.status : 0;
       this.message = `BunnyCdnStreamError: unable to ${when}`;
