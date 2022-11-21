@@ -35,11 +35,10 @@ jobs:
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
-          yarn standard-version --skip.tag
+          yarn standard-version --skip.tag -r patch
 
           yarn release
 
-          git commit -m "chore(npm): bump and release"
           git push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
