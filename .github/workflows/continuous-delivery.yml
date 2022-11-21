@@ -1,16 +1,10 @@
 name: Continuous Delivery
 
 on:
-  workflow_dispatch:
-    inputs:
-      prNumber:
-        description: The number of the PR that is being deployed
-        required: true
-      branch:
-        description: The branch that is being deployed.
-        required: false
-        default: main
   push:
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'package.json'
     branches:
       - main
 
@@ -36,13 +30,14 @@ jobs:
         run: yarn --immutable
       - name: Bump Version & Publish
         run: |
-          echo -e "\n# Resolve the tag to be used. \"next\" for push events, \"pr-{prNumber}\" for dispatch events."
-          TAG=$([[ ${{ github.event_name }} == 'push' ]] && echo 'next' || echo 'pr-${{ github.event.inputs.prNumber }}')
-
           echo -e "\n# Bump the version"
-          yarn standard-version --skip.commit --skip.tag --prerelease "${TAG}.$(git rev-parse --verify --shot HEAD)"
+          yarn standard-version --skip.tag
 
-          echo -e "\n# Publish to NPM"
-          yarn release --tag ${TAG}
+          yarn release
+
+          git config --global user.name 'DanCodes'
+          git config --global user.email 'dan@dancodes.online'
+          git commit -m "chore(npm): bump and release"
+          git push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
