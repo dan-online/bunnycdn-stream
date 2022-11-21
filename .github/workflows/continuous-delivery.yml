@@ -31,12 +31,14 @@ jobs:
       - name: Bump Version & Publish
         run: |
           echo -e "\n# Bump the version"
+
+          git config --global user.name 'DanCodes'
+          git config --global user.email 'dan@dancodes.online'
+
           yarn standard-version --skip.tag
 
           yarn release
 
-          git config --global user.name 'DanCodes'
-          git config --global user.email 'dan@dancodes.online'
           git commit -m "chore(npm): bump and release"
           git push
         env:
