@@ -335,7 +335,8 @@ export class BunnyCdnStream {
 
   private getOptions() {
     return {
-      ...this.axiosOptions
+      ...this.axiosOptions,
+      headers: {...this.axiosOptions.headers}
     };
   }
 }
