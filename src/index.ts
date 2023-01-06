@@ -116,7 +116,7 @@ export class BunnyCdnStream {
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'PUT';
     options.data = file;
-    options.headers['Content-Type'] = 'application/octet-stream';
+    options.headers = { ...options.headers, 'Content-Type': 'application/octet-stream' };
 
     return this.request<BunnyCdnStream.UploadVideoResponse>(options, 'upload');
   }
