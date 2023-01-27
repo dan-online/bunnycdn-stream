@@ -19,7 +19,7 @@
     "format": "prettier --write \"{src,tests}/**/*.ts\"",
     "test": "jest",
     "update": "yarn upgrade-interactive",
-    "build": "rollup -c rollup.bundle.ts",
+    "build": "rollup -c rollup.bundle.mjs",
     "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
     "watch": "tsc -b src -w",
     "release": "npm publish",
