@@ -1,11 +1,11 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
+import axios, { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 import type { ReadStream } from 'fs';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
 
 export class BunnyCdnStream {
   public axiosOptions: BunnyCdnStream.BunnyAxiosRequestConfig = {
-    headers: { Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' },
+    headers: new AxiosHeaders({ Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' }),
     url: 'https://video.bunnycdn.com',
     method: 'GET',
     maxBodyLength: Infinity
@@ -116,7 +116,7 @@ export class BunnyCdnStream {
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'PUT';
     options.data = file;
-    options.headers = { ...options.headers, 'Content-Type': 'application/octet-stream' };
+    options.headers.set('Content-Type', 'application/octet-stream');
 
     return this.request<BunnyCdnStream.UploadVideoResponse>(options, 'upload');
   }
@@ -336,7 +336,7 @@ export class BunnyCdnStream {
   private getOptions() {
     return {
       ...this.axiosOptions,
-      headers: { ...this.axiosOptions.headers }
+      headers: new AxiosHeaders(this.axiosOptions.headers)
     };
   }
 }
