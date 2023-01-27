@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import cleaner from 'rollup-plugin-cleaner';
 import typescript from 'rollup-plugin-typescript2';
-import versionInjector from 'rollup-plugin-version-injector';
 
 export default {
   input: 'src/index.ts',
@@ -22,12 +21,9 @@ export default {
       file: './dist/index.umd.js',
       format: 'umd',
       name: 'BunnyCdnStream',
-      sourcemap: true,
-      globals: {
-        process: 'process'
-      }
+      sourcemap: true
     }
   ],
-  external: ['process'],
-  plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') }), versionInjector()]
+  external: ['axios'],
+  plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };

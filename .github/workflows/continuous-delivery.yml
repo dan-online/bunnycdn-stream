@@ -1,25 +1,23 @@
 name: Continuous Delivery
 
 on:
-  push:
-    paths-ignore:
-      - 'CHANGELOG.md'
-      - 'package.json'
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'what version to release'
+        required: true 
+        type: string
 
 jobs:
   publish:
-    name: Publish Next to NPM
+    name: Publish to NPM
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
         with:
           fetch-depth: 0
-          ref: ${{ github.event.inputs.branch || 'main' }}
-      - name: Add TypeScript Problem Matcher
-        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+          ref: ${{ 'main' }}
       - name: Use Node.js v16
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
         with:
@@ -28,6 +26,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: yarn --immutable
+      - name: Build
+        run: yarn build
       - name: Bump Version & Publish
         run: |
           echo -e "\n# Bump the version"
@@ -35,10 +35,8 @@ jobs:
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
-          yarn standard-version --skip.tag -r patch
+          yarn standard-version -r ${{ inputs.version }} 
 
-          yarn release
-
-          git push
+          git push --follow-tags origin main && yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
