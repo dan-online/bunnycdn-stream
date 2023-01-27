@@ -35,8 +35,6 @@ jobs:
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
-          yarn standard-version -r ${{ inputs.version }} 
-
-          git push --follow-tags origin main && yarn release
+          yarn release-it --ci -i ${{ inputs.version }} 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
