@@ -38,6 +38,11 @@ export class BunnyCdnStreamVideo {
     timestamp: number;
   }[];
 
+  public metaTags: {
+    property: string;
+    value: string;
+  }[];
+
   public constructor(data: BunnyCdnStream.VideoResponse) {
     this.videoLibraryId = data.videoLibraryId;
     this.guid = data.guid;
@@ -64,6 +69,7 @@ export class BunnyCdnStreamVideo {
     this.totalWatchTime = data.totalWatchTime;
     this.category = data.category;
     this.chapters = data.chapters;
+    this.metaTags = data.metaTags;
   }
 
   public get resolutions() {

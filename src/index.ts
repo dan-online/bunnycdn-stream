@@ -400,6 +400,10 @@ export namespace BunnyCdnStream {
       label: string;
       timestamp: number;
     }[];
+    metaTags: {
+      property: string;
+      value: string;
+    }[];
   }
 
   export interface DeleteVideoResponse {
