@@ -52,8 +52,9 @@ export class BunnyCdnStream {
     data: {
       title?: string;
       collectionId?: string;
-      chapters?: { title: string; start: number; end: number };
-      moments?: { label: string; timestamp: number };
+      chapters?: { title: string; start: number; end: number }[];
+      moments?: { label: string; timestamp: number }[];
+      metaTags?: { property: string; value: string }[];
     } = {}
   ): Promise<BunnyCdnStream.VideoResponse> {
     const options = this.getOptions();
@@ -74,7 +75,7 @@ export class BunnyCdnStream {
    * await stream.deleteVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
    * ```
    */
-  public async deleteVideo(videoId: string) {
+  public async deleteVideo(videoId: string): Promise<BunnyCdnStream.DeleteVideoResponse> {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'DELETE';
@@ -91,7 +92,7 @@ export class BunnyCdnStream {
    * await stream.createVideo({ title: "The best title" })
    * ```
    */
-  public async createVideo(data: { title: string; collectionId?: string }) {
+  public async createVideo(data: { title: string; collectionId?: string }): Promise<BunnyCdnStream.VideoResponse> {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos`;
     options.method = 'POST';
@@ -106,16 +107,18 @@ export class BunnyCdnStream {
    * @returns A {@link UploadVideoResponse} instance.
    * @param file The video file to upload as a readable stream
    * @param videoId The video id to upload to of a created video
+   * @param data Optional paramaters such as enabledResolutions
    * @example
    * ```typescript
    * await stream.uploadVideo(createReadStream("./file.mp4"), "0273f24a-79d1-d0fe-97ca-b0e36bed31es")
    * ```
    */
-  public async uploadVideo(file: ReadStream, videoId: string) {
+  public async uploadVideo(file: ReadStream, videoId: string, data: { enabledResolutions?: string } = {}) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'PUT';
     options.data = file;
+    options.params = data;
     options.headers.set('Content-Type', 'application/octet-stream');
 
     return this.request<BunnyCdnStream.UploadVideoResponse>(options, 'upload');
@@ -145,16 +148,32 @@ export class BunnyCdnStream {
 
   /**
    * Get video statistics
+   * @returns A {@link VideoHeatmapResponse} instance.
+   * @param videoId The video id to get heatmap info from
+   * @example
+   * ```typescript
+   * await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+   * ```
+   */
+  public async getVideoHeatmap(videoId: string) {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`;
+
+    return this.request<BunnyCdnStream.VideoHeatmapResponse>(options, 'fetch');
+  }
+
+  /**
+   * Get video statistics
    * @returns A {@link VideoStatisticsResponse} instance.
    * @param data The data to fetch video statistics with
    * @example
    * ```typescript
-   * await stream.getVideoStatistics({ videoId: "0273f24a-79d1-d0fe-97ca-b0e36bed31es" })
+   * await stream.getVideoStatistics("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
    * ```
    */
   public async getVideoStatistics(
+    videoId: string,
     data: {
-      videoId?: string;
       hourly?: boolean;
       dateTo?: string;
       dateFrom?: string;
@@ -162,7 +181,7 @@ export class BunnyCdnStream {
   ) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/statistics`;
-    options.data = JSON.stringify({ ...data, videoGuid: data.videoId });
+    options.data = JSON.stringify({ ...data, videoGuid: videoId });
 
     return this.request<BunnyCdnStream.VideoStatisticsResponse>(options, 'fetch');
   }
@@ -247,7 +266,7 @@ export class BunnyCdnStream {
   /**
    * Set the thumbnail
    *
-   * NOTE: This does not work as BunnyCDN describe but feel free to try
+   * NOTE: This does not work as BunnyCDN describes but feel free to try, I believe it actually means a thumbnail it has provided
    * @returns A {@link SetThumbnailVideoResponse} instance.
    * @param videoId The video ID
    * @param url The url of the thumbnail
@@ -385,7 +404,7 @@ export namespace BunnyCdnStream {
 
   export interface DeleteVideoResponse {
     success: boolean;
-    message: string;
+    message?: string;
     statusCode: number;
   }
 
@@ -420,11 +439,16 @@ export namespace BunnyCdnStream {
   }
 
   export interface VideoStatisticsResponse {
+    // TODO: Verify this is correct
     viewsChart: { [date: string]: number };
     watchTimeChart: { [date: string]: number };
     countryViewCounts: { [country: string]: number };
     countryWatchTime: { [country: string]: number };
     engagementScore: number;
+  }
+
+  export interface VideoHeatmapResponse {
+    // TODO: incorrect on bunny's docs, to be discovered
   }
 
   export interface ListVideosResponse {
