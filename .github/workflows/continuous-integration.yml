@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - stable
   pull_request:
 
 jobs:
@@ -20,46 +19,23 @@ jobs:
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           node-version: 16
-          cache: yarn
           registry-url: https://registry.npmjs.org/
+      - name: Locate Yarn Cache
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Yarn Cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-cache-folder-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+          restore-keys: |
+            yarn-cache-folder-
       - name: Install Dependencies
         run: yarn --immutable
       - name: Run ESLint
         run: yarn lint --fix=false
-
-  testing:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-      - name: Use Node.js v16
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-        with:
-          node-version: 16
-          cache: yarn
-          registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        run: yarn --immutable
       - name: Run tests
         run: yarn test --coverage
-
-  building:
-    name: Compile Source Code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
-      - name: Add TypeScript Problem Matcher
-        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
-      - name: Use Node.js v16
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-        with:
-          node-version: 16
-          cache: yarn
-          registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        if: ${{ !steps.cache-restore.outputs.cache-hit }}
-        run: yarn --immutable
       - name: Build Code
         run: yarn build
