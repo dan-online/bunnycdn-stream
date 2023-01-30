@@ -343,7 +343,19 @@ export class BunnyCdnStream {
     return this.request<BunnyCdnStream.DeleteCaptionsVideoResponse>(options, 'deleteCaptions');
   }
 
-  public async generateDirectUpload(data: { title: string; collection?: string }, expirationTime = 3600) {
+  /**
+   * Generate a direct upload tus
+   *
+   * NOTE: metadata.filetype is required for the tus upload to work
+   * @returns A {@link CreateDirectUpload}
+   * @param data The data to create the video with
+   * @param expirationTime The expiration time of the tus upload
+   * @example
+   * ```typescript
+   * await stream.createDirectUpload({ title: "My Video" })
+   * ```
+   */
+  public async createDirectUpload(data: { title: string; collection?: string }, expirationTime = 3600): Promise<BunnyCdnStream.CreateDirectUpload> {
     // create a video
     const video = await this.createVideo(data);
     const hash = this.generateTUSHash(video.guid, expirationTime);
@@ -488,6 +500,21 @@ export namespace BunnyCdnStream {
     currentPage: number;
     itemsPerPage: number;
     items: VideoResponse[];
+  }
+
+  export interface CreateDirectUpload {
+    endpoint: string;
+    headers: {
+      AuthorizationSignature: string;
+      AuthorizationExpire: number;
+      VideoId: string;
+      LibraryId: string;
+    };
+    metadata: {
+      filetype: string;
+      title: string;
+      collection: string | undefined;
+    };
   }
 
   export interface BunnyAxiosRequestConfig extends AxiosRequestConfig {
