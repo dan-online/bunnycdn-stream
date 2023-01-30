@@ -1,8 +1,8 @@
 import axios, { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 import type { ReadStream } from 'fs';
+import { createHash } from 'node:crypto';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
-
 export class BunnyCdnStream {
   public axiosOptions: BunnyCdnStream.BunnyAxiosRequestConfig = {
     headers: new AxiosHeaders({ Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' }),
@@ -341,6 +341,34 @@ export class BunnyCdnStream {
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/captions/${srclang}`;
     options.method = 'DELETE';
     return this.request<BunnyCdnStream.DeleteCaptionsVideoResponse>(options, 'deleteCaptions');
+  }
+
+  public async generateDirectUpload(data: { title: string; collection?: string }, expirationTime = 3600) {
+    // create a video
+    const video = await this.createVideo(data);
+    const hash = this.generateTUSHash(video.guid, expirationTime);
+
+    return {
+      endpoint: 'https://video.bunnycdn.com/tusupload',
+      headers: {
+        AuthorizationSignature: hash,
+        AuthorizationExpire: expirationTime,
+        VideoId: video.guid,
+        LibraryId: this.options.videoLibrary
+      },
+      metadata: {
+        filetype: '',
+        title: data.title,
+        collection: data.collection
+      }
+    };
+  }
+
+  private generateTUSHash(videoId: string, expirationTime: number) {
+    // sha256(library_id + api_key + expiration_time + video_id)
+    return createHash('sha256')
+      .update(this.options.videoLibrary + this.options.apiKey + expirationTime + videoId)
+      .digest('base64');
   }
 
   private async request<ResponseType>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
