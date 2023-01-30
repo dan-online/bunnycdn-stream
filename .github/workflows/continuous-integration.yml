@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  linting:
-    name: Linting
+  ci:
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
