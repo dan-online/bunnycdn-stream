@@ -8,15 +8,15 @@ bunnycdn-stream / [Exports](modules.md)
 <br />
 <div align="center">
   <a href="https://github.com/dan-online/bunnycdn-stream">
-    <img src="assets/bunnycdn-stream.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/dan-online/bunnycdn-stream/raw/main/assets/images/bunnycdn-stream.png?raw=true" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BunnyCDN-Stream</h3>
 
   <p align="center">
-    A simple, lightweight, and easy to use the HTTP streaming library for BunnyCDN.
+    A simple, lightweight, and easy to use library for BunnyCDN's stream api.
     <br />
-    <a href="docs/classes/BunnyCdnStream.md">Documentation</a>
+    <a href="https://github.com/dan-online/bunnycdn-stream/blob/1.0.0/docs/classes/BunnyCdnStream.md">Documentation</a>
     ·
     <a href="https://github.com/dan-online/bunnycdn-stream/issues">Report Bug</a>
     ·
@@ -38,11 +38,9 @@ bunnycdn-stream / [Exports](modules.md)
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -54,7 +52,7 @@ bunnycdn-stream / [Exports](modules.md)
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot]
 
 There are many bunnycdn modules for accessing bunnycdn storage yet none of them provide access to the `stream` endpoint, which requires seperate authentication. Therefore I decided to just write my own in typescript.
 
@@ -62,20 +60,15 @@ This was harder than you would think, a lot of bunnycdn's documentation is misna
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [Axios](https://axios.com/)
 - [Typescript](https://www.typescriptlang.org)
 - [Rollup](https://rollupjs.org/guide/en/)
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Install
-
-This is an example of how to list things you need to use the software and how to install them.
 
 - npm
 
@@ -90,7 +83,7 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-_For more examples, please refer to the [Documentation](docs/classes/BunnyCdnStream.md)_
+_For more examples, please refer to the [Documentation](https://github.com/dan-online/bunnycdn-stream/blob/1.0.0/docs/classes/BunnyCdnStream.md)_
 
 ## Contributing
 
@@ -136,4 +129,4 @@ Project Link: [https://github.com/dan-online/bunnycdn-stream](https://github.com
 [issues-url]: https://github.com/dan-online/bunnycdn-stream/issues
 [license-shield]: https://img.shields.io/github/license/dan-online/bunnycdn-stream.svg?style=for-the-badge
 [license-url]: https://github.com/dan-online/bunnycdn-stream/blob/master/LICENSE
-[product-screenshot]: assets/demo.png
+[product-screenshot]: https://github.com/dan-online/bunnycdn-stream/raw/main/assets/images/demo.png?raw=true

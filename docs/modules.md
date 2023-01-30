@@ -10,5 +10,5 @@
 
 ### Classes
 
-- [BunnyCdnStream](classes/BunnyCdnStream.md)
+- [BunnyCdnStream](classes/BunnyCdnStream-1.md)
 - [BunnyCdnStreamVideo](classes/BunnyCdnStreamVideo.md)

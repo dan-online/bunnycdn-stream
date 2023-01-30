@@ -24,6 +24,7 @@
 - [height](BunnyCdnStreamVideo.md#height)
 - [isPublic](BunnyCdnStreamVideo.md#ispublic)
 - [length](BunnyCdnStreamVideo.md#length)
+- [metaTags](BunnyCdnStreamVideo.md#metatags)
 - [moments](BunnyCdnStreamVideo.md#moments)
 - [status](BunnyCdnStreamVideo.md#status)
 - [storageSize](BunnyCdnStreamVideo.md#storagesize)
@@ -53,7 +54,7 @@
 
 #### Defined in
 
-[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L41)
+[src/structures/Video.ts:46](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L46)
 
 ## Properties
 
@@ -63,7 +64,7 @@
 
 #### Defined in
 
-[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L15)
+[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L15)
 
 ___
 
@@ -73,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L27)
+[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L27)
 
 ___
 
@@ -83,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L19)
+[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L19)
 
 ___
 
@@ -93,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L29)
+[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L29)
 
 ___
 
@@ -103,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L30)
+[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L30)
 
 ___
 
@@ -113,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L25)
+[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L25)
 
 ___
 
@@ -123,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L7)
+[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L7)
 
 ___
 
@@ -133,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L17)
+[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L17)
 
 ___
 
@@ -143,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L12)
+[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L12)
 
 ___
 
@@ -153,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L5)
+[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L5)
 
 ___
 
@@ -163,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L24)
+[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L24)
 
 ___
 
@@ -173,7 +174,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L14)
+[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L14)
 
 ___
 
@@ -183,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L9)
+[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L9)
 
 ___
 
@@ -193,7 +194,17 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L10)
+[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L10)
+
+___
+
+### metaTags
+
+• **metaTags**: { `property`: `string` ; `value`: `string`  }[]
+
+#### Defined in
+
+[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L41)
 
 ___
 
@@ -203,7 +214,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L36)
+[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L36)
 
 ___
 
@@ -213,7 +224,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L11)
+[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L11)
 
 ___
 
@@ -223,7 +234,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L18)
+[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L18)
 
 ___
 
@@ -233,7 +244,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L16)
+[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L16)
 
 ___
 
@@ -243,7 +254,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L26)
+[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L26)
 
 ___
 
@@ -253,7 +264,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L6)
+[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L6)
 
 ___
 
@@ -263,7 +274,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L28)
+[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L28)
 
 ___
 
@@ -273,7 +284,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L4)
+[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L4)
 
 ___
 
@@ -283,7 +294,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L8)
+[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L8)
 
 ___
 
@@ -293,7 +304,7 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L13)
+[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L13)
 
 ## Accessors
 
@@ -307,4 +318,4 @@ ___
 
 #### Defined in
 
-[src/structures/Video.ts:69](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/structures/Video.ts#L69)
+[src/structures/Video.ts:75](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/structures/Video.ts#L75)

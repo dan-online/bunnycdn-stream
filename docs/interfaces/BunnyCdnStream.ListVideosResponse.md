@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/index.ts:431](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L431)
+[src/index.ts:500](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L500)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:433](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L433)
+[src/index.ts:502](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L502)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:432](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L432)
+[src/index.ts:501](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L501)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:430](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L430)
+[src/index.ts:499](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L499)

@@ -68,7 +68,7 @@ export class BunnyCdnStream {
 
   /**
    * Delete a video
-   * @returns A {@link DeleteVideoResponse} instance.
+   * @returns A {@link BunnyCdnStream.DeleteVideoResponse} instance.
    * @param videoId The video ID
    * @example
    * ```typescript
@@ -104,7 +104,7 @@ export class BunnyCdnStream {
 
   /**
    * Upload video, this does not create the video and requires a created video
-   * @returns A {@link UploadVideoResponse} instance.
+   * @returns A {@link BunnyCdnStream.UploadVideoResponse} instance.
    * @param file The video file to upload as a readable stream
    * @param videoId The video id to upload to of a created video
    * @param data Optional paramaters such as enabledResolutions
@@ -148,7 +148,7 @@ export class BunnyCdnStream {
 
   /**
    * Get video statistics
-   * @returns A {@link VideoHeatmapResponse} instance.
+   * @returns A {@link BunnyCdnStream.VideoHeatmapResponse} instance.
    * @param videoId The video id to get heatmap info from
    * @example
    * ```typescript
@@ -164,7 +164,7 @@ export class BunnyCdnStream {
 
   /**
    * Get video statistics
-   * @returns A {@link VideoStatisticsResponse} instance.
+   * @returns A {@link BunnyCdnStream.VideoStatisticsResponse} instance.
    * @param data The data to fetch video statistics with
    * @example
    * ```typescript
@@ -209,7 +209,7 @@ export class BunnyCdnStream {
 
   /**
    * List videos
-   * @returns An array of {@link VideoStatisticsResponse} instances.
+   * @returns An array of {@link BunnyCdnStream.VideoStatisticsResponse} instances.
    * @param data The options to list videos with
    * @example
    * ```typescript
@@ -227,7 +227,7 @@ export class BunnyCdnStream {
 
   /**
    * List all videos with an optional callback between each page
-   * @returns An array of {@link VideoStatisticsResponse} instances.
+   * @returns An array of {@link BunnyCdnStream.VideoStatisticsResponse} instances.
    * @param data The options to list videos with
    * @param stop The callback that if returns ``true`` stops the iteration
    * @example
@@ -267,7 +267,7 @@ export class BunnyCdnStream {
    * Set the thumbnail
    *
    * NOTE: This does not work as BunnyCDN describes but feel free to try, I believe it actually means a thumbnail it has provided
-   * @returns A {@link SetThumbnailVideoResponse} instance.
+   * @returns A {@link BunnyCdnStream.SetThumbnailVideoResponse} instance.
    * @param videoId The video ID
    * @param url The url of the thumbnail
    * @example
@@ -287,7 +287,7 @@ export class BunnyCdnStream {
    * Fetch a video
    *
    * NOTE: This does not return a video, more a confirmation that a video will be fetched from the url with specific headers
-   * @returns A {@link FetchVideoResponse} instance
+   * @returns A {@link BunnyCdnStream.FetchVideoResponse} instance
    * @param videoId The video ID
    * @param data The data to fetch the video from
    * @example
@@ -305,7 +305,7 @@ export class BunnyCdnStream {
 
   /**
    * Add captions to a video
-   * @returns A {@link AddCaptionsVideoResponse} instance.
+   * @returns A {@link BunnyCdnStream.AddCaptionsVideoResponse} instance.
    * @param videoId The video ID
    * @param data The data to add captions with
    * @example
@@ -328,7 +328,7 @@ export class BunnyCdnStream {
 
   /**
    * Delete captions from a video
-   * @returns A {@link DeleteCaptionsVideoResponse} instance.
+   * @returns A {@link BunnyCdnStream.DeleteCaptionsVideoResponse} instance.
    * @param videoId The video ID
    * @param srclang The specified srclang used when creating
    * @example
@@ -347,7 +347,7 @@ export class BunnyCdnStream {
    * Generate a direct upload tus
    *
    * NOTE: metadata.filetype is required for the tus upload to work
-   * @returns A {@link CreateDirectUpload}
+   * @returns A {@link BunnyCdnStream.CreateDirectUpload}
    * @param data The data to create the video with
    * @param expirationTime The expiration time of the tus upload
    * @example
