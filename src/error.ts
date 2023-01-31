@@ -15,7 +15,7 @@ export class BunnyCdnStreamError extends Error {
   public name: string;
   public code: number;
 
-  public constructor(axiosError: AxiosError | string, when?: string) {
+  public constructor(axiosError: AxiosError | string, when?: string, code?: number) {
     super();
     this.name = 'BunnyCdnStreamError';
     if (axiosError instanceof AxiosError) {
@@ -28,7 +28,7 @@ export class BunnyCdnStreamError extends Error {
         this.message += `: ${axiosError.response.data}`;
       }
     } else {
-      this.code = 0;
+      this.code = code || -1;
       this.message = `BunnyCdnStreamError: Unable to ${when}, ${axiosError}`;
     }
   }

@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 import { fileTypeFromBuffer } from 'file-type';
-import type { ReadStream } from 'fs';
+import { ReadStream } from 'fs';
 import { createHash } from 'node:crypto';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
@@ -296,14 +296,18 @@ export class BunnyCdnStream {
    * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("thumbnail.jpg"))
    * ```
    */
-  public async setThumbnail(videoId: string, thumbnail: Buffer, overrideContentType?: string) {
+  public async setThumbnail(videoId: string, thumbnail: Buffer | ReadStream, overrideContentType?: string) {
     const options = this.getOptions();
-    const ct = overrideContentType ? { mime: overrideContentType } : await fileTypeFromBuffer(thumbnail);
+    const ct = overrideContentType ? { mime: overrideContentType } : undefined;
+
+    // if thumbnail is a buffer, we can auto detect the content type, if the ct is not overridden
+    // if thumbnail is a stream, we set the content type to octet-stream
+    options.headers['Content-Type'] =
+      thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileTypeFromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
 
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
     options.method = 'POST';
     options.data = thumbnail;
-    options.headers.setContentType(ct ? ct.mime : 'image/jpeg');
 
     return this.request<BunnyCdnStream.SetThumbnailVideoResponse>(options, 'setThumbnail');
   }
@@ -529,9 +533,19 @@ export class BunnyCdnStream {
       .digest('base64');
   }
 
-  private async request<ResponseType>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
+  private async request<ResponseType extends object>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
     try {
-      const req = await axios.request(options);
+      const req = await axios.request<ResponseType>(options);
+      if (
+        'message' in req.data &&
+        typeof req.data.message === 'string' &&
+        'statusCode' in req.data &&
+        typeof req.data.statusCode === 'number' &&
+        req.data.statusCode !== 200
+      ) {
+        throw new BunnyCdnStreamError(req.data.message, name, req.data.statusCode);
+      }
+
       return req.data;
     } catch (error) {
       throw new BunnyCdnStreamError(error as AxiosError, name);

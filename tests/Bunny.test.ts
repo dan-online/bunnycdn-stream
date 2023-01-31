@@ -220,9 +220,15 @@ describe('BunnyCdnStream', () => {
       expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
     });
 
-    test('GIVEN library w/ encoded video THEN can set thumbnail as jpg', async () => {
+    test('GIVEN library w/ encoded video AND overriden mime THEN can set thumbnail as jpg', async () => {
       const thumbnail = readFileSync(resolve(__dirname, 'data', 'bunny.jpg'));
       const res = await stream.setThumbnail(videoGuid, thumbnail, 'image/jpg');
+      expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    });
+
+    test('GIVEN library w/ encoded video THEN can set thumbnail from stream', async () => {
+      const thumbnail = createReadStream(resolve(__dirname, 'data', 'bunny.jpg'));
+      const res = await stream.setThumbnail(videoGuid, thumbnail);
       expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
     });
 
