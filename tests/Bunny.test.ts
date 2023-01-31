@@ -142,6 +142,8 @@ describe('BunnyCdnStream', () => {
         chapters: [],
         metaTags: []
       });
+
+      expect(video.resolutions).toHaveLength(4);
     });
 
     // TODO: This seems to break the video :/
@@ -201,7 +203,7 @@ describe('BunnyCdnStream', () => {
     });
 
     test('GIVEN library w/ encoded video THEN can update', async () => {
-      const res = await stream.updateVideo(videoGuid, { title: 'updated' });
+      await stream.updateVideo(videoGuid, { title: 'updated' });
       const vid = await stream.getVideo(videoGuid);
       expect(vid.title).toEqual('updated');
     });
