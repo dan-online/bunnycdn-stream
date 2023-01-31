@@ -5,8 +5,12 @@ on:
     inputs:
       version:
         description: 'what version to release'
-        required: true 
+        required: true
         type: string
+      dry:
+        description: 'Dry run'
+        required: false
+        type: boolean
 
 jobs:
   publish:
@@ -29,12 +33,26 @@ jobs:
       - name: Build
         run: yarn build
       - name: Bump Version & Publish
+        if: ${{ inputs.dry }}
         run: |
           echo -e "\n# Bump the version"
 
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
-          yarn release-it --ci -i ${{ inputs.version }} 
+          yarn release-it --ci -i ${{ inputs.version }} -d
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Bump Version & Publish
+        if: ${{ !inputs.dry }}
+        run: |
+          echo -e "\n# Bump the version"
+
+          git config --global user.name 'DanCodes'
+          git config --global user.email 'dan@dancodes.online'
+
+          yarn release-it --ci -i ${{ inputs.version }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

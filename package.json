@@ -64,7 +64,7 @@
     "!dist/*.tsbuildinfo"
   ],
   "engines": {
-    "node": ">=18",
+    "node": ">=16",
     "npm": ">=6"
   },
   "keywords": [],
