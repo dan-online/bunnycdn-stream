@@ -142,6 +142,8 @@ describe('BunnyCdnStream', () => {
         chapters: [],
         metaTags: []
       });
+
+      expect(video.resolutions).toHaveLength(4);
     });
 
     // TODO: This seems to break the video :/
@@ -201,7 +203,7 @@ describe('BunnyCdnStream', () => {
     });
 
     test('GIVEN library w/ encoded video THEN can update', async () => {
-      const res = await stream.updateVideo(videoGuid, { title: 'updated' });
+      await stream.updateVideo(videoGuid, { title: 'updated' });
       const vid = await stream.getVideo(videoGuid);
       expect(vid.title).toEqual('updated');
     });
@@ -219,6 +221,87 @@ describe('BunnyCdnStream', () => {
         endpoint: expect.any(String),
         headers: expect.any(Object),
         metadata: expect.any(Object)
+      });
+    });
+  });
+
+  describe('can use collections', () => {
+    let createdCollectionGUID: string;
+
+    test('GIVEN library w/ a non-existing collection Id THEN throws an error', async () => {
+      await expect(stream.getCollection('non-existing-GUID')).rejects.toThrowError();
+    });
+
+    test('GIVEN library w/ a collection name THEN can create collection', async () => {
+      const response = await stream.createCollection('TestCollection');
+      expect(response).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
+      });
+
+      createdCollectionGUID = response.guid; // Sets the GUID for the following tests
+    });
+
+    test('GIVEN library w/ a collection Id THEN can fetch a collection', async () => {
+      const response = await stream.getCollection(createdCollectionGUID);
+      expect(response).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
+      });
+    });
+
+    test('GIVEN library THEN can list collections', async () => {
+      const response = await stream.listCollections();
+      expect(response).toMatchObject({
+        totalItems: expect.any(Number),
+        itemsPerPage: expect.any(Number),
+        currentPage: expect.any(Number),
+        items: expect.any(Object)
+      });
+    });
+
+    test('GIVEN library w/ values for list parameters THEN can list collections', async () => {
+      const response = await stream.listCollections({ search: 'TestCollection', itemsPerPage: 10, page: 1, orderBy: 'date' });
+      const createdCollection = response.items.find((item) => item.guid === createdCollectionGUID);
+      expect(createdCollection?.name).toBe('TestCollection');
+    });
+
+    test('GIVEN library THEN can list all collections', async () => {
+      const response = await stream.listAllCollections();
+
+      expect(response[0]).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
+      });
+    });
+
+    test('GIVEN library w/ a collection Id THEN can update a collection', async () => {
+      const response = await stream.updateCollection(createdCollectionGUID, { name: 'NewCollectionName' });
+      expect(response).toMatchObject({
+        success: true,
+        message: 'OK',
+        statusCode: 200
+      });
+    });
+
+    test('GIVEN library w/ a collection Id THEN can delete a collection', async () => {
+      const response = await stream.deleteCollection(createdCollectionGUID);
+      expect(response).toMatchObject({
+        success: true,
+        message: 'OK',
+        statusCode: 200
       });
     });
   });

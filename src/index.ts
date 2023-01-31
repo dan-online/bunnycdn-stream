@@ -391,6 +391,126 @@ export class BunnyCdnStream {
   }
 
   /**
+   * Create a collection
+   * @returns A {@link BunnyCdnStream.CreateCollectionResponse} instance.
+   * @param name The collection name
+   * @example
+   * ```typescript
+   * await stream.createCollection("New Collection")
+   * ```
+   */
+  public async createCollection(name: string): Promise<BunnyCdnStream.CreateCollectionResponse> {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/collections`;
+    options.method = 'POST';
+    options.data = JSON.stringify({ name });
+    return this.request<BunnyCdnStream.CreateCollectionResponse>(options, 'createCollection');
+  }
+
+  /**
+   * Retrieve info about a collection from BunnyCdn
+   * @returns A {@link BunnyCdnStream.BunnyCdnStreamCollection} instance.
+   * @param collectionId The collection ID
+   * @example
+   * ```typescript
+   * await stream.getCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+   * ```
+   */
+  public async getCollection(collectionId: string): Promise<BunnyCdnStream.BunnyCdnStreamCollection> {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/collections/${collectionId}`;
+    return this.request<BunnyCdnStream.BunnyCdnStreamCollection>(options, 'getCollection');
+  }
+
+  /**
+   * List collections
+   * @returns a {@link BunnyCdnStream.ListCollectionsResponse} instances.
+   * @param data The options to list collections with
+   * @example
+   * ```typescript
+   * await stream.listCollections({ page: 2, search: "Y collections", itemsPerPage: 100, orderBy: 'date' })
+   * ```
+   */
+  public async listCollections(data: { page?: number; itemsPerPage?: number; search?: string; orderBy?: string } = {}) {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/collections`;
+    options.params = { ...data };
+    const collections = await this.request<BunnyCdnStream.ListCollectionsResponse>(options, 'listCollections');
+    return collections;
+  }
+
+  /**
+   * List all collections with an optional callback between each page
+   * @returns An array of {@link BunnyCdnStream.BunnyCdnStreamCollection} instances.
+   * @param data The options to list collections with
+   * @param stop The callback that if returns ``true`` stops the iteration
+   * @example
+   * ```typescript
+   * await stream.listAllCollections()
+   * ```
+   */
+  public async listAllCollections(
+    data: { search?: string; orderBy?: string; itemsPerPage?: number } = {},
+    stop?: (collections: BunnyCdnStream.BunnyCdnStreamCollection[], page: number, totalPages: number) => boolean
+  ) {
+    const all: BunnyCdnStream.BunnyCdnStreamCollection[] = [];
+    let nextPage = true;
+    let page = 1;
+    while (nextPage) {
+      const collections = await this.listCollections({ ...data, page, itemsPerPage: data.itemsPerPage || 100 });
+      const totalPages = Math.ceil(collections.totalItems / collections.itemsPerPage);
+
+      all.push(...collections.items);
+
+      if (stop && (await stop(collections.items, page, totalPages))) {
+        nextPage = false;
+        continue;
+      }
+
+      if (page < totalPages) {
+        page++;
+      } else {
+        nextPage = false;
+      }
+    }
+
+    return all;
+  }
+
+  /**
+   * Update info of a collection
+   * @returns A {@link BunnyCdnStream.UpdateCollectionResponse} instance.
+   * @param collectionId The collection ID
+   * @example
+   * ```typescript
+   * await stream.updateCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { name: 'New Collection'})
+   * ```
+   */
+  public async updateCollection(collectionId: string, data: { name: string }): Promise<BunnyCdnStream.UpdateCollectionResponse> {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/collections/${collectionId}`;
+    options.method = 'POST';
+    options.data = JSON.stringify(data);
+    return this.request<BunnyCdnStream.UpdateCollectionResponse>(options, 'updateCollection');
+  }
+
+  /**
+   * Delete a collection
+   * @returns A {@link BunnyCdnStream.DeleteCollectionResponse} instance.
+   * @param collectionId The collection ID
+   * @example
+   * ```typescript
+   * await stream.deleteCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+   * ```
+   */
+  public async deleteCollection(collectionId: string): Promise<BunnyCdnStream.DeleteCollectionResponse> {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/collections/${collectionId}`;
+    options.method = 'DELETE';
+    return this.request<BunnyCdnStream.DeleteCollectionResponse>(options, 'deleteCollection');
+  }
+
+  /**
    * Generate a direct upload tus
    *
    * NOTE: metadata.filetype is required for the tus upload to work
@@ -553,6 +673,41 @@ export namespace BunnyCdnStream {
     currentPage: number;
     itemsPerPage: number;
     items: VideoResponse[];
+  }
+
+  export interface CreateCollectionResponse {
+    videoLibraryId: number;
+    guid: string;
+    name: string;
+    videoCount: number;
+    totalSize: number;
+    previewVideoIds: string;
+  }
+  export interface BunnyCdnStreamCollection {
+    videoLibraryId: number;
+    guid: string;
+    name: string;
+    videoCount: number;
+    totalSize: number;
+    previewVideoIds: string;
+  }
+
+  export interface ListCollectionsResponse {
+    totalItems: number;
+    currentPage: number;
+    itemsPerPage: number;
+    items: BunnyCdnStreamCollection[];
+  }
+
+  export interface UpdateCollectionResponse {
+    success: boolean;
+    message: string;
+    statusCode: number;
+  }
+  export interface DeleteCollectionResponse {
+    success: boolean;
+    message: string;
+    statusCode: number;
   }
 
   export interface CreateDirectUpload {
