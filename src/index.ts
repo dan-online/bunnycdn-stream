@@ -114,7 +114,7 @@ export class BunnyCdnStream {
    * await stream.createVideo({ title: "The best title" })
    * ```
    */
-  public async createVideo(data: { title: string; collectionId?: string }): Promise<BunnyCdnStream.VideoResponse> {
+  public async createVideo(data: { title: string; collectionId?: string }): Promise<BunnyCdnStreamVideo> {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos`;
     options.method = 'POST';
@@ -511,6 +511,7 @@ export class BunnyCdnStream {
     const hash = this.generateTUSHash(video.guid, expirationTime);
 
     return {
+      video,
       endpoint: 'https://video.bunnycdn.com/tusupload',
       headers: {
         AuthorizationSignature: hash,
@@ -703,6 +704,7 @@ export namespace BunnyCdnStream {
   }
 
   export interface CreateDirectUpload {
+    video: BunnyCdnStreamVideo;
     endpoint: string;
     headers: {
       AuthorizationSignature: string;

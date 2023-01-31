@@ -242,10 +242,14 @@ describe('BunnyCdnStream', () => {
     test('GIVEN library THEN generate TUS', async () => {
       const tus = await stream.createDirectUpload({ title: 'test-tus' });
       expect(tus).toMatchObject({
+        video: expect.anything(),
         endpoint: expect.any(String),
         headers: expect.any(Object),
         metadata: expect.any(Object)
       });
+
+      expect(tus.video).toBeInstanceOf(BunnyCdnStreamVideo);
+      await stream.deleteVideo(tus.video.guid);
     });
   });
 
