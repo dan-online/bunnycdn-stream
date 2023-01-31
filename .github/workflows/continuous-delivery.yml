@@ -50,6 +50,7 @@ jobs:
 
           yarn docs &&
 
+          git add . &&
           git commit -m "docs(${{ inputs.version }}): generate documentation" &&
 
           git push &&
