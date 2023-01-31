@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import cleaner from 'rollup-plugin-cleaner';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 import typescript from 'rollup-plugin-typescript2';
 
 export default {
@@ -21,9 +22,15 @@ export default {
       file: './dist/index.umd.js',
       format: 'umd',
       name: 'BunnyCdnStream',
-      sourcemap: true
+      sourcemap: true,
+      globals: {
+        axios: 'axios',
+        'file-type': 'fileType',
+        'node:crypto': 'crypto',
+        fs: 'fs'
+      }
     }
   ],
-  external: ['axios'],
-  plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
+  external: ['axios', 'file-type', 'node:crypto', 'fs'],
+  plugins: [nodePolyfills(), cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };
