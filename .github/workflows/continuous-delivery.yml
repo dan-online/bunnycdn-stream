@@ -32,8 +32,6 @@ jobs:
         run: yarn --immutable
       - name: Build
         run: yarn build
-      - name: Docs
-        run: yarn docs
       - name: Bump Version & Publish
         if: ${{ inputs.dry }}
         run: |
@@ -49,6 +47,12 @@ jobs:
         run: |
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
+
+          yarn docs &&
+
+          git commit -m "docs(${{ inputs.version }}): generate documentation" &&
+
+          git push &&
 
           yarn release-it --ci -i ${{ inputs.version }}
         env:
