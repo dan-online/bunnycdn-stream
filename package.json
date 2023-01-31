@@ -1,6 +1,6 @@
 {
   "name": "bunnycdn-stream",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "",
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "clean": "rimraf dist node_modules/.cache",
     "lint": "eslint src tests --ext ts --fix",
     "format": "prettier --write \"{src,tests}/**/*.ts\"",
-    "test": "jest",
+    "test": "vitest run",
     "update": "yarn upgrade-interactive",
     "build": "rollup -c rollup.bundle.mjs",
     "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
@@ -38,6 +38,7 @@
     "@types/rimraf": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "@vitest/coverage-c8": "^0.28.3",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -57,7 +58,8 @@
     "ts-node": "^10.9.1",
     "typedoc": "^0.23.24",
     "typedoc-plugin-markdown": "^3.14.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vitest": "^0.28.3"
   },
   "files": [
     "dist",
@@ -76,6 +78,7 @@
   },
   "packageManager": "yarn@3.3.1",
   "dependencies": {
-    "axios": "^1.2.6"
+    "axios": "^1.2.6",
+    "file-type": "^18.2.0"
   }
 }

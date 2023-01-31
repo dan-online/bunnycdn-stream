@@ -16,11 +16,11 @@
 
 ### message
 
-• **message**: `string`
+• `Optional` **message**: `string`
 
 #### Defined in
 
-[src/index.ts:387](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L387)
+[src/index.ts:451](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L451)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:388](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L388)
+[src/index.ts:452](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L452)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:386](https://github.com/dan-online/bunnycdn-stream/blob/0d47ebd/src/index.ts#L386)
+[src/index.ts:450](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L450)

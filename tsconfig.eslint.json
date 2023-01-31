@@ -3,7 +3,7 @@
   "include": [
     "src",
     "tests",
-    "jest.config.ts",
+    "vitest.config.ts",
     "rollup.bundle.mjs"
   ]
 }

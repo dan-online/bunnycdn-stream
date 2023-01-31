@@ -8,6 +8,7 @@
 
 - [AddCaptionsVideoResponse](../interfaces/BunnyCdnStream.AddCaptionsVideoResponse.md)
 - [BunnyAxiosRequestConfig](../interfaces/BunnyCdnStream.BunnyAxiosRequestConfig.md)
+- [CreateDirectUpload](../interfaces/BunnyCdnStream.CreateDirectUpload.md)
 - [DeleteCaptionsVideoResponse](../interfaces/BunnyCdnStream.DeleteCaptionsVideoResponse.md)
 - [DeleteVideoResponse](../interfaces/BunnyCdnStream.DeleteVideoResponse.md)
 - [FetchVideoResponse](../interfaces/BunnyCdnStream.FetchVideoResponse.md)
@@ -15,5 +16,6 @@
 - [Options](../interfaces/BunnyCdnStream.Options.md)
 - [SetThumbnailVideoResponse](../interfaces/BunnyCdnStream.SetThumbnailVideoResponse.md)
 - [UploadVideoResponse](../interfaces/BunnyCdnStream.UploadVideoResponse.md)
+- [VideoHeatmapResponse](../interfaces/BunnyCdnStream.VideoHeatmapResponse.md)
 - [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md)
 - [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisticsResponse.md)

@@ -32,6 +32,8 @@ jobs:
         run: yarn --immutable
       - name: Build
         run: yarn build
+      - name: Docs
+        run: yarn docs
       - name: Bump Version & Publish
         if: ${{ inputs.dry }}
         run: |
