@@ -222,75 +222,74 @@ describe('BunnyCdnStream', () => {
       });
     });
   });
+
+  describe(
+    'can use collections',
+    () => {
+      let createdCollectionGUID: string;
+
+      test('Fetching a non-existing collection throws an error', async () => {
+        await expect(stream.getCollection('non-existing-GUID')).rejects.toThrowError();
+      });
+
+      test('Creating a collection returns a valid response', async () => {
+        const response = await stream.createCollection('TestCollection');
+        expect(response.videoLibraryId).not.toBeUndefined();
+        expect(response.guid).not.toBeUndefined();
+        expect(response.name).not.toBeUndefined();
+        expect(response.videoCount).not.toBeUndefined();
+        expect(response.totalSize).not.toBeUndefined();
+        expect(response.previewVideoIds).not.toBeUndefined();
+        createdCollectionGUID = response.guid; // Sets the GUID for the following tests
+      });
+
+      test('Fetching an existing collection returns a valid response', async () => {
+        const response = await stream.getCollection(createdCollectionGUID);
+        expect(response.videoLibraryId).not.toBeUndefined();
+        expect(response.guid).not.toBeUndefined();
+        expect(response.name).not.toBeUndefined();
+        expect(response.videoCount).not.toBeUndefined();
+        expect(response.totalSize).not.toBeUndefined();
+        expect(response.previewVideoIds).not.toBeUndefined();
+      });
+
+      test('Listing collections returns a valid response', async () => {
+        const response = await stream.listCollections();
+        expect(response.totalItems).not.toBeUndefined();
+        expect(response.itemsPerPage).not.toBeUndefined();
+        expect(response.currentPage).not.toBeUndefined();
+        expect(response.items).not.toBeUndefined();
+      });
+
+      test('Listing collections with search contains the created collection', async () => {
+        const response = await stream.listCollections({ search: 'TestCollection', itemsPerPage: 10, page: 1, orderBy: 'date' });
+        const createdCollection = response.items.find((item) => item.guid === createdCollectionGUID);
+        expect(createdCollection?.name).toBe('TestCollection');
+      });
+
+      test('Updating a collection returns a valid response', async () => {
+        const response = await stream.updateCollection(createdCollectionGUID, { name: 'NewCollectionName' });
+        expect(response.success).toBe(true);
+        expect(response.message).not.toBeUndefined();
+        expect(response.statusCode).not.toBeUndefined();
+      });
+
+      test('Collection name did change in update', async () => {
+        const response = await stream.getCollection(createdCollectionGUID);
+        expect(response.name).toBe('NewCollectionName');
+      });
+
+      test('Deleting a collection returns a valid response', async () => {
+        const response = await stream.deleteCollection(createdCollectionGUID);
+        expect(response.success).toBe(true);
+        expect(response.message).not.toBeUndefined();
+        expect(response.statusCode).not.toBeUndefined();
+      });
+
+      test('Collection was indeed deleted', async () => {
+        await expect(stream.getCollection(createdCollectionGUID)).rejects.toThrowError();
+      });
+    },
+    { timeout: 10000 }
+  );
 });
-
-describe(
-  'Collections API 2E2',
-  () => {
-    const stream = new BunnyCdnStream({ videoLibrary: process.env.BUNNY_VIDEO_LIBRARY || '123', apiKey: process.env.BUNNY_API_KEY || '123' });
-    let createdCollectionGUID: string;
-
-    test('Fetching a non-existing collection throws an error', async () => {
-      await expect(stream.getCollection('non-existing-GUID')).rejects.toThrowError();
-    });
-
-    test('Creating a collection returns a valid response', async () => {
-      const response = await stream.createCollection('TestCollection');
-      expect(response.videoLibraryId).not.toBeUndefined();
-      expect(response.guid).not.toBeUndefined();
-      expect(response.name).not.toBeUndefined();
-      expect(response.videoCount).not.toBeUndefined();
-      expect(response.totalSize).not.toBeUndefined();
-      expect(response.previewVideoIds).not.toBeUndefined();
-      createdCollectionGUID = response.guid; // Sets the GUID for the following tests
-    });
-
-    test('Fetching an existing collection returns a valid response', async () => {
-      const response = await stream.getCollection(createdCollectionGUID);
-      expect(response.videoLibraryId).not.toBeUndefined();
-      expect(response.guid).not.toBeUndefined();
-      expect(response.name).not.toBeUndefined();
-      expect(response.videoCount).not.toBeUndefined();
-      expect(response.totalSize).not.toBeUndefined();
-      expect(response.previewVideoIds).not.toBeUndefined();
-    });
-
-    test('Listing collections returns a valid response', async () => {
-      const response = await stream.listCollections();
-      expect(response.totalItems).not.toBeUndefined();
-      expect(response.itemsPerPage).not.toBeUndefined();
-      expect(response.currentPage).not.toBeUndefined();
-      expect(response.items).not.toBeUndefined();
-    });
-
-    test('Listing collections with search contains the created collection', async () => {
-      const response = await stream.listCollections({ search: 'TestCollection', itemsPerPage: 10, page: 1, orderBy: 'date' });
-      const createdCollection = response.items.find((item) => item.guid === createdCollectionGUID);
-      expect(createdCollection?.name).toBe('TestCollection');
-    });
-
-    test('Updating a collection returns a valid response', async () => {
-      const response = await stream.updateCollection(createdCollectionGUID, { name: 'NewCollectionName' });
-      expect(response.success).toBe(true);
-      expect(response.message).not.toBeUndefined();
-      expect(response.statusCode).not.toBeUndefined();
-    });
-
-    test('Collection name did change in update', async () => {
-      const response = await stream.getCollection(createdCollectionGUID);
-      expect(response.name).toBe('NewCollectionName');
-    });
-
-    test('Deleting a collection returns a valid response', async () => {
-      const response = await stream.deleteCollection(createdCollectionGUID);
-      expect(response.success).toBe(true);
-      expect(response.message).not.toBeUndefined();
-      expect(response.statusCode).not.toBeUndefined();
-    });
-
-    test('Collection was indeed deleted', async () => {
-      await expect(stream.getCollection(createdCollectionGUID)).rejects.toThrowError();
-    });
-  },
-  { timeout: 10000 }
-);
