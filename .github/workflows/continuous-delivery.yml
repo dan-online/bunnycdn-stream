@@ -35,8 +35,6 @@ jobs:
       - name: Bump Version & Publish
         if: ${{ inputs.dry }}
         run: |
-          echo -e "\n# Bump the version"
-
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
@@ -47,8 +45,6 @@ jobs:
       - name: Bump Version & Publish
         if: ${{ !inputs.dry }}
         run: |
-          echo -e "\n# Bump the version"
-
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
