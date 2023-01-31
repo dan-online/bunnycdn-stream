@@ -223,73 +223,86 @@ describe('BunnyCdnStream', () => {
     });
   });
 
-  describe(
-    'can use collections',
-    () => {
-      let createdCollectionGUID: string;
+  describe('can use collections', () => {
+    let createdCollectionGUID: string;
 
-      test('Fetching a non-existing collection throws an error', async () => {
-        await expect(stream.getCollection('non-existing-GUID')).rejects.toThrowError();
+    test('GIVEN library w/ a non-existing collection Id THEN throws an error', async () => {
+      await expect(stream.getCollection('non-existing-GUID')).rejects.toThrowError();
+    });
+
+    test('GIVEN library w/ a collection name THEN can create collection', async () => {
+      const response = await stream.createCollection('TestCollection');
+      expect(response).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
       });
 
-      test('Creating a collection returns a valid response', async () => {
-        const response = await stream.createCollection('TestCollection');
-        expect(response.videoLibraryId).not.toBeUndefined();
-        expect(response.guid).not.toBeUndefined();
-        expect(response.name).not.toBeUndefined();
-        expect(response.videoCount).not.toBeUndefined();
-        expect(response.totalSize).not.toBeUndefined();
-        expect(response.previewVideoIds).not.toBeUndefined();
-        createdCollectionGUID = response.guid; // Sets the GUID for the following tests
-      });
+      createdCollectionGUID = response.guid; // Sets the GUID for the following tests
+    });
 
-      test('Fetching an existing collection returns a valid response', async () => {
-        const response = await stream.getCollection(createdCollectionGUID);
-        expect(response.videoLibraryId).not.toBeUndefined();
-        expect(response.guid).not.toBeUndefined();
-        expect(response.name).not.toBeUndefined();
-        expect(response.videoCount).not.toBeUndefined();
-        expect(response.totalSize).not.toBeUndefined();
-        expect(response.previewVideoIds).not.toBeUndefined();
+    test('GIVEN library w/ a collection Id THEN can fetch a collection', async () => {
+      const response = await stream.getCollection(createdCollectionGUID);
+      expect(response).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
       });
+    });
 
-      test('Listing collections returns a valid response', async () => {
-        const response = await stream.listCollections();
-        expect(response.totalItems).not.toBeUndefined();
-        expect(response.itemsPerPage).not.toBeUndefined();
-        expect(response.currentPage).not.toBeUndefined();
-        expect(response.items).not.toBeUndefined();
+    test('GIVEN library THEN can list collections', async () => {
+      const response = await stream.listCollections();
+      expect(response).toMatchObject({
+        totalItems: expect.any(Number),
+        itemsPerPage: expect.any(Number),
+        currentPage: expect.any(Number),
+        items: expect.any(Object)
       });
+    });
 
-      test('Listing collections with search contains the created collection', async () => {
-        const response = await stream.listCollections({ search: 'TestCollection', itemsPerPage: 10, page: 1, orderBy: 'date' });
-        const createdCollection = response.items.find((item) => item.guid === createdCollectionGUID);
-        expect(createdCollection?.name).toBe('TestCollection');
-      });
+    test('GIVEN library w/ values for list parameters THEN can list collections', async () => {
+      const response = await stream.listCollections({ search: 'TestCollection', itemsPerPage: 10, page: 1, orderBy: 'date' });
+      const createdCollection = response.items.find((item) => item.guid === createdCollectionGUID);
+      expect(createdCollection?.name).toBe('TestCollection');
+    });
 
-      test('Updating a collection returns a valid response', async () => {
-        const response = await stream.updateCollection(createdCollectionGUID, { name: 'NewCollectionName' });
-        expect(response.success).toBe(true);
-        expect(response.message).not.toBeUndefined();
-        expect(response.statusCode).not.toBeUndefined();
-      });
+    test('GIVEN library THEN can list all collections', async () => {
+      const response = await stream.listAllCollections();
 
-      test('Collection name did change in update', async () => {
-        const response = await stream.getCollection(createdCollectionGUID);
-        expect(response.name).toBe('NewCollectionName');
-      });
+      expect(response[0]).toMatchObject(
+        expect.any({
+          videoLibraryId: expect.any(Number),
+          guid: expect.any(String),
+          name: expect.any(String),
+          videoCount: expect.any(Number),
+          totalSize: expect.any(Number),
+          previewVideoIds: expect.any(Object)
+        })
+      );
+    });
 
-      test('Deleting a collection returns a valid response', async () => {
-        const response = await stream.deleteCollection(createdCollectionGUID);
-        expect(response.success).toBe(true);
-        expect(response.message).not.toBeUndefined();
-        expect(response.statusCode).not.toBeUndefined();
+    test('GIVEN library w/ a collection Id THEN can update a collection', async () => {
+      const response = await stream.updateCollection(createdCollectionGUID, { name: 'NewCollectionName' });
+      expect(response).toMatchObject({
+        success: true,
+        message: 'OK',
+        statusCode: 200
       });
+    });
 
-      test('Collection was indeed deleted', async () => {
-        await expect(stream.getCollection(createdCollectionGUID)).rejects.toThrowError();
+    test('GIVEN library w/ a collection Id THEN can delete a collection', async () => {
+      const response = await stream.deleteCollection(createdCollectionGUID);
+      expect(response).toMatchObject({
+        success: true,
+        message: 'OK',
+        statusCode: 200
       });
-    },
-    { timeout: 10000 }
-  );
+    });
+  });
 });
