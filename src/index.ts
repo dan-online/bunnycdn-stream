@@ -409,17 +409,17 @@ export class BunnyCdnStream {
 
   /**
    * Retrieve info about a collection from BunnyCdn
-   * @returns A {@link BunnyCdnStream.GetCollectionResponse} instance.
+   * @returns A {@link BunnyCdnStream.BunnyCdnStreamCollection} instance.
    * @param collectionId The collection ID
    * @example
    * ```typescript
    * await stream.getCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
    * ```
    */
-  public async getCollection(collectionId: string): Promise<BunnyCdnStream.GetCollectionResponse> {
+  public async getCollection(collectionId: string): Promise<BunnyCdnStream.BunnyCdnStreamCollection> {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/collections/${collectionId}`;
-    return this.request<BunnyCdnStream.GetCollectionResponse>(options, 'getCollection');
+    return this.request<BunnyCdnStream.BunnyCdnStreamCollection>(options, 'getCollection');
   }
 
   /**
@@ -437,6 +437,44 @@ export class BunnyCdnStream {
     options.params = { ...data };
     const collections = await this.request<BunnyCdnStream.ListCollectionsResponse>(options, 'listCollections');
     return collections;
+  }
+
+  /**
+   * List all collections with an optional callback between each page
+   * @returns An array of {@link BunnyCdnStream.BunnyCdnStreamCollection} instances.
+   * @param data The options to list collections with
+   * @param stop The callback that if returns ``true`` stops the iteration
+   * @example
+   * ```typescript
+   * await stream.listAllCollections()
+   * ```
+   */
+  public async listAllCollections(
+    data: { search?: string; orderBy?: string; itemsPerPage?: number } = {},
+    stop?: (collections: BunnyCdnStream.BunnyCdnStreamCollection[], page: number, totalPages: number) => boolean
+  ) {
+    const all: BunnyCdnStream.BunnyCdnStreamCollection[] = [];
+    let nextPage = true;
+    let page = 1;
+    while (nextPage) {
+      const collections = await this.listCollections({ ...data, page, itemsPerPage: data.itemsPerPage || 100 });
+      const totalPages = Math.ceil(collections.totalItems / collections.itemsPerPage);
+
+      all.push(...collections.items);
+
+      if (stop && (await stop(collections.items, page, totalPages))) {
+        nextPage = false;
+        continue;
+      }
+
+      if (page < totalPages) {
+        page++;
+      } else {
+        nextPage = false;
+      }
+    }
+
+    return all;
   }
 
   /**
@@ -645,7 +683,7 @@ export namespace BunnyCdnStream {
     totalSize: number;
     previewVideoIds: string;
   }
-  export interface GetCollectionResponse {
+  export interface BunnyCdnStreamCollection {
     videoLibraryId: number;
     guid: string;
     name: string;
@@ -658,7 +696,7 @@ export namespace BunnyCdnStream {
     totalItems: number;
     currentPage: number;
     itemsPerPage: number;
-    items: GetCollectionResponse[];
+    items: BunnyCdnStreamCollection[];
   }
 
   export interface UpdateCollectionResponse {
