@@ -1,5 +1,7 @@
 name: Continuous Integration
 
+concurrency: bunnycdn-atomic
+
 on:
   push:
     branches:
