@@ -635,7 +635,6 @@ export namespace BunnyCdnStream {
   }
 
   export interface VideoStatisticsResponse {
-    // TODO: Verify this is correct
     viewsChart: { [date: string]: number };
     watchTimeChart: { [date: string]: number };
     countryViewCounts: { [country: string]: number };

@@ -146,7 +146,7 @@ describe('BunnyCdnStream', () => {
       expect(video.resolutions).toHaveLength(4);
     });
 
-    // TODO: This seems to break the video :/
+    // See the function for more info
     // test('GIVEN library w/ encoded video THEN can fetch', async () => {
     //   const res = await stream.fetchVideo(videoGuid, { url: 'https://dancodes.online' });
     //   expect(res).toMatchObject({
