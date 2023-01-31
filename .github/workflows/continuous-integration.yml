@@ -27,5 +27,8 @@ jobs:
         run: yarn lint --fix=false
       - name: Run tests
         run: yarn test --coverage
+        env:
+          BUNNY_VIDEO_LIBRARY: ${{ secrets.BUNNY_VIDEO_LIBRARY }}
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
       - name: Build Code
         run: yarn build

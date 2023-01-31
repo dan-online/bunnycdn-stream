@@ -24,7 +24,9 @@ export class BunnyCdnStreamError extends Error {
       } ${axiosError.message}`;
 
       this.code = axiosError.response ? axiosError.response.status : 0;
-      console.log(axiosError.response?.data);
+      if (axiosError.response?.data) {
+        this.message += `: ${axiosError.response.data}`;
+      }
     } else {
       this.code = 0;
       this.message = `BunnyCdnStreamError: Unable to ${when}, ${axiosError}`;
