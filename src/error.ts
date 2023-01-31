@@ -17,18 +17,17 @@ export class BunnyCdnStreamError extends Error {
 
   public constructor(axiosError: AxiosError | string, when?: string) {
     super();
-
+    this.name = 'BunnyCdnStreamError';
     if (axiosError instanceof AxiosError) {
-      this.name = axiosError.response ? errorTypes[axiosError.response.status] : 'UNKNOWN_ERROR';
+      this.message = `BunnyCdnStreamError: Unable to ${when || 'run operation'}, responded with ${
+        axiosError.response ? errorTypes[axiosError.response.status] : 'UNKNOWN_ERROR'
+      } ${axiosError.message}`;
+
       this.code = axiosError.response ? axiosError.response.status : 0;
-      this.message = `BunnyCdnStreamError: unable to ${when}`;
-      if (axiosError.response?.data) {
-        this.message += `: ${axiosError.response?.data}`;
-      }
+      console.log(axiosError.response?.data);
     } else {
-      this.name = 'UNKNOWN_ERROR';
       this.code = 0;
-      this.message = `BunnyCdnStreamError: unable to ${when} due to ${axiosError}`;
+      this.message = `BunnyCdnStreamError: Unable to ${when}, ${axiosError}`;
     }
   }
 }

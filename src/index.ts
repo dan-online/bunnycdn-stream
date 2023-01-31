@@ -56,14 +56,13 @@ export class BunnyCdnStream {
       moments?: { label: string; timestamp: number }[];
       metaTags?: { property: string; value: string }[];
     } = {}
-  ): Promise<BunnyCdnStream.VideoResponse> {
+  ): Promise<BunnyCdnStream.UpdateVideoResponse> {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'POST';
     options.data = JSON.stringify(data);
 
-    const video = await this.request<BunnyCdnStream.VideoResponse>(options, 'update');
-    return new BunnyCdnStreamVideo(video);
+    return this.request<BunnyCdnStream.UpdateVideoResponse>(options, 'update');
   }
 
   /**
@@ -81,6 +80,27 @@ export class BunnyCdnStream {
     options.method = 'DELETE';
 
     return this.request<BunnyCdnStream.DeleteVideoResponse>(options, 'delete');
+  }
+
+  /**
+   * Delete all videos
+   *
+   * NOTE: This uses the listVideos method and will iterate over all pages and delete all videos per page before continuing to the next page.
+   * @returns void
+   * @example
+   * ```typescript
+   * await stream.deleteAllVideos();
+   * ```
+   */
+  public async deleteAllVideos() {
+    const iterate = async (page: number) => {
+      const { items: videos } = await this.listVideos({ page });
+      if (videos.length === 0) return;
+      await Promise.all(videos.map((video) => this.deleteVideo(video.guid)));
+      await iterate(page + 1);
+    };
+
+    await iterate(1);
   }
 
   /**
@@ -113,7 +133,7 @@ export class BunnyCdnStream {
    * await stream.uploadVideo(createReadStream("./file.mp4"), "0273f24a-79d1-d0fe-97ca-b0e36bed31es")
    * ```
    */
-  public async uploadVideo(file: ReadStream, videoId: string, data: { enabledResolutions?: string } = {}) {
+  public async uploadVideo(file: ReadStream, videoId: string, data?: { enabledResolutions?: string }) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     options.method = 'PUT';
@@ -136,31 +156,29 @@ export class BunnyCdnStream {
    */
   public async createAndUploadVideo(file: ReadStream, data: { title: string; collectionId?: string }) {
     const createdVideo = await this.createVideo(data);
-    try {
-      await this.uploadVideo(file, createdVideo.guid);
-    } catch (err) {
-      await this.deleteVideo(createdVideo.guid);
-      throw err;
-    }
+
+    await this.uploadVideo(file, createdVideo.guid);
 
     return createdVideo;
   }
 
-  /**
-   * Get video statistics
-   * @returns A {@link BunnyCdnStream.VideoHeatmapResponse} instance.
-   * @param videoId The video id to get heatmap info from
-   * @example
-   * ```typescript
-   * await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
-   * ```
-   */
-  public async getVideoHeatmap(videoId: string) {
-    const options = this.getOptions();
-    options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`;
+  // Only returns a 500 at the moment
+  // /**
+  //  * Get video statistics
+  //  * @returns A {@link BunnyCdnStream.VideoHeatmapResponse} instance.
+  //  * @param videoId The video id to get heatmap info from
+  //  * @example
+  //  * ```typescript
+  //  * await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+  //  * ```
+  //  */
+  // public async getVideoHeatmap(videoId: string) {
+  //   const options = this.getOptions();
+  //   options.method = 'GET';
+  //   options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`;
 
-    return this.request<BunnyCdnStream.VideoHeatmapResponse>(options, 'fetch');
-  }
+  //   return this.request<BunnyCdnStream.VideoHeatmapResponse>(options, 'fetch');
+  // }
 
   /**
    * Get video statistics
@@ -239,7 +257,7 @@ export class BunnyCdnStream {
     data: { search?: string; collection?: string; orderBy?: string; itemsPerPage?: number } = {},
     stop?: (videos: BunnyCdnStreamVideo[], page: number, totalPages: number) => boolean
   ) {
-    const all = [];
+    const all: BunnyCdnStreamVideo[] = [];
     let nextPage = true;
     let page = 1;
     while (nextPage) {
@@ -275,6 +293,34 @@ export class BunnyCdnStream {
    * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", "thumbnail_1.jpg")
    * ```
    */
+  // TODO: this can be done from image
+  /*
+   $.ajax({
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener('loadend', function (e) {
+                });
+                xhr.upload.addEventListener('error', function (e) {
+                    if (onError != undefined)
+                        onError();
+                });
+                return xhr;
+            },
+            url: "https://" + ConfigStreamAPIHostname + "/library/" + +this.VideoLibraryId + "/videos/" + guid + "/thumbnail",
+            type: "POST",
+            data: file,
+            contentType: "image/jpeg",
+            processData: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('AccessKey', _this.ApiClient.AccessKey);
+                xhr.setRequestHeader('Content-Type', "image/jpeg");
+            },
+            success: function () {
+                if (onResult != undefined)
+                    onResult();
+            },
+        });*/
+
   public async setThumbnail(videoId: string, url: string) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
@@ -283,25 +329,26 @@ export class BunnyCdnStream {
     return this.request<BunnyCdnStream.SetThumbnailVideoResponse>(options, 'setThumbnail');
   }
 
-  /**
-   * Fetch a video
-   *
-   * NOTE: This does not return a video, more a confirmation that a video will be fetched from the url with specific headers
-   * @returns A {@link BunnyCdnStream.FetchVideoResponse} instance
-   * @param videoId The video ID
-   * @param data The data to fetch the video from
-   * @example
-   * ```typescript
-   * await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://example.com/file.mp4" })
-   * ```
-   */
-  public async fetchVideo(videoId: string, data: { url: string; headers?: { [key: string]: string } }) {
-    const options = this.getOptions();
-    options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/fetch`;
-    options.method = 'POST';
-    options.data = JSON.stringify(data);
-    return this.request<BunnyCdnStream.FetchVideoResponse>(options, 'fetch');
-  }
+  // TODO: This seems to break the encoding of a video
+  // /**
+  //  * Fetch a video
+  //  *
+  //  * NOTE: This does not return a video, more a confirmation that a video will be fetched from the url with specific headers
+  //  * @returns A {@link BunnyCdnStream.FetchVideoResponse} instance
+  //  * @param videoId The video ID
+  //  * @param data The data to fetch the video from
+  //  * @example
+  //  * ```typescript
+  //  * await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://example.com/file.mp4" })
+  //  * ```
+  //  */
+  // public async fetchVideo(videoId: string, data: { url: string; headers?: { [key: string]: string } }) {
+  //   const options = this.getOptions();
+  //   options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/fetch`;
+  //   options.method = 'POST';
+  //   options.data = JSON.stringify(data);
+  //   return this.request<BunnyCdnStream.FetchVideoResponse>(options, 'fetch');
+  // }
 
   /**
    * Add captions to a video
@@ -318,7 +365,7 @@ export class BunnyCdnStream {
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/captions/${data.srclang}`;
     options.method = 'POST';
 
-    if (data.captionsFile instanceof Buffer) {
+    if (typeof data.captionsFile !== 'string') {
       data.captionsFile = data.captionsFile.toString('base64');
     }
 
@@ -453,6 +500,12 @@ export namespace BunnyCdnStream {
   }
 
   export interface UploadVideoResponse {
+    success: boolean;
+    message: string;
+    statusCode: number;
+  }
+
+  export interface UpdateVideoResponse {
     success: boolean;
     message: string;
     statusCode: number;

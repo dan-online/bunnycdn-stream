@@ -17,7 +17,7 @@
     "clean": "rimraf dist node_modules/.cache",
     "lint": "eslint src tests --ext ts --fix",
     "format": "prettier --write \"{src,tests}/**/*.ts\"",
-    "test": "vitest",
+    "test": "vitest run",
     "update": "yarn upgrade-interactive",
     "build": "rollup -c rollup.bundle.mjs",
     "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
