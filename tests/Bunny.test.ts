@@ -275,16 +275,14 @@ describe('BunnyCdnStream', () => {
     test('GIVEN library THEN can list all collections', async () => {
       const response = await stream.listAllCollections();
 
-      expect(response[0]).toMatchObject(
-        expect.any({
-          videoLibraryId: expect.any(Number),
-          guid: expect.any(String),
-          name: expect.any(String),
-          videoCount: expect.any(Number),
-          totalSize: expect.any(Number),
-          previewVideoIds: expect.any(Object)
-        })
-      );
+      expect(response[0]).toMatchObject({
+        videoLibraryId: expect.any(Number),
+        guid: expect.any(String),
+        name: expect.any(String),
+        videoCount: expect.any(Number),
+        totalSize: expect.any(Number),
+        previewVideoIds: expect.any(Object)
+      });
     });
 
     test('GIVEN library w/ a collection Id THEN can update a collection', async () => {
