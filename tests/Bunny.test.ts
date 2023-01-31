@@ -208,6 +208,24 @@ describe('BunnyCdnStream', () => {
       expect(vid.title).toEqual('updated');
     });
 
+    test('GIVEN library w/ encoded video THEN can set thumbnail as png', async () => {
+      const thumbnail = readFileSync(resolve(__dirname, 'data', 'bunny.png'));
+      const res = await stream.setThumbnail(videoGuid, thumbnail);
+      expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    });
+
+    test('GIVEN library w/ encoded video THEN can set thumbnail as jpg', async () => {
+      const thumbnail = readFileSync(resolve(__dirname, 'data', 'bunny.jpg'));
+      const res = await stream.setThumbnail(videoGuid, thumbnail);
+      expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    });
+
+    test('GIVEN library w/ encoded video THEN can set thumbnail as jpg', async () => {
+      const thumbnail = readFileSync(resolve(__dirname, 'data', 'bunny.jpg'));
+      const res = await stream.setThumbnail(videoGuid, thumbnail, 'image/jpg');
+      expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    });
+
     test('GIVEN library THEN upload invalid video', async () => {
       const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));
       await expect(stream.createAndUploadVideo(vid, { title: 'test', collectionId: 'invalidCollections' })).rejects.toThrow();
@@ -216,7 +234,7 @@ describe('BunnyCdnStream', () => {
 
   describe('can use tus', () => {
     test('GIVEN library THEN generate TUS', async () => {
-      const tus = await stream.createDirectUpload({ title: 'Just the best' });
+      const tus = await stream.createDirectUpload({ title: 'test-tus' });
       expect(tus).toMatchObject({
         endpoint: expect.any(String),
         headers: expect.any(Object),

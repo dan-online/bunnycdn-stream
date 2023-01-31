@@ -1,8 +1,10 @@
 import axios, { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
+import { fileTypeFromBuffer } from 'file-type';
 import type { ReadStream } from 'fs';
 import { createHash } from 'node:crypto';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
+
 export class BunnyCdnStream {
   public axiosOptions: BunnyCdnStream.BunnyAxiosRequestConfig = {
     headers: new AxiosHeaders({ Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' }),
@@ -284,48 +286,25 @@ export class BunnyCdnStream {
   /**
    * Set the thumbnail
    *
-   * NOTE: This does not work as BunnyCDN describes but feel free to try, I believe it actually means a thumbnail it has provided
+   * NOTE: The file type is automatically detected from the buffer, however if it fails, it will default to ``image/jpeg``
    * @returns A {@link BunnyCdnStream.SetThumbnailVideoResponse} instance.
    * @param videoId The video ID
-   * @param url The url of the thumbnail
+   * @param thumbnail A buffer of the thumbnail
+   * @param overrideContentType The content type to override and skip the automatic detection
    * @example
    * ```typescript
-   * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", "thumbnail_1.jpg")
+   * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("thumbnail.jpg"))
    * ```
    */
-  // TODO: this can be done from image
-  /*
-   $.ajax({
-            xhr: function () {
-                var xhr = new window.XMLHttpRequest();
-                xhr.upload.addEventListener('loadend', function (e) {
-                });
-                xhr.upload.addEventListener('error', function (e) {
-                    if (onError != undefined)
-                        onError();
-                });
-                return xhr;
-            },
-            url: "https://" + ConfigStreamAPIHostname + "/library/" + +this.VideoLibraryId + "/videos/" + guid + "/thumbnail",
-            type: "POST",
-            data: file,
-            contentType: "image/jpeg",
-            processData: false,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('AccessKey', _this.ApiClient.AccessKey);
-                xhr.setRequestHeader('Content-Type', "image/jpeg");
-            },
-            success: function () {
-                if (onResult != undefined)
-                    onResult();
-            },
-        });*/
-
-  public async setThumbnail(videoId: string, url: string) {
+  public async setThumbnail(videoId: string, thumbnail: Buffer, overrideContentType?: string) {
     const options = this.getOptions();
+    const ct = overrideContentType ? { mime: overrideContentType } : await fileTypeFromBuffer(thumbnail);
+
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
     options.method = 'POST';
-    options.data = JSON.stringify({ thumbnailUrl: url });
+    options.data = thumbnail;
+    options.headers.setContentType(ct ? ct.mime : 'image/jpeg');
+
     return this.request<BunnyCdnStream.SetThumbnailVideoResponse>(options, 'setThumbnail');
   }
 
