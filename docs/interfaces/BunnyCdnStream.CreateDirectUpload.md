@@ -11,6 +11,7 @@
 - [endpoint](BunnyCdnStream.CreateDirectUpload.md#endpoint)
 - [headers](BunnyCdnStream.CreateDirectUpload.md#headers)
 - [metadata](BunnyCdnStream.CreateDirectUpload.md#metadata)
+- [video](BunnyCdnStream.CreateDirectUpload.md#video)
 
 ## Properties
 
@@ -20,7 +21,7 @@
 
 #### Defined in
 
-[src/index.ts:506](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L506)
+[src/index.ts:708](https://github.com/dan-online/bunnycdn-stream/blob/57a3027/src/index.ts#L708)
 
 ___
 
@@ -39,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:507](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L507)
+[src/index.ts:709](https://github.com/dan-online/bunnycdn-stream/blob/57a3027/src/index.ts#L709)
 
 ___
 
@@ -57,4 +58,14 @@ ___
 
 #### Defined in
 
-[src/index.ts:513](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L513)
+[src/index.ts:715](https://github.com/dan-online/bunnycdn-stream/blob/57a3027/src/index.ts#L715)
+
+___
+
+### video
+
+• **video**: [`BunnyCdnStreamVideo`](../classes/BunnyCdnStreamVideo.md)
+
+#### Defined in
+
+[src/index.ts:707](https://github.com/dan-online/bunnycdn-stream/blob/57a3027/src/index.ts#L707)

@@ -212,7 +212,7 @@ AxiosRequestConfig.headers
 
 #### Defined in
 
-[src/index.ts:521](https://github.com/dan-online/bunnycdn-stream/blob/ddcf8f3/src/index.ts#L521)
+[src/index.ts:723](https://github.com/dan-online/bunnycdn-stream/blob/57a3027/src/index.ts#L723)
 
 ___
 
