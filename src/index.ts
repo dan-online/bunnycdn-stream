@@ -173,23 +173,22 @@ export class BunnyCdnStream {
     return createdVideo;
   }
 
-  // Only returns a 500 at the moment
-  // /**
-  //  * Get video statistics
-  //  * @returns A {@link BunnyCdnStream.VideoHeatmapResponse} instance.
-  //  * @param videoId The video id to get heatmap info from
-  //  * @example
-  //  * ```typescript
-  //  * await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
-  //  * ```
-  //  */
-  // public async getVideoHeatmap(videoId: string) {
-  //   const options = this.getOptions();
-  //   options.method = 'GET';
-  //   options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`;
+  /**
+   * Get video statistics
+   * @returns A {@link BunnyCdnStream.VideoHeatmapResponse} instance.
+   * @param videoId The video id to get heatmap info from
+   * @example
+   * ```typescript
+   * await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+   * ```
+   */
+  public async getVideoHeatmap(videoId: string) {
+    const options = this.getOptions();
+    options.method = 'GET';
+    options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`;
 
-  //   return this.request<BunnyCdnStream.VideoHeatmapResponse>(options, 'fetch');
-  // }
+    return this.request<BunnyCdnStream.VideoHeatmapResponse>(options, 'getHeatmap');
+  }
 
   /**
    * Get video statistics
@@ -216,9 +215,8 @@ export class BunnyCdnStream {
   }
 
   /**
-   * Force reencode a video
+   * Force re-encode a video
    *
-   * NOTE: This sometimes fails and is not very reliable, use with caution
    * @returns A {@link BunnyCdnStream.VideoResponse} instance.
    * @param videoId The video ID
    * @example
@@ -305,42 +303,48 @@ export class BunnyCdnStream {
    * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("thumbnail.jpg"))
    * ```
    */
-  public async setThumbnail(videoId: string, thumbnail: Buffer | ReadStream, overrideContentType?: string) {
+  public async setThumbnail(videoId: string, thumbnail: Buffer | ReadStream | string, overrideContentType?: string) {
     const options = this.getOptions();
     const ct = overrideContentType ? { mime: overrideContentType } : undefined;
 
     // if thumbnail is a buffer, we can auto detect the content type, if the ct is not overridden
     // if thumbnail is a stream, we set the content type to octet-stream
-    options.headers['Content-Type'] =
-      thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileTypeFromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
+    if (typeof thumbnail !== 'string')
+      options.headers['Content-Type'] =
+        thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileTypeFromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
 
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
     options.method = 'POST';
-    options.data = thumbnail;
+
+    if (typeof thumbnail === 'string') {
+      options.data = JSON.stringify({ thumbnailUrl: thumbnail });
+    } else {
+      options.data = thumbnail;
+    }
 
     return this.request<BunnyCdnStream.SetThumbnailVideoResponse>(options, 'setThumbnail');
   }
 
-  // TODO: This seems to break the encoding of a video
-  // /**
-  //  * Fetch a video
-  //  *
-  //  * NOTE: This does not return a video, more a confirmation that a video will be fetched from the url with specific headers
-  //  * @returns A {@link BunnyCdnStream.FetchVideoResponse} instance
-  //  * @param videoId The video ID
-  //  * @param data The data to fetch the video from
-  //  * @example
-  //  * ```typescript
-  //  * await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://example.com/file.mp4" })
-  //  * ```
-  //  */
-  // public async fetchVideo(videoId: string, data: { url: string; headers?: { [key: string]: string } }) {
-  //   const options = this.getOptions();
-  //   options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/fetch`;
-  //   options.method = 'POST';
-  //   options.data = JSON.stringify(data);
-  //   return this.request<BunnyCdnStream.FetchVideoResponse>(options, 'fetch');
-  // }
+  /**
+   * Upload a video using a URL
+   *
+   * NOTE: This will not work if the video is not public, and the thumbnail/preview will not be regenerated for existing videos
+   * @returns A {@link BunnyCdnStream.FetchVideoResponse} instance
+   * @param videoId The video ID
+   * @param data The data with video url to fetch and optional headers
+   * @example
+   * ```typescript
+   * await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://example.com/file.mp4" })
+   * ```
+   */
+  public async fetchVideo(videoId: string, data: { url: string; headers?: { [key: string]: string } }) {
+    const options = this.getOptions();
+    options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/fetch`;
+    options.method = 'POST';
+    options.data = JSON.stringify(data);
+
+    return this.request<BunnyCdnStream.FetchVideoResponse>(options, 'fetch');
+  }
 
   /**
    * Add captions to a video

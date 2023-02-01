@@ -58,6 +58,7 @@ describe('BunnyCdnStream', () => {
         const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));
         const upload = await stream.createAndUploadVideo(vid, { title: 'test' });
 
+        videoGuid = upload.guid;
         expect(upload).toMatchObject({
           guid: expect.any(String),
           title: 'test',
@@ -86,7 +87,6 @@ describe('BunnyCdnStream', () => {
           width: 0
         });
 
-        videoGuid = upload.guid;
         const videos = await stream.listVideos();
         expect(videos.items).toHaveLength(1);
       },
@@ -147,17 +147,6 @@ describe('BunnyCdnStream', () => {
       expect(video.resolutions).toHaveLength(4);
     });
 
-    // See the function for more info
-    // test('GIVEN library w/ encoded video THEN can fetch', async () => {
-    //   const res = await stream.fetchVideo(videoGuid, { url: 'https://dancodes.online' });
-    //   expect(res).toMatchObject({
-    //     id: expect.any(String),
-    //     success: true,
-    //     message: 'OK',
-    //     statusCode: 200
-    //   });
-    // });
-
     test('GIVEN library w/ encoded video THEN can upload vtt subtitles', async () => {
       const subs = readFileSync(resolve(__dirname, 'data', 'bunny.vtt'));
       const res = await stream.addCaptions(videoGuid, { captionsFile: subs, label: 'English', srclang: 'en' });
@@ -198,11 +187,6 @@ describe('BunnyCdnStream', () => {
       });
     });
 
-    test('GIVEN library w/ encoded video THEN can reencode', async () => {
-      const res = await stream.reencodeVideo(videoGuid);
-      expect(res).toBeInstanceOf(BunnyCdnStreamVideo);
-    });
-
     test('GIVEN library w/ encoded video THEN can update', async () => {
       await stream.updateVideo(videoGuid, { title: 'updated' });
       const vid = await stream.getVideo(videoGuid);
@@ -232,6 +216,54 @@ describe('BunnyCdnStream', () => {
       const res = await stream.setThumbnail(videoGuid, thumbnail);
       expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
     });
+
+    // test('GIVEN library w/ encoded video THEN can set thumbnail from url', async () => {
+    //   const res = await stream.setThumbnail(videoGuid, 'https://i.imgur.com/s9P5a3j.png');
+    //   expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    // }); // Does not work
+
+    // test('GIVEN library w/ encoded video THEN can get heatmap', async () => {
+    //   const res = await stream.getVideoHeatmap(videoGuid);
+    //   console.log(res);
+    // }); // 500
+
+    test('GIVEN library w/ encoded video THEN can fetch', async () => {
+      const res = await stream.fetchVideo(videoGuid, { url: 'https://support-bunny.b-cdn.net/tickets/186949/file_example_MP4_480_1_5MG.mp4' });
+      expect(res).toMatchObject({
+        id: expect.any(String),
+        success: true,
+        message: 'OK',
+        statusCode: 200
+      });
+
+      await new Promise((r) => {
+        const interval = setInterval(async () => {
+          const video = await stream.getVideo(videoGuid);
+          if (video.encodeProgress === 100) {
+            clearInterval(interval);
+            r(0);
+          }
+        }, 1000);
+      });
+    });
+
+    test(
+      'GIVEN library w/ encoded video THEN can reencode',
+      async () => {
+        const res = await stream.reencodeVideo(videoGuid);
+        expect(res).toBeInstanceOf(BunnyCdnStreamVideo);
+        await new Promise((r) => {
+          const interval = setInterval(async () => {
+            const video = await stream.getVideo(videoGuid);
+            if (video.encodeProgress === 100) {
+              clearInterval(interval);
+              r(0);
+            }
+          }, 1000);
+        });
+      },
+      { timeout: 60000 * 2 }
+    );
 
     test('GIVEN library THEN upload invalid video', async () => {
       const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));
