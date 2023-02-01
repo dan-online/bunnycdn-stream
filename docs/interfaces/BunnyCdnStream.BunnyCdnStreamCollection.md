@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/index.ts:715](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L715)
+[src/index.ts:718](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L718)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:716](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L716)
+[src/index.ts:719](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L719)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:719](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L719)
+[src/index.ts:722](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L722)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:718](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L718)
+[src/index.ts:721](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L721)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:717](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L717)
+[src/index.ts:720](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L720)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:714](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L714)
+[src/index.ts:717](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L717)

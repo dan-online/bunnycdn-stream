@@ -25,10 +25,12 @@
 - [deleteCaptions](BunnyCdnStream-1.md#deletecaptions)
 - [deleteCollection](BunnyCdnStream-1.md#deletecollection)
 - [deleteVideo](BunnyCdnStream-1.md#deletevideo)
+- [fetchVideo](BunnyCdnStream-1.md#fetchvideo)
 - [generateTUSHash](BunnyCdnStream-1.md#generatetushash)
 - [getCollection](BunnyCdnStream-1.md#getcollection)
 - [getOptions](BunnyCdnStream-1.md#getoptions)
 - [getVideo](BunnyCdnStream-1.md#getvideo)
+- [getVideoHeatmap](BunnyCdnStream-1.md#getvideoheatmap)
 - [getVideoStatistics](BunnyCdnStream-1.md#getvideostatistics)
 - [listAllCollections](BunnyCdnStream-1.md#listallcollections)
 - [listAllVideos](BunnyCdnStream-1.md#listallvideos)
@@ -55,7 +57,7 @@
 
 #### Defined in
 
-[src/index.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L30)
+[src/index.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L30)
 
 ## Properties
 
@@ -65,7 +67,7 @@
 
 #### Defined in
 
-[src/index.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L18)
+[src/index.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L18)
 
 ___
 
@@ -77,7 +79,7 @@ Options for connecting and authenticating with the Bunny CDN API
 
 #### Defined in
 
-[src/index.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L28)
+[src/index.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L28)
 
 ## Methods
 
@@ -98,7 +100,7 @@ await stream.addCaptions("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { captionsFile:
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `videoId` | `string` | The video ID |
-| `data` | `Object` | The data to add captions with |
+| `data` | `Object` | The data to add captions with where the captions file is a buffer or base64 string |
 | `data.captionsFile` | `string` \| `Buffer` | - |
 | `data.label` | `string` | - |
 | `data.srclang` | `string` | - |
@@ -111,7 +113,7 @@ A [AddCaptionsVideoResponse](../interfaces/BunnyCdnStream.AddCaptionsVideoRespon
 
 #### Defined in
 
-[src/index.ts:355](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L355)
+[src/index.ts:358](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L358)
 
 ___
 
@@ -144,7 +146,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:168](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L168)
+[src/index.ts:168](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L168)
 
 ___
 
@@ -174,7 +176,7 @@ A [CreateCollectionResponse](../interfaces/BunnyCdnStream.CreateCollectionRespon
 
 #### Defined in
 
-[src/index.ts:394](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L394)
+[src/index.ts:397](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L397)
 
 ___
 
@@ -209,7 +211,7 @@ A [CreateDirectUpload](../interfaces/BunnyCdnStream.CreateDirectUpload.md)
 
 #### Defined in
 
-[src/index.ts:536](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L536)
+[src/index.ts:539](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L539)
 
 ___
 
@@ -241,7 +243,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:126](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L126)
+[src/index.ts:126](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L126)
 
 ___
 
@@ -265,7 +267,7 @@ void
 
 #### Defined in
 
-[src/index.ts:513](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L513)
+[src/index.ts:516](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L516)
 
 ___
 
@@ -291,7 +293,7 @@ void
 
 #### Defined in
 
-[src/index.ts:106](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L106)
+[src/index.ts:106](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L106)
 
 ___
 
@@ -322,7 +324,7 @@ A [DeleteCaptionsVideoResponse](../interfaces/BunnyCdnStream.DeleteCaptionsVideo
 
 #### Defined in
 
-[src/index.ts:378](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L378)
+[src/index.ts:381](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L381)
 
 ___
 
@@ -352,7 +354,7 @@ A [DeleteCollectionResponse](../interfaces/BunnyCdnStream.DeleteCollectionRespon
 
 #### Defined in
 
-[src/index.ts:498](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L498)
+[src/index.ts:501](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L501)
 
 ___
 
@@ -382,7 +384,42 @@ A [DeleteVideoResponse](../interfaces/BunnyCdnStream.DeleteVideoResponse.md) ins
 
 #### Defined in
 
-[src/index.ts:88](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L88)
+[src/index.ts:88](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L88)
+
+___
+
+### fetchVideo
+
+▸ **fetchVideo**(`videoId`, `data`): `Promise`<[`FetchVideoResponse`](../interfaces/BunnyCdnStream.FetchVideoResponse.md)\>
+
+Upload a video using a URL
+
+NOTE: This will not work if the video is not public, and the thumbnail/preview will not be regenerated for existing videos
+
+**`Example`**
+
+```typescript
+await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://example.com/file.mp4" })
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `videoId` | `string` | The video ID |
+| `data` | `Object` | The data with video url to fetch and optional headers |
+| `data.headers?` | `Object` | - |
+| `data.url` | `string` | - |
+
+#### Returns
+
+`Promise`<[`FetchVideoResponse`](../interfaces/BunnyCdnStream.FetchVideoResponse.md)\>
+
+A [FetchVideoResponse](../interfaces/BunnyCdnStream.FetchVideoResponse.md) instance
+
+#### Defined in
+
+[src/index.ts:339](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L339)
 
 ___
 
@@ -403,7 +440,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:558](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L558)
+[src/index.ts:561](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L561)
 
 ___
 
@@ -433,7 +470,7 @@ A [BunnyCdnStreamCollection](../interfaces/BunnyCdnStream.BunnyCdnStreamCollecti
 
 #### Defined in
 
-[src/index.ts:411](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L411)
+[src/index.ts:414](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L414)
 
 ___
 
@@ -488,7 +525,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:589](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L589)
+[src/index.ts:592](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L592)
 
 ___
 
@@ -518,7 +555,37 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:44](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L44)
+[src/index.ts:44](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L44)
+
+___
+
+### getVideoHeatmap
+
+▸ **getVideoHeatmap**(`videoId`): `Promise`<[`VideoHeatmapResponse`](../interfaces/BunnyCdnStream.VideoHeatmapResponse.md)\>
+
+Get video statistics
+
+**`Example`**
+
+```typescript
+await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `videoId` | `string` | The video id to get heatmap info from |
+
+#### Returns
+
+`Promise`<[`VideoHeatmapResponse`](../interfaces/BunnyCdnStream.VideoHeatmapResponse.md)\>
+
+A [VideoHeatmapResponse](../interfaces/BunnyCdnStream.VideoHeatmapResponse.md) instance.
+
+#### Defined in
+
+[src/index.ts:185](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L185)
 
 ___
 
@@ -552,7 +619,7 @@ A [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisticsResponse
 
 #### Defined in
 
-[src/index.ts:203](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L203)
+[src/index.ts:202](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L202)
 
 ___
 
@@ -586,7 +653,7 @@ An array of [BunnyCdnStreamCollection](../interfaces/BunnyCdnStream.BunnyCdnStre
 
 #### Defined in
 
-[src/index.ts:444](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L444)
+[src/index.ts:447](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L447)
 
 ___
 
@@ -621,7 +688,7 @@ An array of [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisti
 
 #### Defined in
 
-[src/index.ts:267](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L267)
+[src/index.ts:266](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L266)
 
 ___
 
@@ -655,7 +722,7 @@ a [ListCollectionsResponse](../interfaces/BunnyCdnStream.ListCollectionsResponse
 
 #### Defined in
 
-[src/index.ts:426](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L426)
+[src/index.ts:429](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L429)
 
 ___
 
@@ -690,7 +757,7 @@ An array of [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisti
 
 #### Defined in
 
-[src/index.ts:248](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L248)
+[src/index.ts:247](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L247)
 
 ___
 
@@ -698,9 +765,9 @@ ___
 
 ▸ **reencodeVideo**(`videoId`): `Promise`<[`BunnyCdnStreamVideo`](BunnyCdnStreamVideo.md)\>
 
-Force reencode a video
+Force re-encode a video
 
-NOTE: This sometimes fails and is not very reliable, use with caution
+NOTE: This will not work if keepOriginal is set to false
 
 **`Example`**
 
@@ -722,7 +789,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:229](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L229)
+[src/index.ts:228](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L228)
 
 ___
 
@@ -749,7 +816,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:565](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L565)
+[src/index.ts:568](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L568)
 
 ___
 
@@ -772,7 +839,7 @@ await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `videoId` | `string` | The video ID |
-| `thumbnail` | `ReadStream` \| `Buffer` | A buffer of the thumbnail |
+| `thumbnail` | `string` \| `ReadStream` \| `Buffer` | A buffer/stream/url of the thumbnail |
 | `overrideContentType?` | `string` | The content type to override and skip the automatic detection |
 
 #### Returns
@@ -783,7 +850,7 @@ A [SetThumbnailVideoResponse](../interfaces/BunnyCdnStream.SetThumbnailVideoResp
 
 #### Defined in
 
-[src/index.ts:308](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L308)
+[src/index.ts:307](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L307)
 
 ___
 
@@ -815,7 +882,7 @@ A [UpdateCollectionResponse](../interfaces/BunnyCdnStream.UpdateCollectionRespon
 
 #### Defined in
 
-[src/index.ts:481](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L481)
+[src/index.ts:484](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L484)
 
 ___
 
@@ -851,7 +918,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:61](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L61)
+[src/index.ts:61](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L61)
 
 ___
 
@@ -884,4 +951,4 @@ A [UploadVideoResponse](../interfaces/BunnyCdnStream.UploadVideoResponse.md) ins
 
 #### Defined in
 
-[src/index.ts:147](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L147)
+[src/index.ts:147](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L147)
