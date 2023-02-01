@@ -503,6 +503,25 @@ export class BunnyCdnStream {
   }
 
   /**
+   * Delete all collections
+   * @returns void
+   * @example
+   * ```typescript
+   * await stream.deleteAllCollections()
+   * ```
+   */
+  public async deleteAllCollections() {
+    const iterate = async (page: number) => {
+      const { items: collections } = await this.listCollections({ page });
+      if (collections.length === 0) return;
+      await Promise.all(collections.map((collection) => this.deleteCollection(collection.guid)));
+      await iterate(page + 1);
+    };
+
+    await iterate(1);
+  }
+
+  /**
    * Generate a direct upload tus
    *
    * NOTE: metadata.filetype is required for the tus upload to work
@@ -690,6 +709,7 @@ export namespace BunnyCdnStream {
     totalSize: number;
     previewVideoIds: string;
   }
+
   export interface BunnyCdnStreamCollection {
     videoLibraryId: number;
     guid: string;

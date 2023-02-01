@@ -1,6 +1,7 @@
 name: Continuous Integration
 
-concurrency: bunnycdn-atomic
+concurrency:
+  group: bunnycdn-atomic
 
 on:
   push:
@@ -17,10 +18,10 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
       - name: Add ESLint Problem Matcher
         run: echo "::add-matcher::.github/problemMatchers/eslint.json"
-      - name: Use Node.js v16
+      - name: Use Node.js v18
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies

@@ -13,6 +13,7 @@ describe('BunnyCdnStream', () => {
 
   beforeAll(async () => {
     await stream.deleteAllVideos();
+    await stream.deleteAllCollections();
   });
 
   describe('is a class', () => {
