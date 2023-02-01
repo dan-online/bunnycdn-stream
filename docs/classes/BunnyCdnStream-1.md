@@ -20,6 +20,7 @@
 - [createCollection](BunnyCdnStream-1.md#createcollection)
 - [createDirectUpload](BunnyCdnStream-1.md#createdirectupload)
 - [createVideo](BunnyCdnStream-1.md#createvideo)
+- [deleteAllCollections](BunnyCdnStream-1.md#deleteallcollections)
 - [deleteAllVideos](BunnyCdnStream-1.md#deleteallvideos)
 - [deleteCaptions](BunnyCdnStream-1.md#deletecaptions)
 - [deleteCollection](BunnyCdnStream-1.md#deletecollection)
@@ -54,7 +55,7 @@
 
 #### Defined in
 
-[src/index.ts:21](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L21)
+[src/index.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L30)
 
 ## Properties
 
@@ -64,7 +65,7 @@
 
 #### Defined in
 
-[src/index.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L9)
+[src/index.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L18)
 
 ___
 
@@ -76,7 +77,7 @@ Options for connecting and authenticating with the Bunny CDN API
 
 #### Defined in
 
-[src/index.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L19)
+[src/index.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L28)
 
 ## Methods
 
@@ -110,7 +111,7 @@ A [AddCaptionsVideoResponse](../interfaces/BunnyCdnStream.AddCaptionsVideoRespon
 
 #### Defined in
 
-[src/index.ts:346](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L346)
+[src/index.ts:355](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L355)
 
 ___
 
@@ -143,7 +144,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:159](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L159)
+[src/index.ts:168](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L168)
 
 ___
 
@@ -173,7 +174,7 @@ A [CreateCollectionResponse](../interfaces/BunnyCdnStream.CreateCollectionRespon
 
 #### Defined in
 
-[src/index.ts:385](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L385)
+[src/index.ts:394](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L394)
 
 ___
 
@@ -208,7 +209,7 @@ A [CreateDirectUpload](../interfaces/BunnyCdnStream.CreateDirectUpload.md)
 
 #### Defined in
 
-[src/index.ts:508](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L508)
+[src/index.ts:536](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L536)
 
 ___
 
@@ -240,7 +241,31 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:117](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L117)
+[src/index.ts:126](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L126)
+
+___
+
+### deleteAllCollections
+
+▸ **deleteAllCollections**(): `Promise`<`void`\>
+
+Delete all collections
+
+**`Example`**
+
+```typescript
+await stream.deleteAllCollections()
+```
+
+#### Returns
+
+`Promise`<`void`\>
+
+void
+
+#### Defined in
+
+[src/index.ts:513](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L513)
 
 ___
 
@@ -266,7 +291,7 @@ void
 
 #### Defined in
 
-[src/index.ts:97](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L97)
+[src/index.ts:106](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L106)
 
 ___
 
@@ -297,7 +322,7 @@ A [DeleteCaptionsVideoResponse](../interfaces/BunnyCdnStream.DeleteCaptionsVideo
 
 #### Defined in
 
-[src/index.ts:369](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L369)
+[src/index.ts:378](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L378)
 
 ___
 
@@ -327,7 +352,7 @@ A [DeleteCollectionResponse](../interfaces/BunnyCdnStream.DeleteCollectionRespon
 
 #### Defined in
 
-[src/index.ts:489](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L489)
+[src/index.ts:498](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L498)
 
 ___
 
@@ -357,7 +382,7 @@ A [DeleteVideoResponse](../interfaces/BunnyCdnStream.DeleteVideoResponse.md) ins
 
 #### Defined in
 
-[src/index.ts:79](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L79)
+[src/index.ts:88](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L88)
 
 ___
 
@@ -378,7 +403,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:530](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L530)
+[src/index.ts:558](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L558)
 
 ___
 
@@ -408,7 +433,7 @@ A [BunnyCdnStreamCollection](../interfaces/BunnyCdnStream.BunnyCdnStreamCollecti
 
 #### Defined in
 
-[src/index.ts:402](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L402)
+[src/index.ts:411](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L411)
 
 ___
 
@@ -463,7 +488,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:556](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L556)
+[src/index.ts:589](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L589)
 
 ___
 
@@ -493,7 +518,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:35](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L35)
+[src/index.ts:44](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L44)
 
 ___
 
@@ -527,7 +552,7 @@ A [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisticsResponse
 
 #### Defined in
 
-[src/index.ts:194](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L194)
+[src/index.ts:203](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L203)
 
 ___
 
@@ -561,7 +586,7 @@ An array of [BunnyCdnStreamCollection](../interfaces/BunnyCdnStream.BunnyCdnStre
 
 #### Defined in
 
-[src/index.ts:435](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L435)
+[src/index.ts:444](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L444)
 
 ___
 
@@ -596,7 +621,7 @@ An array of [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisti
 
 #### Defined in
 
-[src/index.ts:258](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L258)
+[src/index.ts:267](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L267)
 
 ___
 
@@ -630,7 +655,7 @@ a [ListCollectionsResponse](../interfaces/BunnyCdnStream.ListCollectionsResponse
 
 #### Defined in
 
-[src/index.ts:417](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L417)
+[src/index.ts:426](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L426)
 
 ___
 
@@ -665,7 +690,7 @@ An array of [VideoStatisticsResponse](../interfaces/BunnyCdnStream.VideoStatisti
 
 #### Defined in
 
-[src/index.ts:239](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L239)
+[src/index.ts:248](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L248)
 
 ___
 
@@ -697,7 +722,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:220](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L220)
+[src/index.ts:229](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L229)
 
 ___
 
@@ -709,7 +734,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `ResponseType` | extends `object` |
+| `ResponseType` | extends `Record`<`string`, `any`\> |
 
 #### Parameters
 
@@ -724,7 +749,7 @@ ___
 
 #### Defined in
 
-[src/index.ts:537](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L537)
+[src/index.ts:565](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L565)
 
 ___
 
@@ -758,7 +783,7 @@ A [SetThumbnailVideoResponse](../interfaces/BunnyCdnStream.SetThumbnailVideoResp
 
 #### Defined in
 
-[src/index.ts:299](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L299)
+[src/index.ts:308](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L308)
 
 ___
 
@@ -790,7 +815,7 @@ A [UpdateCollectionResponse](../interfaces/BunnyCdnStream.UpdateCollectionRespon
 
 #### Defined in
 
-[src/index.ts:472](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L472)
+[src/index.ts:481](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L481)
 
 ___
 
@@ -826,7 +851,7 @@ A [VideoResponse](../interfaces/BunnyCdnStream.VideoResponse.md) instance.
 
 #### Defined in
 
-[src/index.ts:52](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L52)
+[src/index.ts:61](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L61)
 
 ___
 
@@ -859,4 +884,4 @@ A [UploadVideoResponse](../interfaces/BunnyCdnStream.UploadVideoResponse.md) ins
 
 #### Defined in
 
-[src/index.ts:138](https://github.com/dan-online/bunnycdn-stream/blob/12e7bc0/src/index.ts#L138)
+[src/index.ts:147](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L147)

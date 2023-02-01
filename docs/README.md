@@ -16,7 +16,7 @@ bunnycdn-stream / [Exports](modules.md)
   <p align="center">
     A simple, lightweight, and easy to use library for BunnyCDN's stream api.
     <br />
-    <a href="https://github.com/dan-online/bunnycdn-stream/blob/1.0.0/docs/classes/BunnyCdnStream.md">Documentation</a>
+    <a href="https://github.com/dan-online/bunnycdn-stream/blob/main/docs/classes/BunnyCdnStream-1.md">Documentation</a>
     ·
     <a href="https://github.com/dan-online/bunnycdn-stream/issues">Report Bug</a>
     ·
@@ -83,7 +83,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-_For more examples, please refer to the [Documentation](https://github.com/dan-online/bunnycdn-stream/blob/1.0.0/docs/classes/BunnyCdnStream.md)_
+_For more examples, please refer to the [Documentation](https://github.com/dan-online/bunnycdn-stream/blob/main/docs/classes/BunnyCdnStream-1.md)_
 
 ## Contributing
 

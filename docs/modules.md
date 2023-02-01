@@ -12,3 +12,33 @@
 
 - [BunnyCdnStream](classes/BunnyCdnStream-1.md)
 - [BunnyCdnStreamVideo](classes/BunnyCdnStreamVideo.md)
+
+### Functions
+
+- [lowerObject](modules.md#lowerobject)
+
+## Functions
+
+### lowerObject
+
+▸ **lowerObject**<`T`\>(`obj`): `T`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `obj` | `object` |
+
+#### Returns
+
+`T`
+
+#### Defined in
+
+[src/index.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/43fdbc3/src/index.ts#L8)
