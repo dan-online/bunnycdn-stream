@@ -33,7 +33,7 @@ describe('BunnyCdnStream', () => {
   });
 
   describe('can list videos', () => {
-    test('GIVEN empty library THEN returns empty array', async () => {
+    test('GIVEN empty library THEN listVideos returns empty array', async () => {
       const videos = await stream.listVideos();
       expect(videos).toEqual({
         currentPage: 1,
@@ -43,7 +43,7 @@ describe('BunnyCdnStream', () => {
       });
     });
 
-    test('GIVEN empty library THEN returns empty array', async () => {
+    test('GIVEN empty library THEN listAllVideos returns empty array', async () => {
       const videos = await stream.listAllVideos();
       expect(videos).toEqual([]);
     });

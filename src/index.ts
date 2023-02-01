@@ -5,6 +5,15 @@ import { createHash } from 'node:crypto';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
 
+export const lowerObject = <T>(obj: object) => {
+  const newObj: Record<string, any> = {};
+  for (const [key, value] of Object.entries(obj)) {
+    newObj[key[0].toLowerCase() + key.slice(1)] = value;
+  }
+
+  return newObj as T;
+};
+
 export class BunnyCdnStream {
   public axiosOptions: BunnyCdnStream.BunnyAxiosRequestConfig = {
     headers: new AxiosHeaders({ Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' }),
@@ -534,9 +543,14 @@ export class BunnyCdnStream {
       .digest('base64');
   }
 
-  private async request<ResponseType extends object>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
+  private async request<ResponseType extends Record<string, any>>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
     try {
       const req = await axios.request<ResponseType>(options);
+
+      if (typeof req.data === 'object') {
+        req.data = lowerObject(req.data);
+      }
+
       if (
         'message' in req.data &&
         typeof req.data.message === 'string' &&
