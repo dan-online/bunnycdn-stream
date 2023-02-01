@@ -217,6 +217,7 @@ export class BunnyCdnStream {
   /**
    * Force re-encode a video
    *
+   * NOTE: This will not work if keepOriginal is set to false
    * @returns A {@link BunnyCdnStream.VideoResponse} instance.
    * @param videoId The video ID
    * @example
@@ -296,7 +297,7 @@ export class BunnyCdnStream {
    * NOTE: The file type is automatically detected from the buffer, however if it fails, it will default to ``image/jpeg``
    * @returns A {@link BunnyCdnStream.SetThumbnailVideoResponse} instance.
    * @param videoId The video ID
-   * @param thumbnail A buffer of the thumbnail
+   * @param thumbnail A buffer/stream/url of the thumbnail
    * @param overrideContentType The content type to override and skip the automatic detection
    * @example
    * ```typescript
@@ -307,8 +308,6 @@ export class BunnyCdnStream {
     const options = this.getOptions();
     const ct = overrideContentType ? { mime: overrideContentType } : undefined;
 
-    // if thumbnail is a buffer, we can auto detect the content type, if the ct is not overridden
-    // if thumbnail is a stream, we set the content type to octet-stream
     if (typeof thumbnail !== 'string')
       options.headers['Content-Type'] =
         thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileTypeFromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
@@ -317,7 +316,7 @@ export class BunnyCdnStream {
     options.method = 'POST';
 
     if (typeof thumbnail === 'string') {
-      options.data = JSON.stringify({ thumbnailUrl: thumbnail });
+      options.params = { thumbnailUrl: thumbnail };
     } else {
       options.data = thumbnail;
     }
@@ -350,7 +349,7 @@ export class BunnyCdnStream {
    * Add captions to a video
    * @returns A {@link BunnyCdnStream.AddCaptionsVideoResponse} instance.
    * @param videoId The video ID
-   * @param data The data to add captions with
+   * @param data The data to add captions with where the captions file is a buffer or base64 string
    * @example
    * ```typescript
    * await stream.addCaptions("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { captionsFile: readFile("./subtitles.srt"), label: "English", srclang: "en" })

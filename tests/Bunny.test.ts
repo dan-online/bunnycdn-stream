@@ -217,10 +217,10 @@ describe('BunnyCdnStream', () => {
       expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
     });
 
-    // test('GIVEN library w/ encoded video THEN can set thumbnail from url', async () => {
-    //   const res = await stream.setThumbnail(videoGuid, 'https://i.imgur.com/s9P5a3j.png');
-    //   expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
-    // }); // Does not work
+    test('GIVEN library w/ encoded video THEN can set thumbnail from url', async () => {
+      const res = await stream.setThumbnail(videoGuid, 'https://bunny.net/images/floatplane.png');
+      expect(res).toEqual({ success: true, message: 'OK', statusCode: 200 });
+    });
 
     // test('GIVEN library w/ encoded video THEN can get heatmap', async () => {
     //   const res = await stream.getVideoHeatmap(videoGuid);
