@@ -5,5 +5,8 @@
     "enabled": true,
     "automerge": true
   },
-  "pruneBranchAfterAutomerge": true
+  "pruneBranchAfterAutomerge": true,
+  "ignoreDeps": [
+    "file-type"
+  ]
 }
