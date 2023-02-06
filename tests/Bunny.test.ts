@@ -50,7 +50,7 @@ describe('BunnyCdnStream', () => {
     });
   });
 
-  describe('can upload videos', () => {
+  describe('can manipulate videos', () => {
     let videoGuid: string;
     test(
       'GIVEN empty library THEN uploads video',
