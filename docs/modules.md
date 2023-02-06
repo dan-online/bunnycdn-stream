@@ -41,4 +41,4 @@
 
 #### Defined in
 
-[src/index.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/f2e1c22/src/index.ts#L8)
+[src/index.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/62b253f/src/index.ts#L8)
