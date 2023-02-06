@@ -1,6 +1,6 @@
 {
   "name": "bunnycdn-stream",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A simple, lightweight, and easy to use library for BunnyCDN's Stream API",
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
