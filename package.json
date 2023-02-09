@@ -23,7 +23,7 @@
     "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
     "release": "npm publish",
     "prepublishOnly": "rollup-type-bundler",
-    "prepare": "husky install"
+    "husky": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",

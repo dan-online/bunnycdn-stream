@@ -563,7 +563,7 @@ export class BunnyCdnStream {
     // sha256(library_id + api_key + expiration_time + video_id)
     return createHash('sha256')
       .update(this.options.videoLibrary.toString() + this.options.apiKey.toString() + expirationTime.toString() + videoId.toString())
-      .digest('base64');
+      .digest('hex');
   }
 
   private async request<ResponseType extends Record<string, any>>(options: AxiosRequestConfig, name: string): Promise<ResponseType> {
