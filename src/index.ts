@@ -536,17 +536,18 @@ export class BunnyCdnStream {
    * await stream.createDirectUpload({ title: "My Video" })
    * ```
    */
-  public async createDirectUpload(data: { title: string; collection?: string }, expirationTime = 3600): Promise<BunnyCdnStream.CreateDirectUpload> {
+  public async createDirectUpload(data: { title: string; collection?: string }, expirationDate?: Date): Promise<BunnyCdnStream.CreateDirectUpload> {
     // create a video
+    const expirationTimestamp = (expirationDate || new Date(Date.now() + 60000)).getTime();
     const video = await this.createVideo(data);
-    const hash = this.generateTUSHash(video.guid, expirationTime);
+    const hash = this.generateTUSHash(video.guid, expirationTimestamp);
 
     return {
       video,
       endpoint: 'https://video.bunnycdn.com/tusupload',
       headers: {
         AuthorizationSignature: hash,
-        AuthorizationExpire: expirationTime,
+        AuthorizationExpire: expirationTimestamp,
         VideoId: video.guid,
         LibraryId: this.options.videoLibrary
       },
@@ -561,7 +562,7 @@ export class BunnyCdnStream {
   private generateTUSHash(videoId: string, expirationTime: number) {
     // sha256(library_id + api_key + expiration_time + video_id)
     return createHash('sha256')
-      .update(this.options.videoLibrary + this.options.apiKey + expirationTime + videoId)
+      .update(this.options.videoLibrary.toString() + this.options.apiKey.toString() + expirationTime.toString() + videoId.toString())
       .digest('base64');
   }
 
