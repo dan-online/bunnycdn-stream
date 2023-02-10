@@ -1,6 +1,6 @@
 {
   "name": "bunnycdn-stream",
-  "version": "2.1.1",
+  "version": "2.1.2-beta.1",
   "description": "A simple, lightweight, and easy to use library for BunnyCDN's Stream API",
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
     "docs": "cd src/; typedoc --plugin typedoc-plugin-markdown --out ../docs ./index.ts",
     "release": "npm publish",
     "prepublishOnly": "rollup-type-bundler",
-    "prepare": "husky install"
+    "husky": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
