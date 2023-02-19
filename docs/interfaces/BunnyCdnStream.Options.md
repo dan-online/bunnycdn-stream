@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/index.ts:604](https://github.com/dan-online/bunnycdn-stream/blob/26b06e1/src/index.ts#L604)
+[src/index.ts:637](https://github.com/dan-online/bunnycdn-stream/blob/7f053de/src/index.ts#L637)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/index.ts:603](https://github.com/dan-online/bunnycdn-stream/blob/26b06e1/src/index.ts#L603)
+[src/index.ts:636](https://github.com/dan-online/bunnycdn-stream/blob/7f053de/src/index.ts#L636)
