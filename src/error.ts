@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import { lowerObject } from '.';
+import { lowerObject } from './utils';
 
 const errorTypes: { [key: number]: string } = {
   404: 'NOT_FOUND',

@@ -4,19 +4,15 @@ import { ReadStream } from 'fs';
 import { createHash } from 'node:crypto';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
-
-export const lowerObject = <T>(obj: object) => {
-  const newObj: Record<string, any> = {};
-  for (const [key, value] of Object.entries(obj)) {
-    newObj[key[0].toLowerCase() + key.slice(1)] = value;
-  }
-
-  return newObj as T;
-};
+import { lowerObject } from './utils';
 
 export class BunnyCdnStream {
   public axiosOptions: BunnyCdnStream.BunnyAxiosRequestConfig = {
-    headers: new AxiosHeaders({ Accept: 'application/json', 'Content-Type': 'application/json', AccessKey: '' }),
+    headers: new AxiosHeaders({
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      AccessKey: ''
+    }),
     url: 'https://video.bunnycdn.com',
     method: 'GET',
     maxBodyLength: Infinity
@@ -45,6 +41,7 @@ export class BunnyCdnStream {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
     const video = await this.request<BunnyCdnStream.VideoResponse>(options, 'fetch');
+
     return new BunnyCdnStreamVideo(video);
   }
 
@@ -130,6 +127,7 @@ export class BunnyCdnStream {
     options.data = JSON.stringify(data);
 
     const video = await this.request<BunnyCdnStream.VideoResponse>(options, 'create');
+
     return new BunnyCdnStreamVideo(video);
   }
 
@@ -244,13 +242,25 @@ export class BunnyCdnStream {
    * await stream.listVideos({ page: 2, search: "The best title", itemsPerPage: 10 })
    * ```
    */
-  public async listVideos(data: { page?: number; itemsPerPage?: number; search?: string; collection?: string; orderBy?: string } = {}) {
+  public async listVideos(
+    data: {
+      page?: number;
+      itemsPerPage?: number;
+      search?: string;
+      collection?: string;
+      orderBy?: string;
+    } = {}
+  ) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos`;
     options.data = JSON.stringify(data);
 
     const videos = await this.request<BunnyCdnStream.ListVideosResponse>(options, 'list');
-    return { ...videos, items: videos.items.map((video) => new BunnyCdnStreamVideo(video)) };
+
+    return {
+      ...videos,
+      items: videos.items.map((video) => new BunnyCdnStreamVideo(video))
+    };
   }
 
   /**
@@ -264,14 +274,24 @@ export class BunnyCdnStream {
    * ```
    */
   public async listAllVideos(
-    data: { search?: string; collection?: string; orderBy?: string; itemsPerPage?: number } = {},
+    data: {
+      search?: string;
+      collection?: string;
+      orderBy?: string;
+      itemsPerPage?: number;
+    } = {},
     stop?: (videos: BunnyCdnStreamVideo[], page: number, totalPages: number) => boolean
   ) {
     const all: BunnyCdnStreamVideo[] = [];
     let nextPage = true;
     let page = 1;
     while (nextPage) {
-      const videos = await this.listVideos({ ...data, page, itemsPerPage: data.itemsPerPage || 100 });
+      const videos = await this.listVideos({
+        ...data,
+        page,
+        itemsPerPage: data.itemsPerPage || 100
+      });
+
       const totalPages = Math.ceil(videos.totalItems / videos.itemsPerPage);
 
       all.push(...videos.items);
@@ -426,11 +446,19 @@ export class BunnyCdnStream {
    * await stream.listCollections({ page: 2, search: "Y collections", itemsPerPage: 100, orderBy: 'date' })
    * ```
    */
-  public async listCollections(data: { page?: number; itemsPerPage?: number; search?: string; orderBy?: string } = {}) {
+  public async listCollections(
+    data: {
+      page?: number;
+      itemsPerPage?: number;
+      search?: string;
+      orderBy?: string;
+    } = {}
+  ) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/collections`;
     options.params = { ...data };
     const collections = await this.request<BunnyCdnStream.ListCollectionsResponse>(options, 'listCollections');
+
     return collections;
   }
 
@@ -452,7 +480,12 @@ export class BunnyCdnStream {
     let nextPage = true;
     let page = 1;
     while (nextPage) {
-      const collections = await this.listCollections({ ...data, page, itemsPerPage: data.itemsPerPage || 100 });
+      const collections = await this.listCollections({
+        ...data,
+        page,
+        itemsPerPage: data.itemsPerPage || 100
+      });
+
       const totalPages = Math.ceil(collections.totalItems / collections.itemsPerPage);
 
       all.push(...collections.items);
