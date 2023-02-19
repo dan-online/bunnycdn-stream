@@ -253,7 +253,7 @@ export class BunnyCdnStream {
   ) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/videos`;
-    options.data = JSON.stringify(data);
+    options.params = data;
 
     const videos = await this.request<BunnyCdnStream.ListVideosResponse>(options, 'list');
 
