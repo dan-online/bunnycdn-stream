@@ -98,6 +98,16 @@ describe('BunnyCdnStream', () => {
       expect(video.guid).toEqual(videoGuid);
     });
 
+    test('GIVEN library w/ video THEN can list video', async () => {
+      const videos = await stream.listVideos();
+      expect(videos.items).toHaveLength(1);
+    });
+
+    test('GIVEN library w/ video AND has list params THEN empty', async () => {
+      const videos = await stream.listVideos({ page: 2 });
+      expect(videos.items).toHaveLength(0);
+    });
+
     test(
       'GIVEN library w/ video THEN can encode',
       async () => {
