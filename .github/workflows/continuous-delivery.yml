@@ -22,6 +22,8 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ 'main' }}
+          token: ${{secrets.GH_TOKEN}}
+
       - name: Use Node.js v18
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
@@ -60,7 +62,7 @@ jobs:
           yarn docs &&
 
           git add . &&
-          git commit -m "docs(${{ inputs.version }}): generate documentation [skip ci]" &&
+          git commit -m "docs(${{ inputs.version }}): generate documentation \n[no ci]" &&
 
           git push &&
 
