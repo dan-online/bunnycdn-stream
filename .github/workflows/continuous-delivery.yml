@@ -62,7 +62,7 @@ jobs:
           yarn docs &&
 
           git add . &&
-          git commit -m "docs(${{ inputs.version }}): generate documentation \n[no ci]" &&
+          git commit -m "docs(${{ inputs.version }}): generate documentation [no ci]" &&
 
           git push &&
 
