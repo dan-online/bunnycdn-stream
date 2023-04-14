@@ -1,12 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>josh-development/.github:josh-renovate"],
-  "github-actions": {
-    "enabled": true,
-    "automerge": true
-  },
-  "pruneBranchAfterAutomerge": true,
-  "ignoreDeps": [
-    "file-type"
-  ]
+  "extends": ["github>dan-online/.github:renovate-config"]
 }
