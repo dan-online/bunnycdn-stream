@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
+import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig, type AxiosRequestHeaders } from 'axios';
 import fileType from 'file-type';
 import { ReadStream } from 'fs';
 import { createHash } from 'node:crypto';
