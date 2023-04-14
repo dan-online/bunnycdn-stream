@@ -60,11 +60,11 @@ jobs:
           yarn docs &&
 
           git add . &&
-          git commit -m "docs(${{ inputs.version }}): generate documentation" &&
+          git commit -m "docs(${{ inputs.version }}): generate documentation [skip ci]" &&
 
           git push &&
 
           yarn release-it --ci -i ${{ inputs.version }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
