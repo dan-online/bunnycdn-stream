@@ -212,7 +212,7 @@ AxiosRequestConfig.headers
 
 #### Defined in
 
-[src/index.ts:794](https://github.com/dan-online/bunnycdn-stream/blob/72d3ec1/src/index.ts#L794)
+[src/index.ts:794](https://github.com/dan-online/bunnycdn-stream/blob/e358384/src/index.ts#L794)
 
 ___
 
@@ -400,7 +400,7 @@ ___
 
 ### paramsSerializer
 
-• `Optional` **paramsSerializer**: `ParamsSerializerOptions`
+• `Optional` **paramsSerializer**: `ParamsSerializerOptions` \| `CustomParamsSerializer`
 
 #### Inherited from
 
