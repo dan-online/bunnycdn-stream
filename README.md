@@ -96,6 +96,16 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Testing
+
+The project is tested with vitest and requires you to have a test library on your BunnyCDN account to send commands to the Bunny API. Warning: all videos will be deleted during testing.
+
+```sh
+BUNNY_VIDEO_LIBRARY=xxx BUNNY_API_KEY=xxx npm test
+```
+
+Also, IGNORE_PRUNE=1 can be used to keep the video in Bunny at the end of the tests for further manual checking.
+
 <!-- LICENSE -->
 
 ## License
