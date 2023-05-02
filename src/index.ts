@@ -207,7 +207,7 @@ export class BunnyCdnStream {
   ) {
     const options = this.getOptions();
     options.url += `/library/${this.options.videoLibrary}/statistics`;
-    options.data = JSON.stringify({ ...data, videoGuid: videoId });
+    options.params = { ...data, videoGuid: videoId };
 
     return this.request<BunnyCdnStream.VideoStatisticsResponse>(options, 'fetch');
   }
