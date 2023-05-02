@@ -22,11 +22,13 @@
 - [data](BunnyCdnStream.BunnyAxiosRequestConfig.md#data)
 - [decompress](BunnyCdnStream.BunnyAxiosRequestConfig.md#decompress)
 - [env](BunnyCdnStream.BunnyAxiosRequestConfig.md#env)
+- [family](BunnyCdnStream.BunnyAxiosRequestConfig.md#family)
 - [formSerializer](BunnyCdnStream.BunnyAxiosRequestConfig.md#formserializer)
 - [headers](BunnyCdnStream.BunnyAxiosRequestConfig.md#headers)
 - [httpAgent](BunnyCdnStream.BunnyAxiosRequestConfig.md#httpagent)
 - [httpsAgent](BunnyCdnStream.BunnyAxiosRequestConfig.md#httpsagent)
 - [insecureHTTPParser](BunnyCdnStream.BunnyAxiosRequestConfig.md#insecurehttpparser)
+- [lookup](BunnyCdnStream.BunnyAxiosRequestConfig.md#lookup)
 - [maxBodyLength](BunnyCdnStream.BunnyAxiosRequestConfig.md#maxbodylength)
 - [maxContentLength](BunnyCdnStream.BunnyAxiosRequestConfig.md#maxcontentlength)
 - [maxRate](BunnyCdnStream.BunnyAxiosRequestConfig.md#maxrate)
@@ -46,6 +48,7 @@
 - [transformRequest](BunnyCdnStream.BunnyAxiosRequestConfig.md#transformrequest)
 - [transformResponse](BunnyCdnStream.BunnyAxiosRequestConfig.md#transformresponse)
 - [transitional](BunnyCdnStream.BunnyAxiosRequestConfig.md#transitional)
+- [transport](BunnyCdnStream.BunnyAxiosRequestConfig.md#transport)
 - [url](BunnyCdnStream.BunnyAxiosRequestConfig.md#url)
 - [validateStatus](BunnyCdnStream.BunnyAxiosRequestConfig.md#validatestatus)
 - [withCredentials](BunnyCdnStream.BunnyAxiosRequestConfig.md#withcredentials)
@@ -136,7 +139,7 @@ AxiosRequestConfig.cancelToken
 
 #### Defined in
 
-node_modules/axios/index.d.ts:337
+node_modules/axios/index.d.ts:338
 
 ___
 
@@ -164,7 +167,7 @@ AxiosRequestConfig.decompress
 
 #### Defined in
 
-node_modules/axios/index.d.ts:338
+node_modules/axios/index.d.ts:339
 
 ___
 
@@ -184,7 +187,21 @@ AxiosRequestConfig.env
 
 #### Defined in
 
-node_modules/axios/index.d.ts:342
+node_modules/axios/index.d.ts:343
+
+___
+
+### family
+
+• `Optional` **family**: ``4`` \| ``6``
+
+#### Inherited from
+
+AxiosRequestConfig.family
+
+#### Defined in
+
+node_modules/axios/index.d.ts:347
 
 ___
 
@@ -198,7 +215,7 @@ AxiosRequestConfig.formSerializer
 
 #### Defined in
 
-node_modules/axios/index.d.ts:345
+node_modules/axios/index.d.ts:346
 
 ___
 
@@ -212,7 +229,7 @@ AxiosRequestConfig.headers
 
 #### Defined in
 
-[src/index.ts:794](https://github.com/dan-online/bunnycdn-stream/blob/e358384/src/index.ts#L794)
+[src/index.ts:794](https://github.com/dan-online/bunnycdn-stream/blob/ba93b87/src/index.ts#L794)
 
 ___
 
@@ -226,7 +243,7 @@ AxiosRequestConfig.httpAgent
 
 #### Defined in
 
-node_modules/axios/index.d.ts:334
+node_modules/axios/index.d.ts:335
 
 ___
 
@@ -240,7 +257,7 @@ AxiosRequestConfig.httpsAgent
 
 #### Defined in
 
-node_modules/axios/index.d.ts:335
+node_modules/axios/index.d.ts:336
 
 ___
 
@@ -254,7 +271,21 @@ AxiosRequestConfig.insecureHTTPParser
 
 #### Defined in
 
-node_modules/axios/index.d.ts:341
+node_modules/axios/index.d.ts:342
+
+___
+
+### lookup
+
+• `Optional` **lookup**: (`hostname`: `string`, `options`: `object`, `cb`: (`err`: ``null`` \| `Error`, `address`: `string`, `family`: `number`) => `void`) => `void` \| (`hostname`: `string`, `options`: `object`) => `Promise`<`string` \| [address: string, family: number]\>
+
+#### Inherited from
+
+AxiosRequestConfig.lookup
+
+#### Defined in
+
+node_modules/axios/index.d.ts:348
 
 ___
 
@@ -422,7 +453,7 @@ AxiosRequestConfig.proxy
 
 #### Defined in
 
-node_modules/axios/index.d.ts:336
+node_modules/axios/index.d.ts:337
 
 ___
 
@@ -464,7 +495,7 @@ AxiosRequestConfig.signal
 
 #### Defined in
 
-node_modules/axios/index.d.ts:340
+node_modules/axios/index.d.ts:341
 
 ___
 
@@ -548,7 +579,21 @@ AxiosRequestConfig.transitional
 
 #### Defined in
 
-node_modules/axios/index.d.ts:339
+node_modules/axios/index.d.ts:340
+
+___
+
+### transport
+
+• `Optional` **transport**: `any`
+
+#### Inherited from
+
+AxiosRequestConfig.transport
+
+#### Defined in
+
+node_modules/axios/index.d.ts:334
 
 ___
 
