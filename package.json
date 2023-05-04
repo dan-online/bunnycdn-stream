@@ -26,8 +26,8 @@
     "husky": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.1",
-    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@favware/npm-deprecate": "^1.0.7",
     "@favware/rollup-type-bundler": "^2.0.0",
     "@sapphire/eslint-config": "~4.4.2",
