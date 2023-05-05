@@ -2726,7 +2726,7 @@ __metadata:
     pretty-quick: ^3.1.3
     release-it: ^15.10.3
     rimraf: ^5.0.0
-    rollup: ^3.21.4
+    rollup: ^3.21.5
     rollup-plugin-cleaner: ^1.0.0
     rollup-plugin-polyfill-node: ^0.12.0
     rollup-plugin-typescript2: ^0.34.1
@@ -8626,9 +8626,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.21.4":
-  version: 3.21.4
-  resolution: "rollup@npm:3.21.4"
+"rollup@npm:^3.21.5":
+  version: 3.21.5
+  resolution: "rollup@npm:3.21.5"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -8636,7 +8636,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: ad7dec30ce31b47e32c3daf464b14c25e52f4e07b6ad9fa610b0abcff480b1a1fb01aabdefa6bac30ff1ee23ab16762621cd24810798148cdff74efda1a98874
+  checksum: dfe2e4002fbfbc0a67591595f137c23082c639b1a790854ebe8611264b945e77caaf8c8ec9365faf9580f5df9cb9a954915443df020dc2ee391c477659484cf0
   languageName: node
   linkType: hard
 
