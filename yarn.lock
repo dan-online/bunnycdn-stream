@@ -1869,10 +1869,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.7":
-  version: 18.16.7
-  resolution: "@types/node@npm:18.16.7"
-  checksum: dbff7d41a050557cc81aa37cb186aaf3a799b3001bc4bb1015b240398abde1f9d0ac1e943959bba7f2ab2701292ae407a9ee2fc0f735a05b28bfc97d0b2b5e91
+"@types/node@npm:^18.16.8":
+  version: 18.16.8
+  resolution: "@types/node@npm:18.16.8"
+  checksum: d2ec9b61abd260b0fa1e33e4eca8f0089ebb6f6ec1ad2f036a4d01af11dba4f1dbff95b2a1f5dbe9eab3a6f38ed4bd8bf95eb2de9ad96b1caa1f67671e623c1d
   languageName: node
   linkType: hard
 
@@ -2853,7 +2853,7 @@ __metadata:
     "@sapphire/eslint-config": ~4.4.2
     "@sapphire/ts-config": ^4.0.0
     "@types/jest": ^29.5.1
-    "@types/node": ^18.16.7
+    "@types/node": ^18.16.8
     "@types/rimraf": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^5.59.5
     "@typescript-eslint/parser": ^5.59.5
@@ -2871,7 +2871,7 @@ __metadata:
     pretty-quick: ^3.1.3
     release-it: ^15.10.3
     rimraf: ^5.0.0
-    rollup: ^3.21.6
+    rollup: ^3.21.7
     rollup-plugin-cleaner: ^1.0.0
     rollup-plugin-polyfill-node: ^0.12.0
     rollup-plugin-typescript2: ^0.34.1
@@ -8839,9 +8839,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.21.6":
-  version: 3.21.6
-  resolution: "rollup@npm:3.21.6"
+"rollup@npm:^3.21.7":
+  version: 3.21.7
+  resolution: "rollup@npm:3.21.7"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -8849,7 +8849,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: bb6786ee0d755f253d3aa3820b05806a482abe9c9fd6dad14df83b386a370d48af20c4be66f732a15b5e89c0ae6269a7b82736b64f34ae61552c58de0eecedeb
+  checksum: 44372a1e6fbd1941d6cb230b2a3de6d86861ca7523792757c9fe1d254ae4cd645f5dae27d93c7b1e02c60945d2eadd8c74a99033bd8328eda84949086330d804
   languageName: node
   linkType: hard
 
