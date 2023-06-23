@@ -238,7 +238,7 @@ describe('BunnyCdnStream', () => {
     // }); // 500
 
     test('GIVEN library w/ encoded video THEN can fetch', async () => {
-      const res = await stream.fetchVideo(videoGuid, { url: 'https://support-bunny.b-cdn.net/tickets/186949/file_example_MP4_480_1_5MG.mp4' });
+      const res = await stream.fetchVideo(videoGuid, { url: 'https://vz-123412341234.b-cdn.net/1234-1234-1234-1234-123412341234/play_480p.mp4' });
       expect(res).toMatchObject({
         id: expect.any(String),
         success: true,
