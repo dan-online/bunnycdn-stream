@@ -76,7 +76,7 @@
   "lint-staged": {
     "*.ts": "eslint --fix --ext ts"
   },
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.1",
   "dependencies": {
     "axios": "^1.4.0",
     "file-type": "^16.5.4"
