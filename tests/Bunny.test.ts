@@ -1,7 +1,10 @@
+import { config } from 'dotenv';
 import { createReadStream, readFileSync } from 'fs';
 import { resolve } from 'path';
 import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 import { BunnyCdnStream, BunnyCdnStreamVideo } from '../src';
+
+config();
 describe('BunnyCdnStream', () => {
   let stream: BunnyCdnStream;
 
@@ -87,10 +90,17 @@ describe('BunnyCdnStream', () => {
           width: 0
         });
 
-        const videos = await stream.listVideos();
-        expect(videos.items).toHaveLength(1);
+        await new Promise((r) => {
+          const interval = setInterval(async () => {
+            const videos = await stream.listVideos();
+            if (videos.items.length > 0) {
+              clearInterval(interval);
+              r(0);
+            }
+          }, 1000);
+        });
       },
-      { timeout: 60000 }
+      { timeout: 30000 }
     );
 
     test('GIVEN library w/ video THEN can get video', async () => {

@@ -280,7 +280,7 @@ export class BunnyCdnStream {
       orderBy?: string;
       itemsPerPage?: number;
     } = {},
-    stop?: (videos: BunnyCdnStreamVideo[], page: number, totalPages: number) => boolean
+    stop?: (videos: BunnyCdnStreamVideo[], page: number, totalPages: number) => boolean | Promise<boolean>
   ) {
     const all: BunnyCdnStreamVideo[] = [];
     let nextPage = true;
@@ -569,7 +569,7 @@ export class BunnyCdnStream {
    * await stream.createDirectUpload({ title: "My Video" })
    * ```
    */
-  public async createDirectUpload(data: { title: string; collection?: string }, expirationDate?: Date): Promise<BunnyCdnStream.CreateDirectUpload> {
+  public async createDirectUpload(data: { title: string; collectionId?: string }, expirationDate?: Date): Promise<BunnyCdnStream.CreateDirectUpload> {
     // create a video
     const expirationTimestamp = (expirationDate || new Date(Date.now() + 60000)).getTime();
     const video = await this.createVideo(data);
@@ -587,7 +587,7 @@ export class BunnyCdnStream {
       metadata: {
         filetype: '',
         title: data.title,
-        collection: data.collection
+        collection: data.collectionId
       }
     };
   }
@@ -623,7 +623,7 @@ export class BunnyCdnStream {
     }
   }
 
-  private getOptions() {
+  private getOptions(): AxiosRequestConfig & { headers: AxiosHeaders } {
     return {
       ...this.axiosOptions,
       headers: new AxiosHeaders(this.axiosOptions.headers)
@@ -727,9 +727,7 @@ export namespace BunnyCdnStream {
     engagementScore: number;
   }
 
-  export interface VideoHeatmapResponse {
-    // TODO: incorrect on bunny's docs, to be discovered
-  }
+  export interface VideoHeatmapResponse {}
 
   export interface ListVideosResponse {
     totalItems: number;

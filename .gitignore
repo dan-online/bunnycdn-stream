@@ -35,3 +35,4 @@ tests/test.1080.mp4
 tests/test.jpg
 
 coverage/
+.env
