@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
         with:
           repository: 'josh-development/.github'
       - name: Run Label Sync
-        uses: crazy-max/ghaction-github-labeler@f4f6b96e7e747b5416cd470f3cfecf26abaa811e # v4
+        uses: crazy-max/ghaction-github-labeler@de749cf181958193cb7debf1a9c5bb28922f3e1b # v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           yaml-file: .github/labels.yml
