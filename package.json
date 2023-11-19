@@ -31,7 +31,7 @@
     "@favware/npm-deprecate": "^1.0.7",
     "@favware/rollup-type-bundler": "^2.0.0",
     "@sapphire/eslint-config": "~5.0.0",
-    "@sapphire/ts-config": "^4.0.0",
+    "@sapphire/ts-config": "^5.0.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.8.9",
     "@types/rimraf": "^3.0.2",
