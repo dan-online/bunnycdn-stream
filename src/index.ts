@@ -623,7 +623,7 @@ export class BunnyCdnStream {
     }
   }
 
-  private getOptions(): AxiosRequestConfig & { headers: AxiosHeaders } {
+  private getOptions(): AxiosRequestConfig & { headers: AxiosRequestHeaders } {
     return {
       ...this.axiosOptions,
       headers: new AxiosHeaders(this.axiosOptions.headers)
