@@ -52,6 +52,7 @@
 - [url](BunnyCdnStream.BunnyAxiosRequestConfig.md#url)
 - [validateStatus](BunnyCdnStream.BunnyAxiosRequestConfig.md#validatestatus)
 - [withCredentials](BunnyCdnStream.BunnyAxiosRequestConfig.md#withcredentials)
+- [withXSRFToken](BunnyCdnStream.BunnyAxiosRequestConfig.md#withxsrftoken)
 - [xsrfCookieName](BunnyCdnStream.BunnyAxiosRequestConfig.md#xsrfcookiename)
 - [xsrfHeaderName](BunnyCdnStream.BunnyAxiosRequestConfig.md#xsrfheadername)
 
@@ -67,7 +68,7 @@ AxiosRequestConfig.adapter
 
 #### Defined in
 
-node_modules/axios/index.d.ts:319
+node_modules/axios/index.d.cts:386
 
 ___
 
@@ -81,7 +82,7 @@ AxiosRequestConfig.auth
 
 #### Defined in
 
-node_modules/axios/index.d.ts:320
+node_modules/axios/index.d.cts:387
 
 ___
 
@@ -95,13 +96,13 @@ AxiosRequestConfig.baseURL
 
 #### Defined in
 
-node_modules/axios/index.d.ts:309
+node_modules/axios/index.d.cts:376
 
 ___
 
 ### beforeRedirect
 
-• `Optional` **beforeRedirect**: (`options`: `Record`<`string`, `any`\>, `responseDetails`: { `headers`: `Record`<`string`, `string`\>  }) => `void`
+• `Optional` **beforeRedirect**: (`options`: `Record`<`string`, `any`\>, `responseDetails`: { `headers`: `Record`<`string`, `string`\> ; `statusCode`: `HttpStatusCode`  }) => `void`
 
 #### Type declaration
 
@@ -114,6 +115,7 @@ ___
 | `options` | `Record`<`string`, `any`\> |
 | `responseDetails` | `Object` |
 | `responseDetails.headers` | `Record`<`string`, `string`\> |
+| `responseDetails.statusCode` | `HttpStatusCode` |
 
 ##### Returns
 
@@ -125,7 +127,7 @@ AxiosRequestConfig.beforeRedirect
 
 #### Defined in
 
-node_modules/axios/index.d.ts:332
+node_modules/axios/index.d.cts:399
 
 ___
 
@@ -139,7 +141,7 @@ AxiosRequestConfig.cancelToken
 
 #### Defined in
 
-node_modules/axios/index.d.ts:338
+node_modules/axios/index.d.cts:405
 
 ___
 
@@ -153,7 +155,7 @@ AxiosRequestConfig.data
 
 #### Defined in
 
-node_modules/axios/index.d.ts:315
+node_modules/axios/index.d.cts:382
 
 ___
 
@@ -167,7 +169,7 @@ AxiosRequestConfig.decompress
 
 #### Defined in
 
-node_modules/axios/index.d.ts:339
+node_modules/axios/index.d.cts:406
 
 ___
 
@@ -187,13 +189,13 @@ AxiosRequestConfig.env
 
 #### Defined in
 
-node_modules/axios/index.d.ts:343
+node_modules/axios/index.d.cts:410
 
 ___
 
 ### family
 
-• `Optional` **family**: ``4`` \| ``6``
+• `Optional` **family**: `AddressFamily`
 
 #### Inherited from
 
@@ -201,7 +203,7 @@ AxiosRequestConfig.family
 
 #### Defined in
 
-node_modules/axios/index.d.ts:347
+node_modules/axios/index.d.cts:414
 
 ___
 
@@ -215,7 +217,7 @@ AxiosRequestConfig.formSerializer
 
 #### Defined in
 
-node_modules/axios/index.d.ts:346
+node_modules/axios/index.d.cts:413
 
 ___
 
@@ -229,7 +231,7 @@ AxiosRequestConfig.headers
 
 #### Defined in
 
-[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/259d596/src/index.ts#L792)
+[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/2d76aff/src/index.ts#L792)
 
 ___
 
@@ -243,7 +245,7 @@ AxiosRequestConfig.httpAgent
 
 #### Defined in
 
-node_modules/axios/index.d.ts:335
+node_modules/axios/index.d.cts:402
 
 ___
 
@@ -257,7 +259,7 @@ AxiosRequestConfig.httpsAgent
 
 #### Defined in
 
-node_modules/axios/index.d.ts:336
+node_modules/axios/index.d.cts:403
 
 ___
 
@@ -271,13 +273,13 @@ AxiosRequestConfig.insecureHTTPParser
 
 #### Defined in
 
-node_modules/axios/index.d.ts:342
+node_modules/axios/index.d.cts:409
 
 ___
 
 ### lookup
 
-• `Optional` **lookup**: (`hostname`: `string`, `options`: `object`, `cb`: (`err`: ``null`` \| `Error`, `address`: `string`, `family`: `number`) => `void`) => `void` \| (`hostname`: `string`, `options`: `object`) => `Promise`<`string` \| [address: string, family: number]\>
+• `Optional` **lookup**: (`hostname`: `string`, `options`: `object`, `cb`: (`err`: ``null`` \| `Error`, `address`: `LookupAddress` \| `LookupAddress`[], `family?`: `AddressFamily`) => `void`) => `void` \| (`hostname`: `string`, `options`: `object`) => `Promise`<`LookupAddress` \| [address: LookupAddressEntry \| LookupAddressEntry[], family?: AddressFamily]\>
 
 #### Inherited from
 
@@ -285,7 +287,7 @@ AxiosRequestConfig.lookup
 
 #### Defined in
 
-node_modules/axios/index.d.ts:348
+node_modules/axios/index.d.cts:415
 
 ___
 
@@ -299,7 +301,7 @@ AxiosRequestConfig.maxBodyLength
 
 #### Defined in
 
-node_modules/axios/index.d.ts:329
+node_modules/axios/index.d.cts:396
 
 ___
 
@@ -313,7 +315,7 @@ AxiosRequestConfig.maxContentLength
 
 #### Defined in
 
-node_modules/axios/index.d.ts:327
+node_modules/axios/index.d.cts:394
 
 ___
 
@@ -327,7 +329,7 @@ AxiosRequestConfig.maxRate
 
 #### Defined in
 
-node_modules/axios/index.d.ts:331
+node_modules/axios/index.d.cts:398
 
 ___
 
@@ -341,7 +343,7 @@ AxiosRequestConfig.maxRedirects
 
 #### Defined in
 
-node_modules/axios/index.d.ts:330
+node_modules/axios/index.d.cts:397
 
 ___
 
@@ -355,7 +357,7 @@ AxiosRequestConfig.method
 
 #### Defined in
 
-node_modules/axios/index.d.ts:308
+node_modules/axios/index.d.cts:375
 
 ___
 
@@ -383,7 +385,7 @@ AxiosRequestConfig.onDownloadProgress
 
 #### Defined in
 
-node_modules/axios/index.d.ts:326
+node_modules/axios/index.d.cts:393
 
 ___
 
@@ -411,7 +413,7 @@ AxiosRequestConfig.onUploadProgress
 
 #### Defined in
 
-node_modules/axios/index.d.ts:325
+node_modules/axios/index.d.cts:392
 
 ___
 
@@ -425,7 +427,7 @@ AxiosRequestConfig.params
 
 #### Defined in
 
-node_modules/axios/index.d.ts:313
+node_modules/axios/index.d.cts:380
 
 ___
 
@@ -439,7 +441,7 @@ AxiosRequestConfig.paramsSerializer
 
 #### Defined in
 
-node_modules/axios/index.d.ts:314
+node_modules/axios/index.d.cts:381
 
 ___
 
@@ -453,7 +455,7 @@ AxiosRequestConfig.proxy
 
 #### Defined in
 
-node_modules/axios/index.d.ts:337
+node_modules/axios/index.d.cts:404
 
 ___
 
@@ -467,7 +469,7 @@ AxiosRequestConfig.responseEncoding
 
 #### Defined in
 
-node_modules/axios/index.d.ts:322
+node_modules/axios/index.d.cts:389
 
 ___
 
@@ -481,7 +483,7 @@ AxiosRequestConfig.responseType
 
 #### Defined in
 
-node_modules/axios/index.d.ts:321
+node_modules/axios/index.d.cts:388
 
 ___
 
@@ -495,7 +497,7 @@ AxiosRequestConfig.signal
 
 #### Defined in
 
-node_modules/axios/index.d.ts:341
+node_modules/axios/index.d.cts:408
 
 ___
 
@@ -509,7 +511,7 @@ AxiosRequestConfig.socketPath
 
 #### Defined in
 
-node_modules/axios/index.d.ts:333
+node_modules/axios/index.d.cts:400
 
 ___
 
@@ -523,7 +525,7 @@ AxiosRequestConfig.timeout
 
 #### Defined in
 
-node_modules/axios/index.d.ts:316
+node_modules/axios/index.d.cts:383
 
 ___
 
@@ -537,7 +539,7 @@ AxiosRequestConfig.timeoutErrorMessage
 
 #### Defined in
 
-node_modules/axios/index.d.ts:317
+node_modules/axios/index.d.cts:384
 
 ___
 
@@ -551,7 +553,7 @@ AxiosRequestConfig.transformRequest
 
 #### Defined in
 
-node_modules/axios/index.d.ts:310
+node_modules/axios/index.d.cts:377
 
 ___
 
@@ -565,7 +567,7 @@ AxiosRequestConfig.transformResponse
 
 #### Defined in
 
-node_modules/axios/index.d.ts:311
+node_modules/axios/index.d.cts:378
 
 ___
 
@@ -579,7 +581,7 @@ AxiosRequestConfig.transitional
 
 #### Defined in
 
-node_modules/axios/index.d.ts:340
+node_modules/axios/index.d.cts:407
 
 ___
 
@@ -593,7 +595,7 @@ AxiosRequestConfig.transport
 
 #### Defined in
 
-node_modules/axios/index.d.ts:334
+node_modules/axios/index.d.cts:401
 
 ___
 
@@ -607,7 +609,7 @@ AxiosRequestConfig.url
 
 #### Defined in
 
-node_modules/axios/index.d.ts:307
+node_modules/axios/index.d.cts:374
 
 ___
 
@@ -621,7 +623,7 @@ AxiosRequestConfig.validateStatus
 
 #### Defined in
 
-node_modules/axios/index.d.ts:328
+node_modules/axios/index.d.cts:395
 
 ___
 
@@ -635,7 +637,21 @@ AxiosRequestConfig.withCredentials
 
 #### Defined in
 
-node_modules/axios/index.d.ts:318
+node_modules/axios/index.d.cts:385
+
+___
+
+### withXSRFToken
+
+• `Optional` **withXSRFToken**: `boolean` \| (`config`: `InternalAxiosRequestConfig`<`any`\>) => `undefined` \| `boolean`
+
+#### Inherited from
+
+AxiosRequestConfig.withXSRFToken
+
+#### Defined in
+
+node_modules/axios/index.d.cts:417
 
 ___
 
@@ -649,7 +665,7 @@ AxiosRequestConfig.xsrfCookieName
 
 #### Defined in
 
-node_modules/axios/index.d.ts:323
+node_modules/axios/index.d.cts:390
 
 ___
 
@@ -663,4 +679,4 @@ AxiosRequestConfig.xsrfHeaderName
 
 #### Defined in
 
-node_modules/axios/index.d.ts:324
+node_modules/axios/index.d.cts:391
