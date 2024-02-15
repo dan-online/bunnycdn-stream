@@ -4,15 +4,8 @@
   "description": "A simple, lightweight, and easy to use library for BunnyCDN's Stream API",
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "browser": "dist/index.umd.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
-  },
+  "main": "dist/index",
+  "types": "dist/index",
   "scripts": {
     "clean": "rimraf dist node_modules/.cache",
     "lint": "eslint src tests --ext ts --fix",
