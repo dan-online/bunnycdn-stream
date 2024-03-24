@@ -27,7 +27,7 @@
     "@sapphire/ts-config": "^5.0.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.8.9",
-    "@types/rimraf": "^3.0.2",
+    "@types/rimraf": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@vitest/coverage-c8": "^0.31.4",
