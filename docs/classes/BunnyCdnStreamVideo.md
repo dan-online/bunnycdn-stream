@@ -1,321 +1,289 @@
-[bunnycdn-stream](../README.md) / [Exports](../modules.md) / BunnyCdnStreamVideo
+[**bunnycdn-stream**](../README.md) • **Docs**
+
+***
+
+[bunnycdn-stream](../globals.md) / BunnyCdnStreamVideo
 
 # Class: BunnyCdnStreamVideo
 
-## Table of contents
-
-### Constructors
-
-- [constructor](BunnyCdnStreamVideo.md#constructor)
-
-### Properties
-
-- [availableResolutions](BunnyCdnStreamVideo.md#availableresolutions)
-- [averageWatchTime](BunnyCdnStreamVideo.md#averagewatchtime)
-- [captions](BunnyCdnStreamVideo.md#captions)
-- [category](BunnyCdnStreamVideo.md#category)
-- [chapters](BunnyCdnStreamVideo.md#chapters)
-- [collectionId](BunnyCdnStreamVideo.md#collectionid)
-- [dateUploaded](BunnyCdnStreamVideo.md#dateuploaded)
-- [encodeProgress](BunnyCdnStreamVideo.md#encodeprogress)
-- [framerate](BunnyCdnStreamVideo.md#framerate)
-- [guid](BunnyCdnStreamVideo.md#guid)
-- [hasMP4Fallback](BunnyCdnStreamVideo.md#hasmp4fallback)
-- [height](BunnyCdnStreamVideo.md#height)
-- [isPublic](BunnyCdnStreamVideo.md#ispublic)
-- [length](BunnyCdnStreamVideo.md#length)
-- [metaTags](BunnyCdnStreamVideo.md#metatags)
-- [moments](BunnyCdnStreamVideo.md#moments)
-- [status](BunnyCdnStreamVideo.md#status)
-- [storageSize](BunnyCdnStreamVideo.md#storagesize)
-- [thumbnailCount](BunnyCdnStreamVideo.md#thumbnailcount)
-- [thumbnailFileName](BunnyCdnStreamVideo.md#thumbnailfilename)
-- [title](BunnyCdnStreamVideo.md#title)
-- [totalWatchTime](BunnyCdnStreamVideo.md#totalwatchtime)
-- [videoLibraryId](BunnyCdnStreamVideo.md#videolibraryid)
-- [views](BunnyCdnStreamVideo.md#views)
-- [width](BunnyCdnStreamVideo.md#width)
-
-### Accessors
-
-- [resolutions](BunnyCdnStreamVideo.md#resolutions)
-
 ## Constructors
 
-### constructor
+### new BunnyCdnStreamVideo()
 
-• **new BunnyCdnStreamVideo**(`data`)
+> **new BunnyCdnStreamVideo**(`data`): [`BunnyCdnStreamVideo`](BunnyCdnStreamVideo.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `data` | [`VideoResponse`](../interfaces/BunnyCdnStream.VideoResponse.md) |
+• **data**: [`VideoResponse`](../namespaces/BunnyCdnStream/interfaces/VideoResponse.md)
 
-#### Defined in
+#### Returns
 
-[src/structures/Video.ts:46](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L46)
+[`BunnyCdnStreamVideo`](BunnyCdnStreamVideo.md)
+
+#### Source
+
+[src/structures/Video.ts:46](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L46)
 
 ## Properties
 
 ### availableResolutions
 
-• **availableResolutions**: `string`
+> **availableResolutions**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L15)
+[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L15)
 
-___
+***
 
 ### averageWatchTime
 
-• **averageWatchTime**: `number`
+> **averageWatchTime**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L27)
+[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L27)
 
-___
+***
 
 ### captions
 
-• **captions**: { `label`: `string` ; `srclang`: `string`  }[]
+> **captions**: `object`[]
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L19)
+[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L19)
 
-___
+***
 
 ### category
 
-• **category**: `string`
+> **category**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L29)
+[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L29)
 
-___
+***
 
 ### chapters
 
-• **chapters**: { `end`: `number` ; `start`: `number` ; `title`: `string`  }[]
+> **chapters**: `object`[]
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L30)
+[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L30)
 
-___
+***
 
 ### collectionId
 
-• **collectionId**: ``""``
+> **collectionId**: `""`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L25)
+[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L25)
 
-___
+***
 
 ### dateUploaded
 
-• **dateUploaded**: `string`
+> **dateUploaded**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L7)
+[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L7)
 
-___
+***
 
 ### encodeProgress
 
-• **encodeProgress**: `number`
+> **encodeProgress**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L17)
+[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L17)
 
-___
+***
 
 ### framerate
 
-• **framerate**: `number`
+> **framerate**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L12)
+[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L12)
 
-___
+***
 
 ### guid
 
-• **guid**: `string`
+> **guid**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L5)
+[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L5)
 
-___
+***
 
 ### hasMP4Fallback
 
-• **hasMP4Fallback**: `boolean`
+> **hasMP4Fallback**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L24)
+[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L24)
 
-___
+***
 
 ### height
 
-• **height**: `number`
+> **height**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L14)
+[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L14)
 
-___
+***
 
 ### isPublic
 
-• **isPublic**: `boolean`
+> **isPublic**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L9)
+[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L9)
 
-___
+***
 
 ### length
 
-• **length**: `number`
+> **length**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L10)
+[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L10)
 
-___
+***
 
 ### metaTags
 
-• **metaTags**: { `property`: `string` ; `value`: `string`  }[]
+> **metaTags**: `object`[]
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L41)
+[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L41)
 
-___
+***
 
 ### moments
 
-• **moments**: { `label`: `string` ; `timestamp`: `number`  }[]
+> **moments**: `object`[]
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L36)
+[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L36)
 
-___
+***
 
 ### status
 
-• **status**: `number`
+> **status**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L11)
+[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L11)
 
-___
+***
 
 ### storageSize
 
-• **storageSize**: `number`
+> **storageSize**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L18)
+[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L18)
 
-___
+***
 
 ### thumbnailCount
 
-• **thumbnailCount**: `number`
+> **thumbnailCount**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L16)
+[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L16)
 
-___
+***
 
 ### thumbnailFileName
 
-• **thumbnailFileName**: `string`
+> **thumbnailFileName**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L26)
+[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L26)
 
-___
+***
 
 ### title
 
-• **title**: `string`
+> **title**: `string`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L6)
+[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L6)
 
-___
+***
 
 ### totalWatchTime
 
-• **totalWatchTime**: `number`
+> **totalWatchTime**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L28)
+[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L28)
 
-___
+***
 
 ### videoLibraryId
 
-• **videoLibraryId**: `number`
+> **videoLibraryId**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L4)
+[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L4)
 
-___
+***
 
 ### views
 
-• **views**: `number`
+> **views**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L8)
+[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L8)
 
-___
+***
 
 ### width
 
-• **width**: `number`
+> **width**: `number`
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L13)
+[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L13)
 
 ## Accessors
 
 ### resolutions
 
-• `get` **resolutions**(): `number`[]
+> `get` **resolutions**(): `number`[]
 
 #### Returns
 
 `number`[]
 
-#### Defined in
+#### Source
 
-[src/structures/Video.ts:75](https://github.com/dan-online/bunnycdn-stream/blob/a0d1e0a/src/structures/Video.ts#L75)
+[src/structures/Video.ts:75](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L75)
