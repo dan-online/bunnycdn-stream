@@ -49,14 +49,9 @@ jobs:
       - name: Bump Version & Publish
         if: ${{ !inputs.dry }}
         run: |
-          yarn docs &&
+          yarn release-it --ci -i ${{ inputs.version }} &&
 
-          git add . &&
-          git commit -m "docs: generate documentation [no ci]" &&
-
-          git push &&
-
-          yarn release-it --ci -i ${{ inputs.version }}
+          git push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
