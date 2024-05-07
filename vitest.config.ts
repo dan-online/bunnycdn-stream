@@ -6,7 +6,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       reporter: ['text', 'lcov', 'clover'],
-      exclude: ['**/node_modules/**', '**/dist/**', '**/tests/**'],
+      include: ['src/**', 'src/error.ts'],
       clean: false
     },
     testTimeout: 30000
