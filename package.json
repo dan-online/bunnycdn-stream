@@ -30,7 +30,7 @@
     "@types/rimraf": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "@vitest/coverage-c8": "^0.31.4",
+    "@vitest/coverage-v8": "^1.6.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
