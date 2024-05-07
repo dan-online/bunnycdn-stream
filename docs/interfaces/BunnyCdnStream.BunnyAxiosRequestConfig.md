@@ -68,7 +68,7 @@ AxiosRequestConfig.adapter
 
 #### Defined in
 
-node_modules/axios/index.d.cts:386
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:386
 
 ___
 
@@ -82,7 +82,7 @@ AxiosRequestConfig.auth
 
 #### Defined in
 
-node_modules/axios/index.d.cts:387
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:387
 
 ___
 
@@ -96,7 +96,7 @@ AxiosRequestConfig.baseURL
 
 #### Defined in
 
-node_modules/axios/index.d.cts:376
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:376
 
 ___
 
@@ -127,7 +127,7 @@ AxiosRequestConfig.beforeRedirect
 
 #### Defined in
 
-node_modules/axios/index.d.cts:399
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:399
 
 ___
 
@@ -141,7 +141,7 @@ AxiosRequestConfig.cancelToken
 
 #### Defined in
 
-node_modules/axios/index.d.cts:405
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:405
 
 ___
 
@@ -155,7 +155,7 @@ AxiosRequestConfig.data
 
 #### Defined in
 
-node_modules/axios/index.d.cts:382
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:382
 
 ___
 
@@ -169,7 +169,7 @@ AxiosRequestConfig.decompress
 
 #### Defined in
 
-node_modules/axios/index.d.cts:406
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:406
 
 ___
 
@@ -189,7 +189,7 @@ AxiosRequestConfig.env
 
 #### Defined in
 
-node_modules/axios/index.d.cts:410
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:410
 
 ___
 
@@ -203,7 +203,7 @@ AxiosRequestConfig.family
 
 #### Defined in
 
-node_modules/axios/index.d.cts:414
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:414
 
 ___
 
@@ -217,7 +217,7 @@ AxiosRequestConfig.formSerializer
 
 #### Defined in
 
-node_modules/axios/index.d.cts:413
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:413
 
 ___
 
@@ -231,7 +231,7 @@ AxiosRequestConfig.headers
 
 #### Defined in
 
-[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/2d76aff/src/index.ts#L792)
+[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/64b6038/src/index.ts#L792)
 
 ___
 
@@ -245,7 +245,7 @@ AxiosRequestConfig.httpAgent
 
 #### Defined in
 
-node_modules/axios/index.d.cts:402
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:402
 
 ___
 
@@ -259,7 +259,7 @@ AxiosRequestConfig.httpsAgent
 
 #### Defined in
 
-node_modules/axios/index.d.cts:403
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:403
 
 ___
 
@@ -273,7 +273,7 @@ AxiosRequestConfig.insecureHTTPParser
 
 #### Defined in
 
-node_modules/axios/index.d.cts:409
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:409
 
 ___
 
@@ -287,7 +287,7 @@ AxiosRequestConfig.lookup
 
 #### Defined in
 
-node_modules/axios/index.d.cts:415
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:415
 
 ___
 
@@ -301,7 +301,7 @@ AxiosRequestConfig.maxBodyLength
 
 #### Defined in
 
-node_modules/axios/index.d.cts:396
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:396
 
 ___
 
@@ -315,7 +315,7 @@ AxiosRequestConfig.maxContentLength
 
 #### Defined in
 
-node_modules/axios/index.d.cts:394
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:394
 
 ___
 
@@ -329,7 +329,7 @@ AxiosRequestConfig.maxRate
 
 #### Defined in
 
-node_modules/axios/index.d.cts:398
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:398
 
 ___
 
@@ -343,7 +343,7 @@ AxiosRequestConfig.maxRedirects
 
 #### Defined in
 
-node_modules/axios/index.d.cts:397
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:397
 
 ___
 
@@ -357,7 +357,7 @@ AxiosRequestConfig.method
 
 #### Defined in
 
-node_modules/axios/index.d.cts:375
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:375
 
 ___
 
@@ -385,7 +385,7 @@ AxiosRequestConfig.onDownloadProgress
 
 #### Defined in
 
-node_modules/axios/index.d.cts:393
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:393
 
 ___
 
@@ -413,7 +413,7 @@ AxiosRequestConfig.onUploadProgress
 
 #### Defined in
 
-node_modules/axios/index.d.cts:392
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:392
 
 ___
 
@@ -427,7 +427,7 @@ AxiosRequestConfig.params
 
 #### Defined in
 
-node_modules/axios/index.d.cts:380
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:380
 
 ___
 
@@ -441,7 +441,7 @@ AxiosRequestConfig.paramsSerializer
 
 #### Defined in
 
-node_modules/axios/index.d.cts:381
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:381
 
 ___
 
@@ -455,7 +455,7 @@ AxiosRequestConfig.proxy
 
 #### Defined in
 
-node_modules/axios/index.d.cts:404
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:404
 
 ___
 
@@ -469,7 +469,7 @@ AxiosRequestConfig.responseEncoding
 
 #### Defined in
 
-node_modules/axios/index.d.cts:389
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:389
 
 ___
 
@@ -483,7 +483,7 @@ AxiosRequestConfig.responseType
 
 #### Defined in
 
-node_modules/axios/index.d.cts:388
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:388
 
 ___
 
@@ -497,7 +497,7 @@ AxiosRequestConfig.signal
 
 #### Defined in
 
-node_modules/axios/index.d.cts:408
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:408
 
 ___
 
@@ -511,7 +511,7 @@ AxiosRequestConfig.socketPath
 
 #### Defined in
 
-node_modules/axios/index.d.cts:400
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:400
 
 ___
 
@@ -525,7 +525,7 @@ AxiosRequestConfig.timeout
 
 #### Defined in
 
-node_modules/axios/index.d.cts:383
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:383
 
 ___
 
@@ -539,7 +539,7 @@ AxiosRequestConfig.timeoutErrorMessage
 
 #### Defined in
 
-node_modules/axios/index.d.cts:384
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:384
 
 ___
 
@@ -553,7 +553,7 @@ AxiosRequestConfig.transformRequest
 
 #### Defined in
 
-node_modules/axios/index.d.cts:377
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:377
 
 ___
 
@@ -567,7 +567,7 @@ AxiosRequestConfig.transformResponse
 
 #### Defined in
 
-node_modules/axios/index.d.cts:378
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:378
 
 ___
 
@@ -581,7 +581,7 @@ AxiosRequestConfig.transitional
 
 #### Defined in
 
-node_modules/axios/index.d.cts:407
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:407
 
 ___
 
@@ -595,7 +595,7 @@ AxiosRequestConfig.transport
 
 #### Defined in
 
-node_modules/axios/index.d.cts:401
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:401
 
 ___
 
@@ -609,7 +609,7 @@ AxiosRequestConfig.url
 
 #### Defined in
 
-node_modules/axios/index.d.cts:374
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:374
 
 ___
 
@@ -623,7 +623,7 @@ AxiosRequestConfig.validateStatus
 
 #### Defined in
 
-node_modules/axios/index.d.cts:395
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:395
 
 ___
 
@@ -637,7 +637,7 @@ AxiosRequestConfig.withCredentials
 
 #### Defined in
 
-node_modules/axios/index.d.cts:385
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:385
 
 ___
 
@@ -651,7 +651,7 @@ AxiosRequestConfig.withXSRFToken
 
 #### Defined in
 
-node_modules/axios/index.d.cts:417
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:417
 
 ___
 
@@ -665,7 +665,7 @@ AxiosRequestConfig.xsrfCookieName
 
 #### Defined in
 
-node_modules/axios/index.d.cts:390
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:390
 
 ___
 
@@ -679,4 +679,4 @@ AxiosRequestConfig.xsrfHeaderName
 
 #### Defined in
 
-node_modules/axios/index.d.cts:391
+node_modules/.store/axios-npm-1.6.8-85cf1e7152/node_modules/axios/index.d.cts:391
