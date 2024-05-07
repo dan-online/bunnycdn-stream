@@ -3,8 +3,10 @@
   "compilerOptions": {
     "importHelpers": true,
     "noEmitHelpers": true,
-    "target": "ES2021",
+    "target": "esnext",
     "module": "ESNext",
-    "skipLibCheck": true
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   }
 }
