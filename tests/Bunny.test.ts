@@ -164,7 +164,7 @@ describe('BunnyCdnStream', () => {
         metaTags: []
       });
 
-      expect(video.resolutions).toBeGreaterThan(0);
+      expect(video.resolutions.length).toBeGreaterThan(0);
     });
 
     test('GIVEN library w/ encoded video THEN can upload vtt subtitles', async () => {
