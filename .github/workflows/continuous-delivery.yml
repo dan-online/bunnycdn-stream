@@ -11,9 +11,9 @@ on:
         description: 'Dry run'
         required: false
         type: boolean
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   publish:
@@ -52,7 +52,6 @@ jobs:
           yarn release-it --ci -i ${{ inputs.version  }}
 
           git push
-
       - name: Bump Version & Publish
         if: ${{ !inputs.dry && github.event_name == 'push' }}
         run: |
