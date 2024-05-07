@@ -46,12 +46,20 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Bump Version & Publish
-        if: ${{ !inputs.dry }}
+      - name: Set Version & Publish
+        if: ${{ !inputs.dry && github.event_name == 'workflow_dispatch' }}
         run: |
-          yarn release-it --ci -i ${{ inputs.version }} &&
+          yarn release-it --ci -i ${{ inputs.version  }}
 
           git push
+
+      - name: Bump Version & Publish
+        if: ${{ !inputs.dry && github.event_name == 'push' }}
+        run: |
+          yarn release-it --ci
+
+          git push
+
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
