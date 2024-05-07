@@ -11,6 +11,9 @@ on:
         description: 'Dry run'
         required: false
         type: boolean
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
@@ -24,45 +27,32 @@ jobs:
           ref: ${{ 'main' }}
           token: ${{secrets.GH_TOKEN}}
 
-      - name: Use Node.js v18
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+      - name: Use Node.js v22
+        uses: josh-development/.github/setup-node@main
         with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org/
-      - name: Locate Yarn Cache
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-      - name: Yarn Cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install Dependencies
-        run: yarn --immutable
+          version: 22
+
       - name: Build
         run: yarn build
-      - name: Bump Version & Publish
-        if: ${{ inputs.dry }}
+
+      - name: Setup Git
         run: |
           git config --global user.name 'DanCodes'
           git config --global user.email 'dan@dancodes.online'
 
-          yarn release-it --ci -i ${{ inputs.version }} -d
+      - name: Bump Version & Publish
+        if: ${{ inputs.dry }}
+        run: yarn release-it --ci -i ${{ inputs.version }} -d
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Bump Version & Publish
         if: ${{ !inputs.dry }}
         run: |
-          git config --global user.name 'DanCodes'
-          git config --global user.email 'dan@dancodes.online'
-
           yarn docs &&
 
           git add . &&
-          git commit -m "docs(${{ inputs.version }}): generate documentation [no ci]" &&
+          git commit -m "docs: generate documentation [no ci]" &&
 
           git push &&
 
