@@ -16,12 +16,10 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
-      - name: Add ESLint Problem Matcher
-        run: echo "::add-matcher::.github/problemMatchers/eslint.json"
-      - name: Use Node.js v18
+      - name: Use Node.js v22
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
-          node-version: 18
+          node-version: 22
           registry-url: https://registry.npmjs.org/
       - name: Locate Yarn Cache
         id: yarn-cache-dir-path
@@ -35,8 +33,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Run ESLint
-        run: yarn lint --fix=false
+      - name: Run Lint
+        run: yarn lint
       - name: Run tests
         run: yarn test --coverage
         env:
