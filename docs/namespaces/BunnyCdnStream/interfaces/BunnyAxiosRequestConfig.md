@@ -188,7 +188,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L792)
+[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L792)
 
 ***
 

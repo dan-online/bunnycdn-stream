@@ -22,7 +22,7 @@
 
 #### Source
 
-[src/index.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L26)
+[src/index.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L26)
 
 ## Properties
 
@@ -32,7 +32,7 @@
 
 #### Source
 
-[src/index.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L10)
+[src/index.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L10)
 
 ***
 
@@ -44,7 +44,7 @@ Options for connecting and authenticating with the Bunny CDN API
 
 #### Source
 
-[src/index.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L24)
+[src/index.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L24)
 
 ## Methods
 
@@ -84,7 +84,7 @@ await stream.addCaptions("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { captionsFile:
 
 #### Source
 
-[src/index.ts:378](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L378)
+[src/index.ts:378](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L378)
 
 ***
 
@@ -122,7 +122,7 @@ await stream.createAndUploadVideo(createReadStream("./file.mp4"), { title: "The 
 
 #### Source
 
-[src/index.ts:166](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L166)
+[src/index.ts:166](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L166)
 
 ***
 
@@ -152,7 +152,7 @@ await stream.createCollection("New Collection")
 
 #### Source
 
-[src/index.ts:417](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L417)
+[src/index.ts:417](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L417)
 
 ***
 
@@ -190,7 +190,7 @@ await stream.createDirectUpload({ title: "My Video" })
 
 #### Source
 
-[src/index.ts:572](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L572)
+[src/index.ts:572](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L572)
 
 ***
 
@@ -224,7 +224,7 @@ await stream.createVideo({ title: "The best title" })
 
 #### Source
 
-[src/index.ts:123](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L123)
+[src/index.ts:123](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L123)
 
 ***
 
@@ -248,7 +248,7 @@ await stream.deleteAllCollections()
 
 #### Source
 
-[src/index.ts:549](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L549)
+[src/index.ts:549](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L549)
 
 ***
 
@@ -274,7 +274,7 @@ await stream.deleteAllVideos();
 
 #### Source
 
-[src/index.ts:103](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L103)
+[src/index.ts:103](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L103)
 
 ***
 
@@ -308,7 +308,7 @@ await stream.deleteCaptions("0273f24a-79d1-d0fe-97ca-b0e36bed31es", "en")
 
 #### Source
 
-[src/index.ts:401](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L401)
+[src/index.ts:401](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L401)
 
 ***
 
@@ -338,7 +338,7 @@ await stream.deleteCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:534](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L534)
+[src/index.ts:534](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L534)
 
 ***
 
@@ -368,7 +368,7 @@ await stream.deleteVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:85](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L85)
+[src/index.ts:85](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L85)
 
 ***
 
@@ -408,7 +408,7 @@ await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://
 
 #### Source
 
-[src/index.ts:359](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L359)
+[src/index.ts:359](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L359)
 
 ***
 
@@ -428,7 +428,7 @@ await stream.fetchVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { url: "https://
 
 #### Source
 
-[src/index.ts:595](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L595)
+[src/index.ts:595](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L595)
 
 ***
 
@@ -458,7 +458,7 @@ await stream.getCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:434](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L434)
+[src/index.ts:434](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L434)
 
 ***
 
@@ -472,7 +472,7 @@ await stream.getCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:626](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L626)
+[src/index.ts:626](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L626)
 
 ***
 
@@ -502,7 +502,7 @@ await stream.getVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:40](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L40)
+[src/index.ts:40](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L40)
 
 ***
 
@@ -532,7 +532,7 @@ await stream.getVideoHeatmap("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:183](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L183)
+[src/index.ts:183](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L183)
 
 ***
 
@@ -570,7 +570,7 @@ await stream.getVideoStatistics("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:200](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L200)
+[src/index.ts:200](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L200)
 
 ***
 
@@ -610,7 +610,7 @@ await stream.listAllCollections()
 
 #### Source
 
-[src/index.ts:475](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L475)
+[src/index.ts:475](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L475)
 
 ***
 
@@ -652,7 +652,7 @@ await stream.listAllVideos()
 
 #### Source
 
-[src/index.ts:276](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L276)
+[src/index.ts:276](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L276)
 
 ***
 
@@ -690,7 +690,7 @@ await stream.listCollections({ page: 2, search: "Y collections", itemsPerPage: 1
 
 #### Source
 
-[src/index.ts:449](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L449)
+[src/index.ts:449](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L449)
 
 ***
 
@@ -746,7 +746,7 @@ await stream.listVideos({ page: 2, search: "The best title", itemsPerPage: 10 })
 
 #### Source
 
-[src/index.ts:245](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L245)
+[src/index.ts:245](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L245)
 
 ***
 
@@ -778,7 +778,7 @@ await stream.reencodeVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:226](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L226)
+[src/index.ts:226](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L226)
 
 ***
 
@@ -802,7 +802,7 @@ await stream.reencodeVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
 
 #### Source
 
-[src/index.ts:602](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L602)
+[src/index.ts:602](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L602)
 
 ***
 
@@ -842,7 +842,7 @@ await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("
 
 #### Source
 
-[src/index.ts:327](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L327)
+[src/index.ts:327](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L327)
 
 ***
 
@@ -876,7 +876,7 @@ await stream.updateCollection("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { name: 'N
 
 #### Source
 
-[src/index.ts:517](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L517)
+[src/index.ts:517](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L517)
 
 ***
 
@@ -920,7 +920,7 @@ await stream.updateVideo("0273f24a-79d1-d0fe-97ca-b0e36bed31es", { title: "New t
 
 #### Source
 
-[src/index.ts:58](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L58)
+[src/index.ts:58](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L58)
 
 ***
 
@@ -960,4 +960,4 @@ await stream.uploadVideo(createReadStream("./file.mp4"), "0273f24a-79d1-d0fe-97c
 
 #### Source
 
-[src/index.ts:145](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/index.ts#L145)
+[src/index.ts:145](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L145)

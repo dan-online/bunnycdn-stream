@@ -22,7 +22,7 @@
 
 #### Source
 
-[src/structures/Video.ts:46](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L46)
+[src/structures/Video.ts:46](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L46)
 
 ## Properties
 
@@ -32,7 +32,7 @@
 
 #### Source
 
-[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L15)
+[src/structures/Video.ts:15](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L15)
 
 ***
 
@@ -42,7 +42,7 @@
 
 #### Source
 
-[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L27)
+[src/structures/Video.ts:27](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L27)
 
 ***
 
@@ -52,7 +52,7 @@
 
 #### Source
 
-[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L19)
+[src/structures/Video.ts:19](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L19)
 
 ***
 
@@ -62,7 +62,7 @@
 
 #### Source
 
-[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L29)
+[src/structures/Video.ts:29](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L29)
 
 ***
 
@@ -72,7 +72,7 @@
 
 #### Source
 
-[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L30)
+[src/structures/Video.ts:30](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L30)
 
 ***
 
@@ -82,7 +82,7 @@
 
 #### Source
 
-[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L25)
+[src/structures/Video.ts:25](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L25)
 
 ***
 
@@ -92,7 +92,7 @@
 
 #### Source
 
-[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L7)
+[src/structures/Video.ts:7](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L7)
 
 ***
 
@@ -102,7 +102,7 @@
 
 #### Source
 
-[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L17)
+[src/structures/Video.ts:17](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L17)
 
 ***
 
@@ -112,7 +112,7 @@
 
 #### Source
 
-[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L12)
+[src/structures/Video.ts:12](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L12)
 
 ***
 
@@ -122,7 +122,7 @@
 
 #### Source
 
-[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L5)
+[src/structures/Video.ts:5](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L5)
 
 ***
 
@@ -132,7 +132,7 @@
 
 #### Source
 
-[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L24)
+[src/structures/Video.ts:24](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L24)
 
 ***
 
@@ -142,7 +142,7 @@
 
 #### Source
 
-[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L14)
+[src/structures/Video.ts:14](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L14)
 
 ***
 
@@ -152,7 +152,7 @@
 
 #### Source
 
-[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L9)
+[src/structures/Video.ts:9](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L9)
 
 ***
 
@@ -162,7 +162,7 @@
 
 #### Source
 
-[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L10)
+[src/structures/Video.ts:10](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L10)
 
 ***
 
@@ -172,7 +172,7 @@
 
 #### Source
 
-[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L41)
+[src/structures/Video.ts:41](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L41)
 
 ***
 
@@ -182,7 +182,7 @@
 
 #### Source
 
-[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L36)
+[src/structures/Video.ts:36](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L36)
 
 ***
 
@@ -192,7 +192,7 @@
 
 #### Source
 
-[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L11)
+[src/structures/Video.ts:11](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L11)
 
 ***
 
@@ -202,7 +202,7 @@
 
 #### Source
 
-[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L18)
+[src/structures/Video.ts:18](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L18)
 
 ***
 
@@ -212,7 +212,7 @@
 
 #### Source
 
-[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L16)
+[src/structures/Video.ts:16](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L16)
 
 ***
 
@@ -222,7 +222,7 @@
 
 #### Source
 
-[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L26)
+[src/structures/Video.ts:26](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L26)
 
 ***
 
@@ -232,7 +232,7 @@
 
 #### Source
 
-[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L6)
+[src/structures/Video.ts:6](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L6)
 
 ***
 
@@ -242,7 +242,7 @@
 
 #### Source
 
-[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L28)
+[src/structures/Video.ts:28](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L28)
 
 ***
 
@@ -252,7 +252,7 @@
 
 #### Source
 
-[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L4)
+[src/structures/Video.ts:4](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L4)
 
 ***
 
@@ -262,7 +262,7 @@
 
 #### Source
 
-[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L8)
+[src/structures/Video.ts:8](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L8)
 
 ***
 
@@ -272,7 +272,7 @@
 
 #### Source
 
-[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L13)
+[src/structures/Video.ts:13](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L13)
 
 ## Accessors
 
@@ -286,4 +286,4 @@
 
 #### Source
 
-[src/structures/Video.ts:75](https://github.com/dan-online/bunnycdn-stream/blob/d70c6fd/src/structures/Video.ts#L75)
+[src/structures/Video.ts:75](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/structures/Video.ts#L75)
