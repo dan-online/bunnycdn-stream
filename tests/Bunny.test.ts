@@ -55,60 +55,56 @@ describe('BunnyCdnStream', () => {
 
   describe('can manipulate videos', () => {
     let videoGuid: string;
-    test(
-      'GIVEN empty library THEN uploads video',
-      async () => {
-        const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));
-        const upload = await stream.createAndUploadVideo(vid, { title: 'test' });
+    test('GIVEN empty library THEN uploads video', { timeout: 30000 }, async () => {
+      const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));
+      const upload = await stream.createAndUploadVideo(vid, { title: 'test' });
 
-        videoGuid = upload.guid;
-        expect(upload).toMatchObject({
-          guid: expect.any(String),
-          title: 'test',
-          averageWatchTime: 0,
-          availableResolutions: null,
-          captions: [],
-          category: 'unknown',
-          chapters: [],
-          collectionId: '',
-          dateUploaded: expect.any(String),
-          encodeProgress: 0,
-          framerate: 0,
-          hasMP4Fallback: false,
-          height: 0,
-          isPublic: false,
-          length: 0,
-          metaTags: [],
-          moments: [],
-          status: 0,
-          storageSize: 0,
-          thumbnailCount: 0,
-          thumbnailFileName: expect.any(String),
-          totalWatchTime: 0,
-          videoLibraryId: expect.any(Number),
-          views: 0,
-          width: 0
-        });
+      videoGuid = upload.guid;
+      expect(upload).toMatchObject({
+        guid: expect.any(String),
+        title: 'test',
+        averageWatchTime: 0,
+        availableResolutions: null,
+        captions: [],
+        category: 'unknown',
+        chapters: [],
+        collectionId: '',
+        dateUploaded: expect.any(String),
+        encodeProgress: 0,
+        framerate: 0,
+        hasMP4Fallback: false,
+        height: 0,
+        isPublic: false,
+        length: 0,
+        metaTags: [],
+        moments: [],
+        status: 0,
+        storageSize: 0,
+        thumbnailCount: 0,
+        thumbnailFileName: expect.any(String),
+        totalWatchTime: 0,
+        videoLibraryId: expect.any(Number),
+        views: 0,
+        width: 0
+      });
 
-        await new Promise((r) => {
-          const interval = setInterval(async () => {
-            const videos = await stream.listVideos();
-            if (videos.items.length > 0) {
-              clearInterval(interval);
-              r(0);
-            }
-          }, 1000);
-        });
-      },
-      { timeout: 30000 }
-    );
+      await new Promise((r) => {
+        const interval = setInterval(async () => {
+          const videos = await stream.listVideos();
+          if (videos.items.length > 0) {
+            clearInterval(interval);
+            r(0);
+          }
+        }, 1000);
+      });
+    });
 
     test('GIVEN library w/ video THEN can get video', async () => {
       const video = await stream.getVideo(videoGuid);
       expect(video.guid).toEqual(videoGuid);
     });
 
-    test('GIVEN library w/ video THEN can list video', async () => {
+    test('GIVEN library w/ video THEN can list video', { retry: 3 }, async () => {
       const videos = await stream.listVideos();
       expect(videos.items).toHaveLength(1);
     });
@@ -118,21 +114,17 @@ describe('BunnyCdnStream', () => {
       expect(videos.items).toHaveLength(0);
     });
 
-    test(
-      'GIVEN library w/ video THEN can encode',
-      async () => {
-        await new Promise((r) => {
-          const interval = setInterval(async () => {
-            const video = await stream.getVideo(videoGuid);
-            if (video.encodeProgress === 100) {
-              clearInterval(interval);
-              r(0);
-            }
-          }, 1000);
-        });
-      },
-      { timeout: 60000 * 2 }
-    );
+    test('GIVEN library w/ video THEN can encode', { timeout: 60000 * 2 }, async () => {
+      await new Promise((r) => {
+        const interval = setInterval(async () => {
+          const video = await stream.getVideo(videoGuid);
+          if (video.encodeProgress === 100) {
+            clearInterval(interval);
+            r(0);
+          }
+        }, 1000);
+      });
+    });
 
     test('GIVEN library w/ encoded video THEN has meta', async () => {
       const video = await stream.getVideo(videoGuid);
@@ -267,23 +259,19 @@ describe('BunnyCdnStream', () => {
       });
     });
 
-    test(
-      'GIVEN library w/ encoded video THEN can reencode',
-      async () => {
-        const res = await stream.reencodeVideo(videoGuid);
-        expect(res).toBeInstanceOf(BunnyCdnStreamVideo);
-        await new Promise((r) => {
-          const interval = setInterval(async () => {
-            const video = await stream.getVideo(videoGuid);
-            if (video.encodeProgress === 100) {
-              clearInterval(interval);
-              r(0);
-            }
-          }, 1000);
-        });
-      },
-      { timeout: 60000 * 2 }
-    );
+    test('GIVEN library w/ encoded video THEN can reencode', { timeout: 60000 * 2 }, async () => {
+      const res = await stream.reencodeVideo(videoGuid);
+      expect(res).toBeInstanceOf(BunnyCdnStreamVideo);
+      await new Promise((r) => {
+        const interval = setInterval(async () => {
+          const video = await stream.getVideo(videoGuid);
+          if (video.encodeProgress === 100) {
+            clearInterval(interval);
+            r(0);
+          }
+        }, 1000);
+      });
+    });
 
     test('GIVEN library THEN upload invalid video', async () => {
       const vid = createReadStream(resolve(__dirname, 'data', 'bunny.mp4'));

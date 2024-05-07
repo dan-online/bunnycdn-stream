@@ -4,6 +4,7 @@
   "description": "A simple, lightweight, and easy to use library for BunnyCDN's Stream API",
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
+  "type": "module",
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
