@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig, type AxiosRequestHeaders } from 'axios';
-import fileType from 'file-type';
-import { ReadStream } from 'fs';
+import { fileTypeFromBuffer } from 'file-type';
 import { createHash } from 'node:crypto';
+import { ReadStream } from 'node:fs';
 import { BunnyCdnStreamError } from './error';
 import { BunnyCdnStreamVideo } from './structures/Video';
 import { lowerObject } from './utils';
@@ -330,7 +330,7 @@ export class BunnyCdnStream {
 
     if (typeof thumbnail !== 'string')
       options.headers['Content-Type'] =
-        thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileType.fromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
+        thumbnail instanceof ReadStream ? 'application/octet-stream' : (ct || (await fileTypeFromBuffer(thumbnail)) || { mime: 'image/jpg' }).mime;
 
     options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
     options.method = 'POST';
