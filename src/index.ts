@@ -6,7 +6,6 @@ import axios, {
 	type AxiosRequestConfig,
 	type AxiosRequestHeaders,
 } from "axios";
-import { fileTypeFromBuffer } from "file-type";
 import { BunnyCdnStreamError } from "./error";
 import { BunnyCdnStreamVideo } from "./structures/Video";
 import { lowerObject } from "./utils";
@@ -384,11 +383,11 @@ export class BunnyCdnStream {
 	/**
 	 * Set the thumbnail
 	 *
-	 * NOTE: The file type is automatically detected from the buffer, however if it fails, it will default to ``image/jpeg``
+	 * NOTE: It is recommended to use a module like `file-type` to set the content-type of the thumbnail
 	 * @returns A {@link BunnyCdnStream.SetThumbnailVideoResponse} instance.
 	 * @param videoId The video ID
 	 * @param thumbnail A buffer/stream/url of the thumbnail
-	 * @param overrideContentType The content type to override and skip the automatic detection
+	 * @param contentType The content type of the thumbnail, required for non-readstream inputs
 	 * @example
 	 * ```typescript
 	 * await stream.setThumbnail("0273f24a-79d1-d0fe-97ca-b0e36bed31es", readFileSync("thumbnail.jpg"))
@@ -397,19 +396,16 @@ export class BunnyCdnStream {
 	public async setThumbnail(
 		videoId: string,
 		thumbnail: Buffer | ReadStream | string,
-		overrideContentType?: string,
+		contentType?: string,
 	) {
 		const options = this.getOptions();
-		const ct = overrideContentType ? { mime: overrideContentType } : undefined;
 
 		if (typeof thumbnail !== "string")
 			options.headers["Content-Type"] =
-				thumbnail instanceof ReadStream
+				contentType ||
+				(thumbnail instanceof ReadStream
 					? "application/octet-stream"
-					: (
-							ct ||
-							(await fileTypeFromBuffer(thumbnail)) || { mime: "image/jpg" }
-						).mime;
+					: "image/jpeg");
 
 		options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`;
 		options.method = "POST";
