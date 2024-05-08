@@ -224,6 +224,12 @@ describe("BunnyCdnStream", () => {
 			});
 		});
 
+		test("GIVEN library w/ encoded video THEN can get heatmap", async () => {
+			const res = await stream.getVideoHeatmap(videoGuid);
+
+			expect(res).toEqual({ heatmap: {} });
+		});
+
 		test("GIVEN library w/ encoded video THEN can update", async () => {
 			await stream.updateVideo(videoGuid, { title: "updated" });
 			const vid = await stream.getVideo(videoGuid);
