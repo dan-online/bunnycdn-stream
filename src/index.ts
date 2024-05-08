@@ -215,6 +215,37 @@ export class BunnyCdnStream {
 	}
 
 	/**
+	 * Get video play data
+	 * @returns A {@link BunnyCdnStream.VideoPlayDataResponse} instance.
+	 * @param videoId The video id to get play data from
+	 * @param expires The expiration time of the token
+	 * @param data The data to fetch video play data with
+	 * @example
+	 * ```typescript
+	 * await stream.getVideoPlayData("0273f24a-79d1-d0fe-97ca-b0e36bed31es")
+	 * ```
+	 */
+	public async getVideoPlayData(
+		videoId: string,
+		data: {
+			token?: string;
+			expires?: number;
+		} = {
+			token: undefined,
+			expires: 0,
+		},
+	) {
+		const options = this.getOptions();
+		options.method = "GET";
+		options.url += `/library/${this.options.videoLibrary}/videos/${videoId}/play`;
+		options.params = data;
+
+		return this.request<BunnyCdnStream.VideoPlayDataResponse>(
+			options,
+			"getPlayData",
+		);
+	}
+	/**
 	 * Get video statistics
 	 * @returns A {@link BunnyCdnStream.VideoStatisticsResponse} instance.
 	 * @param data The data to fetch video statistics with
@@ -841,9 +872,82 @@ export namespace BunnyCdnStream {
 		engagementScore: number;
 	}
 
-	export type VideoHeatmapResponse = {
+	export interface VideoHeatmapResponse {
 		heatmap: Record<string, string | number>;
-	};
+	}
+
+	export interface VideoPlayDataResponse {
+		video: {
+			videoLibraryId: number;
+			guid: string;
+			title: string;
+			dateUploaded: string;
+			views: number;
+			isPublic: boolean;
+			length: number;
+			status: number;
+			framerate: number;
+			rotation: number;
+			width: number;
+			height: number;
+			availableResolutions: string;
+			thumbnailCount: number;
+			encodeProgress: number;
+			storageSize: number;
+			captions: {
+				srclang: string;
+				label: string;
+			}[];
+			hasMP4Fallback: boolean;
+			collectionId: string;
+			thumbnailFileName: string;
+			averageWatchTime: number;
+			totalWatchTime: number;
+			category: string;
+			chapters: {
+				title: string;
+				start: number;
+				end: number;
+			}[];
+			moments: {
+				label: string;
+				timestamp: number;
+			}[];
+			metaTags: {
+				property: string;
+				value: string;
+			}[];
+			transcodingMessages: {
+				timeStamp: string;
+				level: number;
+				issueCode: number;
+				message: string;
+				value: string;
+			}[];
+		};
+		captionsPath: string;
+		seekPath: string;
+		thumbnailUrl: string;
+		fallbackUrl: string;
+		videoPlaylistUrl: string;
+		originalUrl: string;
+		previewUrl: string;
+		controls: string;
+		enableDRM: boolean;
+		drmVersion: number;
+		playerKeyColor: string;
+		vastTagUrl: string;
+		captionsFontSize: number;
+		captionsFontColor: string;
+		captionsBackground: string;
+		uiLanguage: string;
+		allowEarlyPlay: boolean;
+		tokenAuthEnabled: boolean;
+		enableMP4Fallback: boolean;
+		showHeatmap: boolean;
+		fontFamily: string;
+		playbackSpeeds: string;
+	}
 
 	export interface ListVideosResponse {
 		totalItems: number;
