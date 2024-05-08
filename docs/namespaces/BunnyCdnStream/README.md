@@ -27,5 +27,6 @@
 - [UpdateVideoResponse](interfaces/UpdateVideoResponse.md)
 - [UploadVideoResponse](interfaces/UploadVideoResponse.md)
 - [VideoHeatmapResponse](interfaces/VideoHeatmapResponse.md)
+- [VideoPlayDataResponse](interfaces/VideoPlayDataResponse.md)
 - [VideoResponse](interfaces/VideoResponse.md)
 - [VideoStatisticsResponse](interfaces/VideoStatisticsResponse.md)

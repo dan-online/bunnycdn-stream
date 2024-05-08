@@ -6,6 +6,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+![Codecov][coverage-shield]
 
 <br />
 <div align="center">
@@ -18,7 +19,7 @@
   <p align="center">
     A simple, lightweight, and easy to use library for BunnyCDN's stream api.
     <br />
-    <a href="https://github.com/dan-online/bunnycdn-stream/blob/main/docs/classes/BunnyCdnStream-1.md">Documentation</a>
+    <a href="https://github.com/dan-online/bunnycdn-stream/blob/main/docs/classes/BunnyCdnStream.md">Documentation</a>
     ·
     <a href="https://github.com/dan-online/bunnycdn-stream/issues">Report Bug</a>
     ·
@@ -62,9 +63,10 @@ This was harder than you would think, a lot of bunnycdn's documentation is misna
 
 ### Built With
 
-- [Axios](https://axios.com/)
+- [Axios](https://axios.com)
 - [Typescript](https://www.typescriptlang.org)
-- [Rollup](https://rollupjs.org/guide/en/)
+- [TSup](https://tsup.egoist.dev)
+- [Biome](https://biomejs.dev)
 
 ## Getting Started
 
@@ -102,7 +104,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## Testing
 
-The project is tested with `vitest` and requires you to have a library on your BunnyCDN account to send commands to the Bunny API. 
+The project is tested with `vitest` and requires you to have a library on your BunnyCDN account to send commands to the Bunny API.
 
 > Warning: all videos will be deleted during testing.
 
@@ -137,6 +139,7 @@ Project Link: [https://github.com/dan-online/bunnycdn-stream](https://github.com
 
 [contributors-shield]: https://img.shields.io/github/contributors/dan-online/bunnycdn-stream.svg?style=for-the-badge
 [contributors-url]: https://github.com/dan-online/bunnycdn-stream/graphs/contributors
+[coverage-shield]: https://img.shields.io/codecov/c/github/dan-online/bunnycdn-stream?token=FAU4GNC5FD&style=for-the-badge&logo=codecov
 [forks-shield]: https://img.shields.io/github/forks/dan-online/bunnycdn-stream.svg?style=for-the-badge
 [forks-url]: https://github.com/dan-online/bunnycdn-stream/network/members
 [stars-shield]: https://img.shields.io/github/stars/dan-online/bunnycdn-stream.svg?style=for-the-badge

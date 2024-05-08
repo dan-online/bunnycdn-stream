@@ -14,7 +14,7 @@
 
 #### Source
 
-[src/index.ts:688](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L688)
+[src/index.ts:828](https://github.com/dan-online/bunnycdn-stream/blob/616be292d397c50e1db742e88f1022206d23e14f/src/index.ts#L828)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Source
 
-[src/index.ts:689](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L689)
+[src/index.ts:829](https://github.com/dan-online/bunnycdn-stream/blob/616be292d397c50e1db742e88f1022206d23e14f/src/index.ts#L829)
 
 ***
 
@@ -34,4 +34,4 @@
 
 #### Source
 
-[src/index.ts:687](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L687)
+[src/index.ts:827](https://github.com/dan-online/bunnycdn-stream/blob/616be292d397c50e1db742e88f1022206d23e14f/src/index.ts#L827)

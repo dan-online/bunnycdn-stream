@@ -217,7 +217,6 @@ export class BunnyCdnStream {
 	 * Get video play data
 	 * @returns A {@link BunnyCdnStream.VideoPlayDataResponse} instance.
 	 * @param videoId The video id to get play data from
-	 * @param expires The expiration time of the token
 	 * @param data The data to fetch video play data with
 	 * @example
 	 * ```typescript
@@ -686,7 +685,7 @@ export class BunnyCdnStream {
 	 * NOTE: metadata.filetype is required for the tus upload to work
 	 * @returns A {@link BunnyCdnStream.CreateDirectUpload}
 	 * @param data The data to create the video with
-	 * @param expirationTime The expiration time of the tus upload
+	 * @param expirationDate The expiration date of the tus upload
 	 * @example
 	 * ```typescript
 	 * await stream.createDirectUpload({ title: "My Video" })

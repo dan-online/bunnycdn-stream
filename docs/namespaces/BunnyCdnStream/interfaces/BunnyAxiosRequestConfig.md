@@ -22,7 +22,7 @@
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:386
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:327
 
 ***
 
@@ -36,7 +36,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:387
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:328
 
 ***
 
@@ -50,7 +50,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:376
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:317
 
 ***
 
@@ -78,7 +78,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:399
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:340
 
 ***
 
@@ -92,7 +92,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:405
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:346
 
 ***
 
@@ -106,7 +106,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:382
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:323
 
 ***
 
@@ -120,7 +120,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:406
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:347
 
 ***
 
@@ -146,7 +146,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:410
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:351
 
 ***
 
@@ -160,7 +160,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:414
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:355
 
 ***
 
@@ -174,7 +174,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:413
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:354
 
 ***
 
@@ -188,7 +188,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-[src/index.ts:792](https://github.com/dan-online/bunnycdn-stream/blob/1f8579d/src/index.ts#L792)
+[src/index.ts:1007](https://github.com/dan-online/bunnycdn-stream/blob/616be292d397c50e1db742e88f1022206d23e14f/src/index.ts#L1007)
 
 ***
 
@@ -202,7 +202,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:402
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:343
 
 ***
 
@@ -216,7 +216,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:403
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:344
 
 ***
 
@@ -230,7 +230,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:409
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:350
 
 ***
 
@@ -244,7 +244,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:415
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:356
 
 ***
 
@@ -258,7 +258,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:396
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:337
 
 ***
 
@@ -272,7 +272,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:394
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:335
 
 ***
 
@@ -286,7 +286,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:398
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:339
 
 ***
 
@@ -300,7 +300,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:397
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:338
 
 ***
 
@@ -314,7 +314,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:375
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:316
 
 ***
 
@@ -336,7 +336,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:393
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:334
 
 ***
 
@@ -358,7 +358,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:392
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:333
 
 ***
 
@@ -372,7 +372,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:380
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:321
 
 ***
 
@@ -386,7 +386,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:381
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:322
 
 ***
 
@@ -400,7 +400,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:404
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:345
 
 ***
 
@@ -414,7 +414,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:389
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:330
 
 ***
 
@@ -428,7 +428,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:388
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:329
 
 ***
 
@@ -442,7 +442,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:408
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:349
 
 ***
 
@@ -456,7 +456,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:400
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:341
 
 ***
 
@@ -470,7 +470,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:383
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:324
 
 ***
 
@@ -484,7 +484,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:384
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:325
 
 ***
 
@@ -498,7 +498,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:377
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:318
 
 ***
 
@@ -512,7 +512,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:378
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:319
 
 ***
 
@@ -526,7 +526,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:407
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:348
 
 ***
 
@@ -540,7 +540,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:401
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:342
 
 ***
 
@@ -554,7 +554,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:374
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:315
 
 ***
 
@@ -568,7 +568,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:395
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:336
 
 ***
 
@@ -582,7 +582,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:385
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:326
 
 ***
 
@@ -596,7 +596,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:417
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:358
 
 ***
 
@@ -610,7 +610,7 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:390
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:331
 
 ***
 
@@ -624,4 +624,4 @@ node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:
 
 #### Source
 
-node\_modules/.store/axios-npm-1.6.8-85cf1e7152/node\_modules/axios/index.d.cts:391
+node\_modules/.store/axios-npm-1.6.8-85cf1e7152/package/index.d.ts:332
