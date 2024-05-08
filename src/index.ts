@@ -841,7 +841,9 @@ export namespace BunnyCdnStream {
 		engagementScore: number;
 	}
 
-	export type VideoHeatmapResponse = Record<string, unknown>;
+	export type VideoHeatmapResponse = {
+		heatmap: Record<string, string | number>;
+	};
 
 	export interface ListVideosResponse {
 		totalItems: number;
