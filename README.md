@@ -59,9 +59,10 @@ This was harder than you would think, a lot of bunnycdn's documentation is misna
 
 ### Built With
 
-- [Axios](https://axios.com/)
+- [Axios](https://axios.com)
 - [Typescript](https://www.typescriptlang.org)
-- [Rollup](https://rollupjs.org/guide/en/)
+- [TSup](https://tsup.egoist.dev)
+- [Biome](https://biomejs.dev)
 
 ## Getting Started
 
