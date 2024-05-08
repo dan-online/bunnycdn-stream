@@ -237,6 +237,64 @@ describe("BunnyCdnStream", () => {
 			expect(res).toEqual({ heatmap: {} });
 		});
 
+		test("GIVEN library w/ encoded video THEN can get play data", async () => {
+			const res = await stream.getVideoPlayData(videoGuid);
+
+			expect(res).toMatchObject({
+				video: {
+					videoLibraryId: expect.any(Number),
+					guid: expect.any(String),
+					title: expect.any(String),
+					dateUploaded: expect.any(String),
+					views: expect.any(Number),
+					isPublic: expect.any(Boolean),
+					length: expect.any(Number),
+					status: 4,
+					framerate: expect.any(Number),
+					rotation: expect.any(Number),
+					width: expect.any(Number),
+					height: expect.any(Number),
+					availableResolutions: expect.any(String),
+					thumbnailCount: expect.any(Number),
+					encodeProgress: 100,
+					storageSize: expect.any(Number),
+					captions: expect.arrayContaining([expect.any(Object)]),
+					hasMP4Fallback: expect.any(Boolean),
+					collectionId: expect.any(String),
+					thumbnailFileName: expect.any(String),
+					averageWatchTime: expect.any(Number),
+					totalWatchTime: expect.any(Number),
+					category: expect.any(String),
+					chapters: expect.any(Array),
+					moments: expect.any(Array),
+					metaTags: expect.any(Array),
+					transcodingMessages: expect.any(Array),
+				},
+				captionsPath: expect.any(String),
+				seekPath: expect.any(String),
+				thumbnailUrl: expect.any(String),
+				fallbackUrl: expect.any(String),
+				videoPlaylistUrl: expect.any(String),
+				originalUrl: null,
+				previewUrl: expect.any(String),
+				controls: expect.any(String),
+				enableDRM: expect.any(Boolean),
+				drmVersion: expect.any(Number),
+				playerKeyColor: expect.any(String),
+				vastTagUrl: null,
+				captionsFontSize: expect.any(Number),
+				captionsFontColor: expect.any(String),
+				captionsBackground: expect.any(String),
+				uiLanguage: expect.any(String),
+				allowEarlyPlay: expect.any(Boolean),
+				tokenAuthEnabled: expect.any(Boolean),
+				enableMP4Fallback: expect.any(Boolean),
+				showHeatmap: expect.any(Boolean),
+				fontFamily: expect.any(String),
+				playbackSpeeds: expect.any(String),
+			});
+		});
+
 		test("GIVEN library w/ encoded video THEN can update", async () => {
 			await stream.updateVideo(videoGuid, { title: "updated" });
 			const vid = await stream.getVideo(videoGuid);
