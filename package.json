@@ -5,8 +5,12 @@
   "author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
   "license": "Apache-2.0",
   "type": "module",
-  "main": "dist/index",
-  "types": "dist/index",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    "import": "./dist/mjs/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "scripts": {
     "clean": "rimraf dist node_modules/.cache",
     "lint": "biome check src tests",
