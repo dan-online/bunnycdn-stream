@@ -1,5 +1,6 @@
 import { createReadStream, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { setTimeout } from "node:timers/promises";
 import { config } from "dotenv";
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
 import { BunnyCdnStream, BunnyCdnStreamVideo } from "../src";
@@ -118,7 +119,13 @@ describe("BunnyCdnStream", () => {
 			{ retry: 3 },
 			async () => {
 				const videos = await stream.listVideos();
-				expect(videos.items).toHaveLength(1);
+				try {
+					expect(videos.items).toHaveLength(1);
+				} catch (e) {
+					await setTimeout(1000);
+
+					throw e;
+				}
 			},
 		);
 
