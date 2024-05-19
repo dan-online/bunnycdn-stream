@@ -31,7 +31,7 @@
     "@favware/npm-deprecate": "^1.0.7",
     "@sapphire/ts-config": "^5.0.1",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.12.12",
     "@types/rimraf": "^4.0.5",
     "@vitest/coverage-v8": "^1.6.0",
     "dotenv": "^16.4.5",
@@ -45,7 +45,7 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typedoc": "^0.25.13",
-    "typedoc-plugin-markdown": "^4.0.1",
+    "typedoc-plugin-markdown": "^4.0.2",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },
