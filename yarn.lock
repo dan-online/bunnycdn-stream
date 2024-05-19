@@ -2319,12 +2319,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.12.11":
-  version: 20.12.11
-  resolution: "@types/node@npm:20.12.11"
+"@types/node@npm:^20.12.12":
+  version: 20.12.12
+  resolution: "@types/node@npm:20.12.12"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/efaa7b08c50ba6e6982ac7d531ba08d5935539ba76e954807df1ff9382a319ead7e003ccaca5ad7cf33ecf53f212507f7c1f2794bd2ff52df6365fef21f6e1fb
+  checksum: 10c0/f374b763c744e8f16e4f38cf6e2c0eef31781ec9228c9e43a6f267880fea420fab0a238b59f10a7cb3444e49547c5e3785787e371fc242307310995b21988812
   languageName: node
   linkType: hard
 
@@ -3062,7 +3062,7 @@ __metadata:
     "@favware/npm-deprecate": "npm:^1.0.7"
     "@sapphire/ts-config": "npm:^5.0.1"
     "@types/jest": "npm:^29.5.12"
-    "@types/node": "npm:^20.12.11"
+    "@types/node": "npm:^20.12.12"
     "@types/rimraf": "npm:^4.0.5"
     "@vitest/coverage-v8": "npm:^1.6.0"
     axios: "npm:^1.6.8"
@@ -3077,7 +3077,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     tsup: "npm:^8.0.2"
     typedoc: "npm:^0.25.13"
-    typedoc-plugin-markdown: "npm:^4.0.1"
+    typedoc-plugin-markdown: "npm:^4.0.2"
     typescript: "npm:^5.4.5"
     vitest: "npm:^1.6.0"
   languageName: unknown
@@ -9824,12 +9824,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "typedoc-plugin-markdown@npm:4.0.1"
+"typedoc-plugin-markdown@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "typedoc-plugin-markdown@npm:4.0.2"
   peerDependencies:
     typedoc: 0.25.x
-  checksum: 10c0/c0fe4c655208ef07a7a9c7fcf7d98d37884fc55d5e386c15d17c9ea945f03893c6c3fbd19cca4613eeb426a6d00c07f59917df7005347f8a316d483ada6f3d9a
+  checksum: 10c0/e967edb1d98b472ae468d83a0df347d03a909ebebab26cce4b2bf3a7c58ba93533d9ad5201b3b8d4f8dddd4241b26dd354aec6d746bb505045982bca83c76867
   languageName: node
   linkType: hard
 
