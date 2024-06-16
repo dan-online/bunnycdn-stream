@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Use Node.js v22
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
@@ -41,7 +41,7 @@ jobs:
           BUNNY_VIDEO_LIBRARY: ${{ secrets.BUNNY_VIDEO_LIBRARY }}
           BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.4.1
+        uses: codecov/codecov-action@v4.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Build Code
