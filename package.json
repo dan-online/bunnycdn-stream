@@ -31,7 +31,7 @@
     "@favware/npm-deprecate": "^1.0.7",
     "@sapphire/ts-config": "^5.0.1",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.12",
+    "@types/node": "^20.14.13",
     "@types/rimraf": "^4.0.5",
     "@vitest/coverage-v8": "^1.6.0",
     "dotenv": "^16.4.5",
