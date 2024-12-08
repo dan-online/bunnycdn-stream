@@ -41,7 +41,7 @@ jobs:
           BUNNY_VIDEO_LIBRARY: ${{ secrets.BUNNY_VIDEO_LIBRARY }}
           BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5.0.7
+        uses: codecov/codecov-action@v5.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Build Code
