@@ -15,7 +15,7 @@ jobs:
         with:
           repository: 'josh-development/.github'
       - name: Run Label Sync
-        uses: crazy-max/ghaction-github-labeler@31674a3852a9074f2086abcf1c53839d466a47e7 # v5
+        uses: crazy-max/ghaction-github-labeler@24d110aa46a59976b8a7f35518cb7f14f434c916 # v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           yaml-file: .github/labels.yml
