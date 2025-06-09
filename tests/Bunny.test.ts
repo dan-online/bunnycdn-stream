@@ -175,7 +175,7 @@ describe("BunnyCdnStream", () => {
 				moments: [],
 				averageWatchTime: 0,
 				totalWatchTime: 0,
-				category: "animals-cats",
+				category: "untagged",
 				chapters: [],
 				metaTags: [],
 			});
