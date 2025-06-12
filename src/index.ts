@@ -696,9 +696,9 @@ export class BunnyCdnStream {
 		expirationDate?: Date,
 	): Promise<BunnyCdnStream.CreateDirectUpload> {
 		// create a video
-		const expirationTimestamp = (
-			expirationDate || new Date(Date.now() + 60000)
-		).getTime();
+		const expirationTimestamp = Math.floor(
+			(expirationDate || new Date(Date.now() + 60000)).getTime() / 1000,
+		);
 		const video = await this.createVideo(data);
 		const hash = this.generateTUSHash(video.guid, expirationTimestamp);
 
