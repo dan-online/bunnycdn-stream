@@ -25,7 +25,7 @@
     "husky": "husky install"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@favware/npm-deprecate": "^2.0.0",
