@@ -3410,7 +3410,7 @@ __metadata:
     "@types/rimraf": "npm:^4.0.5"
     "@vitest/coverage-v8": "npm:^3.2.4"
     axios: "npm:^1.10.0"
-    dotenv: "npm:^16.5.0"
+    dotenv: "npm:^17.2.0"
     husky: "npm:^9.1.7"
     jest: "npm:^30.0.2"
     jest-circus: "npm:^30.0.2"
@@ -4137,6 +4137,13 @@ __metadata:
   version: 16.5.0
   resolution: "dotenv@npm:16.5.0"
   checksum: 10c0/5bc94c919fbd955bf0ba44d33922a1e93d1078e64a1db5c30faeded1d996e7a83c55332cb8ea4fae5a9ca4d0be44cbceb95c5811e70f9f095298df09d1997dd9
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "dotenv@npm:17.2.0"
+  checksum: 10c0/d4cb5c2a09c288c921ef47a78f51c765a763266e23e84465cde6a87b28b9f7fc5a9d1fe349ed3c880b4c7297f82dd736dba5b08fe95ce53833ce4a7258d0fc43
   languageName: node
   linkType: hard
 
