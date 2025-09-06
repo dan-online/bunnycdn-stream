@@ -36,3 +36,6 @@ tests/test.jpg
 
 coverage/
 .env
+
+# direnv
+.envrc

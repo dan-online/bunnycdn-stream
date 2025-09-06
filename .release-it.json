@@ -1,8 +1,8 @@
 {
-  "git": {
-    "commitMessage": "chore: release v${version} [no ci]"
-  },
-  "github": {
-    "release": true
-  }
+	"git": {
+		"commitMessage": "chore: release v${version} [no ci]"
+	},
+	"github": {
+		"release": true
+	}
 }

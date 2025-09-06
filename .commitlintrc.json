@@ -1,7 +1,21 @@
 {
-  "extends": ["@commitlint/config-conventional"],
-  "rules": {
-    "type-enum": [2, "always", ["chore", "ci", "docs", "feat", "fix", "perf", "refactor", "style", "test"]],
-    "footer-leading-blank": [2, "always"]
-  }
+	"extends": ["@commitlint/config-conventional"],
+	"rules": {
+		"type-enum": [
+			2,
+			"always",
+			[
+				"chore",
+				"ci",
+				"docs",
+				"feat",
+				"fix",
+				"perf",
+				"refactor",
+				"style",
+				"test"
+			]
+		],
+		"footer-leading-blank": [2, "always"]
+	}
 }

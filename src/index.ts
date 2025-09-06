@@ -1,8 +1,8 @@
 import { createHash } from "node:crypto";
 import { ReadStream } from "node:fs";
 import axios, {
-	AxiosHeaders,
 	type AxiosError,
+	AxiosHeaders,
 	type AxiosRequestConfig,
 	type AxiosRequestHeaders,
 } from "axios";

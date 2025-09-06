@@ -1,12 +1,12 @@
 {
-  "editor.tabSize": 2,
-  "editor.useTabStops": false,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
-  },
-  "files.eol": "\n",
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+	"editor.tabSize": 2,
+	"editor.useTabStops": false,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": false,
+	"editor.codeActionsOnSave": {
+		"source.biome.fixAll": "explicit",
+		"source.biome.organizeImports": "explicit"
+	},
+	"files.eol": "\n",
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }
