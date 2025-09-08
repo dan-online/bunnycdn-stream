@@ -45,7 +45,7 @@ export class BunnyCdnStream {
 	public async getVideo(videoId: string): Promise<BunnyCdnStreamVideo> {
 		const video = await this.request<BunnyCdnStream.VideoResponse>(
 			"fetch",
-			`/library/${this.options.videoLibrary}/videos/${videoId}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}`,
 		);
 
 		return new BunnyCdnStreamVideo(video);
@@ -73,7 +73,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.UpdateVideoResponse> {
 		return this.request<BunnyCdnStream.UpdateVideoResponse>(
 			"update",
-			`/library/${this.options.videoLibrary}/videos/${videoId}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}`,
 			{
 				method: "POST",
 				json: data,
@@ -95,7 +95,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.DeleteVideoResponse> {
 		return this.request<BunnyCdnStream.DeleteVideoResponse>(
 			"delete",
-			`/library/${this.options.videoLibrary}/videos/${videoId}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}`,
 			{ method: "DELETE" },
 		);
 	}
@@ -136,7 +136,7 @@ export class BunnyCdnStream {
 	}): Promise<BunnyCdnStreamVideo> {
 		const video = await this.request<BunnyCdnStream.VideoResponse>(
 			"createVideo",
-			`/library/${this.options.videoLibrary}/videos`,
+			`library/${this.options.videoLibrary}/videos`,
 			{
 				method: "POST",
 				json: data,
@@ -163,7 +163,7 @@ export class BunnyCdnStream {
 		data?: { enabledResolutions?: string },
 	) {
 		// const options = this.getOptions();
-		// options.url += `/library/${this.options.videoLibrary}/videos/${videoId}`;
+		// options.url += `library/${this.options.videoLibrary}/videos/${videoId}`;
 		// options.method = "PUT";
 		// options.data = file;
 		// options.params = data;
@@ -172,7 +172,7 @@ export class BunnyCdnStream {
 		// return this.request<BunnyCdnStream.UploadVideoResponse>(options, "upload");
 		return this.request<BunnyCdnStream.UploadVideoResponse>(
 			"uploadVideo",
-			`/library/${this.options.videoLibrary}/videos/${videoId}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}`,
 			{
 				method: "PUT",
 				body: file,
@@ -217,7 +217,7 @@ export class BunnyCdnStream {
 	public async getVideoHeatmap(videoId: string) {
 		return this.request<BunnyCdnStream.VideoHeatmapResponse>(
 			"getVideoHeatmap",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/heatmap`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/heatmap`,
 			{ method: "GET" },
 		);
 	}
@@ -244,7 +244,7 @@ export class BunnyCdnStream {
 	) {
 		return this.request<BunnyCdnStream.VideoPlayDataResponse>(
 			"getVideoPlayData",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/play`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/play`,
 			{
 				method: "GET",
 				searchParams: data,
@@ -270,7 +270,7 @@ export class BunnyCdnStream {
 	) {
 		return this.request<BunnyCdnStream.VideoStatisticsResponse>(
 			"getVideoStatistics",
-			`/library/${this.options.videoLibrary}/statistics`,
+			`library/${this.options.videoLibrary}/statistics`,
 			{
 				method: "GET",
 				searchParams: { ...data, videoGuid: videoId },
@@ -292,7 +292,7 @@ export class BunnyCdnStream {
 	public async reencodeVideo(videoId: string) {
 		const video = await this.request<BunnyCdnStream.VideoResponse>(
 			"reencodeVideo",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/reencode`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/reencode`,
 			{
 				method: "POST",
 			},
@@ -321,7 +321,7 @@ export class BunnyCdnStream {
 	) {
 		const videos = await this.request<BunnyCdnStream.ListVideosResponse>(
 			"list",
-			`/library/${this.options.videoLibrary}/videos`,
+			`library/${this.options.videoLibrary}/videos`,
 			{ searchParams: data },
 		);
 
@@ -423,7 +423,7 @@ export class BunnyCdnStream {
 
 		return this.request<BunnyCdnStream.SetThumbnailVideoResponse>(
 			"setThumbnail",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/thumbnail`,
 			options,
 		);
 	}
@@ -446,7 +446,7 @@ export class BunnyCdnStream {
 	) {
 		return this.request<BunnyCdnStream.FetchVideoResponse>(
 			"fetch",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/fetch`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/fetch`,
 			{
 				method: "POST",
 				json: data,
@@ -470,7 +470,7 @@ export class BunnyCdnStream {
 	) {
 		return this.request<BunnyCdnStream.AddCaptionsVideoResponse>(
 			"addCaptions",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/captions/${data.srclang}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/captions/${data.srclang}`,
 			{
 				method: "POST",
 				json: {
@@ -497,7 +497,7 @@ export class BunnyCdnStream {
 	public async deleteCaptions(videoId: string, srclang: string) {
 		return this.request<BunnyCdnStream.DeleteCaptionsVideoResponse>(
 			"deleteCaptions",
-			`/library/${this.options.videoLibrary}/videos/${videoId}/captions/${srclang}`,
+			`library/${this.options.videoLibrary}/videos/${videoId}/captions/${srclang}`,
 			{ method: "DELETE" },
 		);
 	}
@@ -516,7 +516,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.CreateCollectionResponse> {
 		return this.request<BunnyCdnStream.CreateCollectionResponse>(
 			"createCollection",
-			`/library/${this.options.videoLibrary}/collections`,
+			`library/${this.options.videoLibrary}/collections`,
 			{
 				method: "POST",
 				json: { name },
@@ -538,7 +538,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.BunnyCdnStreamCollection> {
 		return this.request<BunnyCdnStream.BunnyCdnStreamCollection>(
 			"getCollection",
-			`/library/${this.options.videoLibrary}/collections/${collectionId}`,
+			`library/${this.options.videoLibrary}/collections/${collectionId}`,
 		);
 	}
 
@@ -561,7 +561,7 @@ export class BunnyCdnStream {
 	) {
 		return this.request<BunnyCdnStream.ListCollectionsResponse>(
 			"listCollections",
-			`/library/${this.options.videoLibrary}/collections`,
+			`library/${this.options.videoLibrary}/collections`,
 			{ searchParams: data },
 		);
 	}
@@ -630,7 +630,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.UpdateCollectionResponse> {
 		return this.request<BunnyCdnStream.UpdateCollectionResponse>(
 			"updateCollection",
-			`/library/${this.options.videoLibrary}/collections/${collectionId}`,
+			`library/${this.options.videoLibrary}/collections/${collectionId}`,
 			{
 				method: "POST",
 				json: data,
@@ -652,7 +652,7 @@ export class BunnyCdnStream {
 	): Promise<BunnyCdnStream.DeleteCollectionResponse> {
 		return this.request<BunnyCdnStream.DeleteCollectionResponse>(
 			"deleteCollection",
-			`/library/${this.options.videoLibrary}/collections/${collectionId}`,
+			`library/${this.options.videoLibrary}/collections/${collectionId}`,
 			{ method: "DELETE" },
 		);
 	}
