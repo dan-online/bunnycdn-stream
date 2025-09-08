@@ -1,6 +1,6 @@
 {
 	"name": "bunnycdn-stream",
-	"version": "2.4.3",
+	"version": "2.5.0",
 	"description": "A simple, lightweight, and easy to use library for BunnyCDN's Stream API",
 	"author": "DanCodes <dan@dancodes.online> (https://dancodes.online/)",
 	"license": "Apache-2.0",
@@ -55,8 +55,5 @@
 	"lint-staged": {
 		"*.ts": "biome check --apply"
 	},
-	"packageManager": "yarn@4.9.4",
-	"dependencies": {
-		"ky": "^1.10.0"
-	}
+	"packageManager": "yarn@4.9.4"
 }
