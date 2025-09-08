@@ -357,6 +357,7 @@ export class BunnyCdnStream {
 		const all: BunnyCdnStreamVideo[] = [];
 		let nextPage = true;
 		let page = 1;
+
 		while (nextPage) {
 			const videos = await this.listVideos({
 				...data,
@@ -736,10 +737,7 @@ export class BunnyCdnStream {
 		options: KyOptions = {},
 	): Promise<ResponseType> {
 		try {
-			const req = await this.ky<ResponseType>(
-				url.startsWith("/") ? url.slice(1) : url,
-				options,
-			);
+			const req = await this.ky<ResponseType>(url, options);
 
 			const data = await req.json();
 

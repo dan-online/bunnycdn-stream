@@ -12,6 +12,7 @@ describe("BunnyCdnStream", () => {
 	if (!process.env.IGNORE_PRUNE) {
 		afterAll(async () => {
 			await stream.deleteAllVideos();
+			await stream.deleteAllCollections();
 		});
 	}
 
@@ -53,6 +54,11 @@ describe("BunnyCdnStream", () => {
 
 		test("GIVEN empty library THEN listAllVideos returns empty array", async () => {
 			const videos = await stream.listAllVideos();
+			expect(videos).toEqual([]);
+		});
+
+		test("GIVEN stop THEN listAllVideos returns empty array", async () => {
+			const videos = await stream.listAllVideos(undefined, () => true);
 			expect(videos).toEqual([]);
 		});
 	});
@@ -200,7 +206,7 @@ describe("BunnyCdnStream", () => {
 		test("GIVEN library w/ encoded video THEN can upload srt subtitles", async () => {
 			const subs = readFileSync(resolve(__dirname, "data", "bunny.srt"));
 			const res = await stream.addCaptions(videoGuid, {
-				captionsFile: subs,
+				captionsFile: subs.toString("base64"),
 				label: "Spanish",
 				srclang: "es",
 			});
@@ -460,6 +466,19 @@ describe("BunnyCdnStream", () => {
 
 		test("GIVEN library THEN can list all collections", async () => {
 			const response = await stream.listAllCollections();
+
+			expect(response[0]).toMatchObject({
+				videoLibraryId: expect.any(Number),
+				guid: expect.any(String),
+				name: expect.any(String),
+				videoCount: expect.any(Number),
+				totalSize: expect.any(Number),
+				previewVideoIds: expect.any(Object),
+			});
+		});
+
+		test("GIVEN library THEN can list all collections and stop", async () => {
+			const response = await stream.listAllCollections(undefined, () => true);
 
 			expect(response[0]).toMatchObject({
 				videoLibraryId: expect.any(Number),
