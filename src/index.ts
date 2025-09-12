@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { ReadStream } from "node:fs";
+import type { ReadStream } from "node:fs";
 import ky, {
 	type HTTPError,
 	type KyInstance,
@@ -405,9 +405,9 @@ export class BunnyCdnStream {
 		const headers = {
 			"Content-Type":
 				contentType ||
-				(thumbnail instanceof ReadStream
+				(typeof thumbnail !== "string" && "pipe" in thumbnail
 					? "application/octet-stream"
-					: "image/jpeg"),
+					: contentType || "image/jpeg"),
 		};
 
 		const options: KyOptions = {
@@ -714,6 +714,46 @@ export class BunnyCdnStream {
 				filetype: "",
 				title: data.title,
 				collection: data.collectionId,
+			},
+		};
+	}
+
+  /**
+	 * Generate a direct upload tus from a video ID
+	 *
+	 * @returns A {@link BunnyCdnStream.CreateDirectUpload}
+	 * @param data The data to create the video with
+	 * @param expirationDate The expiration date of the tus upload
+	 * @example
+	 * ```typescript
+	 * await stream.createDirectUpload({ title: "My Video" })
+	 * ```
+	 */
+	public async createDirectUploadFromVideoId(
+    videoId: string,
+    fileType: string,
+		expirationDate?: Date,
+	): Promise<BunnyCdnStream.CreateDirectUpload> {
+		const expirationTimestamp = Math.floor(
+			(expirationDate || new Date(Date.now() + 60000)).getTime() / 1000,
+		);
+		const hash = this.generateTUSHash(videoId, expirationTimestamp);
+
+    const video = await this.getVideo(videoId);
+
+		return {
+			video,
+			endpoint: "https://video.bunnycdn.com/tusupload",
+			headers: {
+				AuthorizationSignature: hash,
+				AuthorizationExpire: expirationTimestamp,
+				VideoId: videoId,
+				LibraryId: this.options.videoLibrary,
+			},
+			metadata: {
+				filetype: fileType,
+				title: video.title,
+				collection: video.collectionId
 			},
 		};
 	}

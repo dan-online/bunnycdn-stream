@@ -22,7 +22,7 @@ export class BunnyCdnStreamVideo {
 	}[];
 
 	public hasMP4Fallback: boolean;
-	public collectionId: "";
+	public collectionId?: string;
 	public thumbnailFileName: string;
 	public averageWatchTime: number;
 	public totalWatchTime: number;
