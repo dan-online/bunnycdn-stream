@@ -718,7 +718,7 @@ export class BunnyCdnStream {
 		};
 	}
 
-  /**
+	/**
 	 * Generate a direct upload tus from a video ID
 	 *
 	 * @returns A {@link BunnyCdnStream.CreateDirectUpload}
@@ -730,8 +730,8 @@ export class BunnyCdnStream {
 	 * ```
 	 */
 	public async createDirectUploadFromVideoId(
-    videoId: string,
-    fileType: string,
+		videoId: string,
+		fileType: string,
 		expirationDate?: Date,
 	): Promise<BunnyCdnStream.CreateDirectUpload> {
 		const expirationTimestamp = Math.floor(
@@ -739,7 +739,7 @@ export class BunnyCdnStream {
 		);
 		const hash = this.generateTUSHash(videoId, expirationTimestamp);
 
-    const video = await this.getVideo(videoId);
+		const video = await this.getVideo(videoId);
 
 		return {
 			video,
@@ -753,7 +753,7 @@ export class BunnyCdnStream {
 			metadata: {
 				filetype: fileType,
 				title: video.title,
-				collection: video.collectionId
+				collection: video.collectionId,
 			},
 		};
 	}
