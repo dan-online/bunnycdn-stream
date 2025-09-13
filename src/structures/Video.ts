@@ -1,6 +1,20 @@
 import type { BunnyCdnStream } from "../";
 
+export const VideoStatus = {
+	0: "Created",
+	1: "Uploaded",
+	2: "Processing",
+	3: "Transcoding",
+	4: "Finished",
+	5: "Error",
+	6: "UploadFailed",
+	7: "JitSegmenting",
+	8: "JitPlaylistsCreated",
+};
+
 export class BunnyCdnStreamVideo {
+	readonly raw: BunnyCdnStream.VideoResponse;
+
 	public videoLibraryId: number;
 	public guid: string;
 	public title: string;
@@ -44,6 +58,8 @@ export class BunnyCdnStreamVideo {
 	}[];
 
 	public constructor(data: BunnyCdnStream.VideoResponse) {
+		this.raw = data;
+
 		this.videoLibraryId = data.videoLibraryId;
 		this.guid = data.guid;
 		this.title = data.title;
@@ -76,5 +92,9 @@ export class BunnyCdnStreamVideo {
 		return this.availableResolutions
 			.split(",")
 			.map((x) => Number.parseInt(x, 10));
+	}
+
+	public get statusName() {
+		return VideoStatus[this.status as keyof typeof VideoStatus];
 	}
 }
