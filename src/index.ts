@@ -399,7 +399,7 @@ export class BunnyCdnStream {
 	 */
 	public async setThumbnail(
 		videoId: string,
-		thumbnail: Buffer | ReadStream | string,
+		thumbnail: Buffer | ReadableStream | string,
 		contentType?: string,
 	) {
 		const headers = {
