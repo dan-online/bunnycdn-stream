@@ -758,6 +758,28 @@ export class BunnyCdnStream {
 		};
 	}
 
+	/**
+	 * Generate an embed token for an iframe
+	 *
+	 * @param videoId
+	 * @param tokenSecurityKey
+	 * @param expirationTime
+	 * @returns A sha256 hash string
+	 */
+	public async generateEmbedToken(
+		videoId: string,
+		tokenSecurityKey: string,
+		expirationTime: number,
+	) {
+		return createHash("sha256")
+			.update(
+				tokenSecurityKey.toString() +
+					videoId.toString() +
+					expirationTime.toString(),
+			)
+			.digest("hex");
+	}
+
 	private generateTUSHash(videoId: string, expirationTime: number) {
 		// sha256(library_id + api_key + expiration_time + video_id)
 		return createHash("sha256")
