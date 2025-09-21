@@ -55,7 +55,7 @@
 	"lint-staged": {
 		"*.ts": "biome check --apply"
 	},
-	"packageManager": "yarn@4.9.4",
+	"packageManager": "yarn@4.10.0",
 	"dependencies": {
 		"ky": "^1.10.0"
 	}
