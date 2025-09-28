@@ -57,6 +57,6 @@
 	},
 	"packageManager": "yarn@4.10.3",
 	"dependencies": {
-		"ky": "^1.10.0"
+		"ky": "^1.11.0"
 	}
 }
