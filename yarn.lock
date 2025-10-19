@@ -1846,7 +1846,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:^3.2.4"
     dotenv: "npm:^17.2.3"
     husky: "npm:^9.1.7"
-    ky: "npm:^1.11.0"
+    ky: "npm:^1.12.0"
     lint-staged: "npm:^16.2.4"
     release-it: "npm:^19.0.5"
     rimraf: "npm:^6.0.1"
@@ -3648,10 +3648,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ky@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "ky@npm:1.11.0"
-  checksum: 10c0/ce656988aa19ee20eaca55f0a84304a529cc222ef66dfb46f8b7cc1ec6b3c2c31065ce125b2d408ce16a0bcb148e6d7b01778128f7482bb44f506e0b1b8b8829
+"ky@npm:^1.12.0":
+  version: 1.12.0
+  resolution: "ky@npm:1.12.0"
+  checksum: 10c0/1b6c5de27f3a93e1ea63d98f3d0aa94961846441873c850f21d553df3749487a634e58497357676d1e9e871262aa6dbb61172d8c5cb1d44fab35d899a5988f79
   languageName: node
   linkType: hard
 
