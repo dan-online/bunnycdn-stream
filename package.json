@@ -30,7 +30,7 @@
 		"@commitlint/config-conventional": "^20.0.0",
 		"@favware/npm-deprecate": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.18.13",
+		"@types/node": "^24.9.2",
 		"@types/rimraf": "^4.0.5",
 		"@vitest/coverage-v8": "^4.0.6",
 		"dotenv": "^17.2.3",
