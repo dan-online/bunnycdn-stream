@@ -25,24 +25,24 @@
 		"husky": "husky install"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.5",
+		"@biomejs/biome": "^2.3.7",
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
 		"@favware/npm-deprecate": "^2.0.0",
-		"@sapphire/ts-config": "^5.0.1",
+		"@sapphire/ts-config": "^5.0.2",
 		"@types/node": "^24.10.1",
 		"@types/rimraf": "^4.0.5",
-		"@vitest/coverage-v8": "^4.0.9",
+		"@vitest/coverage-v8": "^4.0.13",
 		"dotenv": "^17.2.3",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.6",
+		"lint-staged": "^16.2.7",
 		"release-it": "^19.0.6",
-		"rimraf": "^6.1.0",
+		"rimraf": "^6.1.2",
 		"tsup": "^8.5.1",
 		"typedoc": "^0.28.14",
 		"typedoc-plugin-markdown": "^4.9.0",
 		"typescript": "^5.9.3",
-		"vitest": "^4.0.9"
+		"vitest": "^4.0.13"
 	},
 	"files": [
 		"dist",
