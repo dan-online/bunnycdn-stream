@@ -41,7 +41,7 @@
 		"tsup": "^8.5.1",
 		"typedoc": "^0.28.14",
 		"typedoc-plugin-markdown": "^4.9.0",
-		"typescript": "^5.9.3",
+		"typescript": "^7.0.2",
 		"vitest": "^4.0.13"
 	},
 	"files": [
